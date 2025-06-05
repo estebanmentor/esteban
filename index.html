@@ -6,10 +6,6 @@
     <title>Esteban Zárate - Mentoría Empresarial y Ejecutiva</title>
     <meta name="description" content="Esteban Zárate ofrece mentoría empresarial y ejecutiva para ayudarte a desbloquear tu próximo nivel, convertir desafíos en crecimiento y alcanzar tus metas. Conversemos de tus planes.">
     <meta name="keywords" content="mentoría empresarial, coaching ejecutivo, Esteban Zárate, mentor emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching en español">
-    <!-- Chosen Palette: Warm Neutrals with Intense Blue Accent -->
-    <!-- Application Structure Plan: The SPA maintains its user-centric journey from Challenge to Action. SEO and accessibility have been enhanced by adding structured data (Schema.org for ProfessionalService, FAQPage) to improve search engine visibility and ARIA attributes for better screen reader navigation. This structure, combined with semantic HTML, creates a robust and discoverable application that guides the user logically while being optimized for search. -->
-    <!-- Visualization & Content Choices: The core interactive elements (Radar Chart, Interactive Cards, Process Flow) are retained for their proven engagement. The color for primary Call-to-Actions (CTAs) has been changed to an intense blue to increase their visual prominence and drive action. Icons in 'La Transformación' updated to minimalist, monochromatic Unicode characters. The choice of visualizations (Chart.js/Canvas) and interactive elements (HTML/Tailwind/JS) remains consistent with the NO SVG/Mermaid requirement. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +34,16 @@
         .testimonial-card {
             flex: 0 0 100%;
             transition: transform 0.5s ease-in-out;
+        }
+        .logo-grid img {
+            max-height: 60px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease-in-out;
+            opacity: 0.7;
+        }
+        .logo-grid img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
         }
     </style>
 
@@ -93,6 +99,7 @@
                 <a href="#transformacion" class="text-stone-600 hover:text-blue-600 transition-colors">La Transformación</a>
                 <a href="#metodo" class="text-stone-600 hover:text-blue-600 transition-colors">El Método</a>
                 <a href="#exito" class="text-stone-600 hover:text-blue-600 transition-colors">Casos de Éxito</a>
+                <a href="#colaboraciones" class="text-stone-600 hover:text-blue-600 transition-colors">Colaboraciones</a>
             </div>
             <a href="#conversemos" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                 Conversemos
@@ -106,6 +113,7 @@
             <a href="#transformacion" class="block py-2 text-stone-600 hover:text-blue-600">La Transformación</a>
             <a href="#metodo" class="block py-2 text-stone-600 hover:text-blue-600">El Método</a>
             <a href="#exito" class="block py-2 text-stone-600 hover:text-blue-600">Casos de Éxito</a>
+            <a href="#colaboraciones" class="block py-2 text-stone-600 hover:text-blue-600">Colaboraciones</a>
             <a href="#conversemos" class="block mt-4 text-center w-full bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700">Conversemos</a>
         </div>
     </header>
@@ -251,6 +259,26 @@
             </div>
         </section>
 
+        <section id="colaboraciones" class="py-16 md:py-24 bg-stone-100" aria-labelledby="colaboraciones-heading">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 id="colaboraciones-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Donde He Colaborado</h2>
+                    <p class="mt-4 text-lg text-stone-600">
+                        He tenido el privilegio de trabajar y colaborar con diversas organizaciones líderes en sus sectores, aportando al desarrollo de sus proyectos, estrategias y equipos.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center logo-grid">
+                    <img src="https://culinary.cl/wp-content/uploads/2023/11/logo_culinary.svg" alt="Logo Culinary" title="Instituto Profesional Culinary">
+                    <img src="https://www.amsmobilesolutions.cl/wp-content/uploads/2019/12/logo-ams-horizontal.svg" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions">
+                    <img src="https://www.fedetur.org/images/logo_fedetur.png" alt="Logo Fedetur" title="FEDETUR">
+                    <img src="https://brandfetch.com/static/images/buinzoo.cl/buinzoo.cl-logo.svg" alt="Logo Buin Zoo" title="Buin Zoo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Logo_Universidad_de_Chile.svg/1200px-Logo_Universidad_de_Chile.svg.png" alt="Logo Universidad de Chile" title="Universidad de Chile">
+                    <img src="https://brandfetch.com/static/images/sernatur.cl/sernatur.cl-logo.svg" alt="Logo Sernatur" title="Sernatur">
+                    <img src="https://www.codelco.com/prontus_codelco/site/artic/20191226/imag/foto_0000000120191226172317.svg" alt="Logo Codelco" title="CODELCO">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/ESADE_logo.svg/2560px-ESADE_logo.svg.png" alt="Logo ESADE" title="ESADE Business & Law School">
+                </div>
+            </div>
+        </section>
         <section id="conversemos" class="py-16 md:py-24 bg-blue-700 text-white" aria-labelledby="conversemos-heading">
             <div class="container mx-auto px-6 text-center">
                  <h2 id="conversemos-heading" class="text-3xl md:text-4xl font-bold">¿Listo/a para Dejar de Hacer Malabares y Empezar a Construir el Futuro que Quieres?</h2>
@@ -351,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(link => {
         link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) return;
             mobileMenu.classList.add('hidden');
             mobileMenuButton.setAttribute('aria-expanded', 'false');
         });
@@ -433,50 +462,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const testimonialSlider = document.getElementById('testimonial-slider');
-    appData.testimonials.forEach((testimonial, index) => {
-        const card = document.createElement('div');
-        card.className = 'testimonial-card w-full p-4';
-        card.setAttribute('role', 'group');
-        card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
-        card.setAttribute('aria-label', `Testimonio ${index + 1} de ${appData.testimonials.length}`);
-        card.innerHTML = `
-            <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-3xl mx-auto">
-                <blockquote class="text-xl italic text-stone-600">
-                    <p>"${testimonial.quote}"</p>
-                </blockquote>
-                <cite class="mt-6 block font-bold text-teal-700 text-lg not-italic">${testimonial.author}</cite>
-            </div>`;
-        testimonialSlider.appendChild(card);
-    });
+    if (testimonialSlider) {
+        appData.testimonials.forEach((testimonial, index) => {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card w-full p-4';
+            card.setAttribute('role', 'group');
+            card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
+            card.setAttribute('aria-label', `Testimonio ${index + 1} de ${appData.testimonials.length}`);
+            card.innerHTML = `
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-3xl mx-auto">
+                    <blockquote class="text-xl italic text-stone-600">
+                        <p>"${testimonial.quote}"</p>
+                    </blockquote>
+                    <cite class="mt-6 block font-bold text-teal-700 text-lg not-italic">${testimonial.author}</cite>
+                </div>`;
+            testimonialSlider.appendChild(card);
+        });
 
-    let currentIndex = 0;
-    const items = testimonialSlider.children;
-    const totalItems = items.length;
+        let currentIndex = 0;
+        const items = testimonialSlider.children;
+        const totalItems = items.length;
 
-    function updateSlider() {
-        if (totalItems === 0) return;
-        testimonialSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        Array.from(items).forEach((item, idx) => item.setAttribute('aria-hidden', idx !== currentIndex));
+        function updateSlider() {
+            if (totalItems === 0) return;
+            testimonialSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            Array.from(items).forEach((item, idx) => item.setAttribute('aria-hidden', idx !== currentIndex));
+        }
+        
+        if (totalItems > 0) {
+             updateSlider();
+        
+            document.getElementById('next-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateSlider();
+            });
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                updateSlider();
+            });
+            
+            if (totalItems > 1) {
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % totalItems;
+                    updateSlider();
+                }, 7000);
+            }
+        }
     }
-    updateSlider();
     
-    document.getElementById('next-btn').addEventListener('click', () => {
-        if (totalItems === 0) return;
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateSlider();
-    });
-    document.getElementById('prev-btn').addEventListener('click', () => {
-        if (totalItems === 0) return;
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateSlider();
-    });
-    
-    if (totalItems > 1) {
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateSlider();
-        }, 7000);
-    }
 
     const faqSection = document.getElementById('faq-section');
     const faqQuestions = faqSection.querySelectorAll('.faq-question');
