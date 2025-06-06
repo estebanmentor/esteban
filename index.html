@@ -35,6 +35,7 @@
             flex: 0 0 100%;
             transition: transform 0.5s ease-in-out;
         }
+        /* Estilos para la nueva sección de logos */
         .logo-grid img {
             max-height: 60px;
             filter: grayscale(100%);
@@ -268,14 +269,14 @@
                     </p>
                 </div>
                 <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center logo-grid">
-                    <img src="https://culinary.cl/wp-content/uploads/2023/11/logo_culinary.svg" alt="Logo Culinary" title="Instituto Profesional Culinary">
-                    <img src="https://www.amsmobilesolutions.cl/wp-content/uploads/2019/12/logo-ams-horizontal.svg" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions">
-                    <img src="https://www.fedetur.org/images/logo_fedetur.png" alt="Logo Fedetur" title="FEDETUR">
-                    <img src="https://brandfetch.com/static/images/buinzoo.cl/buinzoo.cl-logo.svg" alt="Logo Buin Zoo" title="Buin Zoo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Logo_Universidad_de_Chile.svg/1200px-Logo_Universidad_de_Chile.svg.png" alt="Logo Universidad de Chile" title="Universidad de Chile">
-                    <img src="https://brandfetch.com/static/images/sernatur.cl/sernatur.cl-logo.svg" alt="Logo Sernatur" title="Sernatur">
-                    <img src="https://www.codelco.com/prontus_codelco/site/artic/20191226/imag/foto_0000000120191226172317.svg" alt="Logo Codelco" title="CODELCO">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/ESADE_logo.svg/2560px-ESADE_logo.svg.png" alt="Logo ESADE" title="ESADE Business & Law School">
+                    <img src="img/culinary.svg" alt="Logo Culinary" title="Instituto Profesional Culinary">
+                    <img src="img/ams-mobilesolutions.svg" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions">
+                    <img src="img/fedetur.png" alt="Logo Fedetur" title="FEDETUR">
+                    <img src="img/buinzoo.svg" alt="Logo Buin Zoo" title="Buin Zoo">
+                    <img src="img/uchile.png" alt="Logo Universidad de Chile" title="Universidad de Chile">
+                    <img src="img/sernatur.svg" alt="Logo Sernatur" title="Sernatur">
+                    <img src="img/codelco.svg" alt="Logo Codelco" title="CODELCO">
+                    <img src="img/esade.svg" alt="Logo ESADE" title="ESADE Business & Law School">
                 </div>
             </div>
         </section>
@@ -379,9 +380,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(link => {
         link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('hidden')) return;
-            mobileMenu.classList.add('hidden');
-            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            // Solo cierra el menú si es visible (en móvil)
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
         });
     });
 
@@ -510,7 +513,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-
     const faqSection = document.getElementById('faq-section');
     const faqQuestions = faqSection.querySelectorAll('.faq-question');
     const faqAnswers = faqSection.querySelectorAll('.faq-answer');
@@ -550,6 +552,17 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('faq-schema').textContent = JSON.stringify(faqSchema, null, 2);
     }
     generateFaqSchema();
+
+    // ---- INICIO DE LA CORRECCIÓN ----
+    // Forzar la vista al inicio de la página después de que todo cargue
+    if (window.history.scrollRestoration) {
+        window.history.scrollRestoration = 'manual';
+    } else {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    }
+    // ---- FIN DE LA CORRECCIÓN ----
 
 });
 </script>
