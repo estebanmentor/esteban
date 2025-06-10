@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban Zárate - Mentoría Empresarial y Ejecutiva</title>
-    <meta name="description" content="Esteban Zárate ofrece mentoría empresarial y ejecutiva para ayudarte a desbloquear tu próximo nivel, convertir desafíos en crecimiento y alcanzar tus metas. Conversemos de tus planes.">
-    <meta name="keywords" content="mentoría empresarial, coaching ejecutivo, Esteban Zárate, mentor emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching en español">
+    <title>Esteban Zárate - Mentor de Negocios y Coach Ejecutivo</title>
+    <meta name="description" content="Mentoría de negocios para fundadores y ejecutivos. Te ayudo a transformar desafíos complejos en crecimiento y a alcanzar tus metas con un plan claro y accionable.">
+    <meta name="keywords" content="mentor de negocios, coaching ejecutivo, esteban zarate, mentor para emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching chile, mentoría online">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,58 +16,55 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 40vh;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
+            background-color: #f8f7f5; /* Tono de piedra ligeramente más cálido */
         }
         .testimonial-card {
             flex: 0 0 100%;
             transition: transform 0.5s ease-in-out;
         }
-        /* Estilos para la nueva sección de logos */
         .logo-grid img {
-            max-height: 60px;
+            max-height: 50px; /* Reducido para un look más sutil */
             filter: grayscale(100%);
-            transition: filter 0.3s ease-in-out;
-            opacity: 0.7;
+            transition: all 0.3s ease-in-out;
+            opacity: 0.6;
         }
         .logo-grid img:hover {
             filter: grayscale(0%);
             opacity: 1;
+            transform: scale(1.05);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #ccdbd9; /* Color de línea más suave */
         }
     </style>
 
+    <!-- Schema.org para SEO Avanzado -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Esteban  - Mentoría Empresarial y Ejecutiva",
-      "description": "Mentoría personalizada para emprendedores y ejecutivos enfocada en desbloquear el potencial, convertir desafíos en crecimiento exponencial y alcanzar metas de negocio y liderazgo.",
-      "url": "https://www.innovatur.cl", 
-      "image": "https://placehold.co/1200x630/1d4ed8/ffffff?text=Esteban+",
+      "name": "Esteban Zárate - Mentoría de Negocios y Ejecutiva",
+      "description": "Mentoría personalizada para fundadores y ejecutivos enfocada en desbloquear el potencial, convertir desafíos en crecimiento y alcanzar metas de negocio y liderazgo.",
+      "url": "https://www.innovatur.cl",
+      "image": "https://www.innovatur.cl/img/og-image-principal.jpg",
       "provider": {
         "@type": "Person",
-        "name": "Esteban ",
-        "jobTitle": "Mentor Empresarial y Ejecutivo",
+        "name": "Esteban Zárate",
+        "jobTitle": "Mentor de Negocios y Coach Ejecutivo",
         "knowsAbout": ["Mentoría de negocios", "Coaching ejecutivo", "Liderazgo", "Estrategia empresarial", "Crecimiento de negocios"],
         "url": "https://www.innovatur.cl/#metodo",
-        "image": "https://placehold.co/400x400/ffffff/333333?text=EZ"
+        "image": "https://www.innovatur.cl/img/mentor-sesion-trabajo.jpg"
       },
       "serviceType": "Mentoría de Negocios",
       "areaServed": {
         "@type": "Country",
-        "name": "Países de habla hispana"
+        "name": "Chile"
       },
       "potentialAction": {
         "@type": "CommunicateAction",
@@ -76,7 +73,7 @@
           "urlTemplate": "https://www.innovatur.cl/#conversemos",
           "inLanguage": "es"
         },
-        "name": "Conversemos de tus planes"
+        "name": "Iniciar Diagnóstico"
       }
     }
     </script>
@@ -88,150 +85,187 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-    <a href="#" class="text-xl font-bold text-stone-900">Esteban Zárate</a>
-    <a href="https://www.linkedin.com/in/estebanzarate/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Esteban Zárate">
-        <svg class="w-6 h-6 text-stone-600 hover:text-blue-700 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-        </svg>
-    </a>
-</div>
+                <a href="#" class="text-xl font-bold text-stone-900">Esteban Zárate</a>
+                <a href="https://www.linkedin.com/in/estebanzarate/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Esteban Zárate">
+                    <svg class="w-6 h-6 text-stone-600 hover:text-blue-700 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                    </svg>
+                </a>
+            </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#reto" class="text-stone-600 hover:text-blue-600 transition-colors">El Desafio</a>
+                <a href="#reto" class="text-stone-600 hover:text-blue-600 transition-colors">El Desafío</a>
                 <a href="#transformacion" class="text-stone-600 hover:text-blue-600 transition-colors">La Transformación</a>
-                <a href="#metodo" class="text-stone-600 hover:text-blue-600 transition-colors">El Método</a>
+                <a href="#metodo" class="text-stone-600 hover:text-blue-600 transition-colors">Mi Método</a>
                 <a href="#exito" class="text-stone-600 hover:text-blue-600 transition-colors">Casos de Éxito</a>
-                <a href="#colaboraciones" class="text-stone-600 hover:text-blue-600 transition-colors">Colaboraciones</a>
+                <a href="#recursos" class="text-stone-600 hover:text-blue-600 transition-colors">Recursos</a>
             </div>
             <a href="#conversemos" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                Conversemos
+                Agendar Sesión
             </a>
             <button id="mobile-menu-button" class="md:hidden text-stone-800" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4">
-            <a href="#reto" class="block py-2 text-stone-600 hover:text-blue-600">El Desafio</a>
+            <a href="#reto" class="block py-2 text-stone-600 hover:text-blue-600">El Desafío</a>
             <a href="#transformacion" class="block py-2 text-stone-600 hover:text-blue-600">La Transformación</a>
-            <a href="#metodo" class="block py-2 text-stone-600 hover:text-blue-600">El Método</a>
+            <a href="#metodo" class="block py-2 text-stone-600 hover:text-blue-600">Mi Método</a>
             <a href="#exito" class="block py-2 text-stone-600 hover:text-blue-600">Casos de Éxito</a>
-            <a href="#colaboraciones" class="block py-2 text-stone-600 hover:text-blue-600">Colaboraciones</a>
-            <a href="#conversemos" class="block mt-4 text-center w-full bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700">Conversemos</a>
+            <a href="#recursos" class="block py-2 text-stone-600 hover:text-blue-600">Recursos</a>
+            <a href="#conversemos" class="block mt-4 text-center w-full bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700">Agendar Sesión</a>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="py-20 md:py-32" aria-labelledby="hero-heading">
-            <div class="container mx-auto px-6 text-center">
-                <h1 id="hero-heading" class="text-4xl md:text-6xl font-bold text-stone-900 leading-tight">
-                    Desbloquea tu Próximo Nivel
-                </h1>
-                <h2 class="text-2xl md:text-4xl font-semibold text-teal-700 mt-2">
-                    Convierte Desafíos en Crecimiento 
-                </h2>
-                <p class="mt-6 max-w-2xl mx-auto text-lg text-stone-600">
-                    Sé que estás haciendo malabares para que todo funcione. Juntos, crearemos el plan y habilidades que no conoccías de tí, que no solo ayudarán a superar obstáculos, sino que para alcanzar el éxito que mereces.
-                </p>
-                <a href="#reto" class="mt-10 inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105">
-                    Descubre cómo
-                </a>
+        <!-- SECCIÓN HERO MODIFICADA (Prioridad Alta) -->
+        <section id="hero" class="py-20 md:py-24" aria-labelledby="hero-heading">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 leading-tight">
+                        Mentoría de Negocios para Fundadores y Ejecutivos
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-teal-700 mt-2">
+                        Transforma Desafíos en Crecimiento
+                    </h2>
+                    <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg text-stone-600">
+                        Sabemos que estás haciendo malabares para que todo funcione. Juntos, crearemos un plan de acción claro y desarrollaremos tus habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza.
+                    </p>
+                    <a href="#conversemos" class="mt-10 inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105">
+                        Iniciemos TU diagnostico ahora!
+                    </a>
+                </div>
+                <div class="w-full h-full">
+                    <!-- ======================================================================================================= -->
+                    <!-- == IMAGEN HERO SECTION | FORMATO: JPG (Optimizado para web) | NOMBRE: mentor-sesion-trabajo.jpg | TAMAÑO RECOMENDADO: 1000x1200px == -->
+                    <!-- ======================================================================================================= -->
+                    <img src="/img/mentor-sesion-trabajo.jpg" alt="Mentor de negocios en una sesión de trabajo con un ejecutivo" class="rounded-lg shadow-xl object-cover w-full h-full max-h-[500px]">
+                </div>
             </div>
         </section>
 
-        <section id="reto" class="py-16 md:py-24 bg-white" aria-labelledby="reto-heading">
+        <!-- SECCIÓN COLABORACIONES MODIFICADA (Prueba Social, Prioridad Alta) -->
+        <section id="colaboraciones" class="py-12 bg-white" aria-labelledby="colaboraciones-heading">
+            <div class="container mx-auto px-6">
+                <h3 id="colaboraciones-heading" class="text-center text-sm font-semibold text-stone-500 uppercase tracking-wider">PARTE DE MI EXPERIENCIA LA HE DESARROLLADO EN ESTAS ORGANIZACIONES</h3>
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-8 gap-y-10 items-center justify-items-center logo-grid">
+                    <!-- ======================================================================================================= -->
+                    <!-- == LOGO COLABORACIÓN 1 | FORMATO: SVG (o PNG transparente) | NOMBRE: logo-culinary.svg | TAMAÑO RECOMENDADO: 200x100px (proporcional) == -->
+                    <!-- ======================================================================================================= -->
+                    <img src="/img/logo-culinary.svg" alt="Logo Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <!-- ======================================================================================================= -->
+                    <!-- == LOGO COLABORACIÓN 2 | FORMATO: SVG (o PNG transparente) | NOMBRE: logo-ams.svg | TAMAÑO RECOMENDADO: 200x100px (proporcional) == -->
+                    <!-- ======================================================================================================= -->
+                    <img src="/img/logo-ams.svg" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <!-- ======================================================================================================= -->
+                    <!-- == LOGO COLABORACIÓN 3 | FORMATO: PNG (transparente) | NOMBRE: logo-fedetur.png | TAMAÑO RECOMENDADO: 200x100px (proporcional) == -->
+                    <!-- ======================================================================================================= -->
+                    <img src="/img/logo-fedetur.png" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <!-- ======================================================================================================= -->
+                    <!-- == LOGO COLABORACIÓN 4 | FORMATO: SVG (o PNG transparente) | NOMBRE: logo-buinzoo.svg | TAMAÑO RECOMENDADO: 200x100px (proporcional) == -->
+                    <!-- ======================================================================================================= -->
+                    <img src="/img/logo-buinzoo.svg" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN RETO MODIFICADA (Diseño Estático 2x2) -->
+        <section id="reto" class="py-16 md:py-24" aria-labelledby="reto-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 id="reto-heading" class="text-3xl md:text-4xl font-bold text-stone-900">¿Sientes que tu esfuerzo no se traduce en los resultados que esperas?</h2>
                     <p class="mt-4 text-lg text-stone-600">
-                        Muchos líderes y emprendedores enfrentan los mismos obstáculos. Queremos ayudarte a identificar tus desafíos actuales. Interactúa con el gráfico para ver las frustraciones comunes asociadas a cada área. Reconocer el punto de partida es el primer paso.
+                        Muchos líderes y emprendedores de alto rendimiento enfrentan los mismos obstáculos. En la figura podrás ver las frustraciones más comunes de otros como tú.
                     </p>
                 </div>
-                <div class="mt-16 grid md:grid-cols-2 gap-12 items-center">
-                    <div class="chart-container">
-                        <canvas id="challengesChart" aria-label="Gráfico radar de desafíos comunes de emprendedores"></canvas>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                        <h3 class="font-bold text-xl text-teal-700">Sobrecarga y Agotamiento</h3>
+                        <p class="mt-2 text-stone-600">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad y tu vida personal.</p>
                     </div>
-                    <div id="challenge-details" class="bg-stone-100 p-8 rounded-lg min-h-[300px] flex items-center justify-center" aria-live="polite">
-                        <p class="text-stone-500 text-xl text-center italic">Pasa el cursor sobre un punto del gráfico para ver los detalles.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                        <h3 class="font-bold text-xl text-teal-700">Estancamiento y Falta de Avance</h3>
+                        <p class="mt-2 text-stone-600">Trabajas sin descanso pero no ves el crecimiento real que esperabas. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                        <h3 class="font-bold text-xl text-teal-700">Incertidumbre y Falta de Rumbo</h3>
+                        <p class="mt-2 text-stone-600">Las dudas te asaltan. ¿Estoy tomando las decisiones correctas? La falta de un plan claro te hace vivir tus miedos en lugar de tus sueños.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-stone-200">
+                        <h3 class="font-bold text-xl text-teal-700">La Soledad del Líder</h3>
+                        <p class="mt-2 text-stone-600">Ser emprendedor es una aventura solitaria. Te falta alguien con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="transformacion" class="py-16 md:py-24" aria-labelledby="transformacion-heading">
+        <!-- SECCIÓN TRANSFORMACIÓN MODIFICADA (Diseño Estático) -->
+        <section id="transformacion" class="py-16 md:py-24 bg-white" aria-labelledby="transformacion-heading">
              <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 id="transformacion-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Imagina un Futuro con Claridad, Confianza y Crecimiento</h2>
+                    <h2 id="transformacion-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Diseña un futuro con claridad y confianza que genere crecimiento</h2>
                     <p class="mt-4 text-lg text-stone-600">
-                       La mentoría no se trata solo de superar problemas, sino de construir activamente el futuro que deseas. Aquí exploramos los resultados tangibles que lograrás. Selecciona cada pilar de la transformación para entender cómo impactará en tu negocio.
+                        La mentoría no se trata solo de apagar incendios, sino de construir activamente el futuro que deseas. Aquí exploramos los resultados tangibles que lograremos juntos.
                     </p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
-    <div class="transformation-card border-2 border-stone-200 p-6 rounded-lg text-center cursor-pointer hover:border-teal-500 hover:shadow-xl transition-all" data-benefit="claridad" tabindex="0" role="button" aria-labelledby="claridad-benefit-heading">
-        <div class="text-4xl mb-4 text-teal-700" aria-hidden="true">🗂️</div>
-        <h3 id="claridad-benefit-heading" class="text-xl font-bold text-stone-900">Definir una Ruta Clara</h3>
-    </div>
-    <div class="transformation-card border-2 border-stone-200 p-6 rounded-lg text-center cursor-pointer hover:border-teal-500 hover:shadow-xl transition-all" data-benefit="liderazgo" tabindex="0" role="button" aria-labelledby="liderazgo-benefit-heading">
-        <div class="text-4xl mb-4 text-teal-700" aria-hidden="true">♔</div>
-        <h3 id="liderazgo-benefit-heading" class="text-xl font-bold text-stone-900">Liderazgo con Confianza</h3>
-    </div>
-     <div class="transformation-card border-2 border-stone-200 p-6 rounded-lg text-center cursor-pointer hover:border-teal-500 hover:shadow-xl transition-all" data-benefit="equilibrio" tabindex="0" role="button" aria-labelledby="equilibrio-benefit-heading">
-        <div class="text-4xl mb-4 text-teal-700" aria-hidden="true">⚖️</div>
-        <h3 id="equilibrio-benefit-heading" class="text-xl font-bold text-stone-900">Crecimiento y Equilibrio</h3>
-    </div>
-</div>
-                 <div id="benefit-details" class="mt-12 bg-white p-8 rounded-lg shadow-lg min-h-[150px] flex items-center" aria-live="polite">
-                     <p class="text-stone-500 text-xl text-center w-full">Selecciona un pilar para ver su descripción.</p>
+                    <div class="bg-stone-100 p-8 rounded-lg shadow-inner text-center">
+                        <div class="text-4xl mb-4 text-teal-700" aria-hidden="true">🎯</div>
+                        <h3 class="text-xl font-bold text-stone-900">Hoja de Ruta Estratégica</h3>
+                        <p class="mt-2 text-stone-600">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles cada semana.</p>
+                    </div>
+                    <div class="bg-stone-100 p-8 rounded-lg shadow-inner text-center">
+                        <div class="text-4xl mb-4 text-teal-700" aria-hidden="true">🚀</div>
+                        <h3 class="text-xl font-bold text-stone-900">Liderazgo de Alto Impacto</h3>
+                        <p class="mt-2 text-stone-600">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad.</p>
+                    </div>
+                     <div class="bg-stone-100 p-8 rounded-lg shadow-inner text-center">
+                        <div class="text-4xl mb-4 text-teal-700" aria-hidden="true">⚖️</div>
+                        <h3 class="text-xl font-bold text-stone-900">Crecimiento Sostenible</h3>
+                        <p class="mt-2 text-stone-600">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar.</p>
+                    </div>
                 </div>
              </div>
         </section>
 
-        <section id="metodo" class="py-16 md:py-24 bg-white" aria-labelledby="metodo-heading">
+        <section id="metodo" class="py-16 md:py-24" aria-labelledby="metodo-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 id="metodo-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Mi Rol: Ayudarte a Ver Mejor el Camino</h2>
+                    <h2 id="metodo-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Mi Método: Enfoque-Acción-Impacto</h2>
                      <p class="mt-4 text-lg text-stone-600">
-                        Mi rol es ayudarte a construir tu visión de futuro en una realidad. No son fórmulas mágicas, sino un proceso estructurado y personalizado. Explora las fases del método para entender cómo lo haremos.
-                    </p>
-                     <div class="mt-8 bg-stone-100 p-8 rounded-lg text-left">
-                        <p class="text-lg text-stone-700">
-                           A través del desarrollo de la mentoría, basada en el <strong class="text-teal-700">Método Enfoque-Acción-Impacto (EAI)</strong>, te ayudo a que desarrolles claridad y confianza para tomar decisiones. Implementaremos estrategias efectivas y concretas para tu negocio y habilidades de liderazgo que siempre has tenido y que no sabías usar.
-                        </p>
-                    </div>
+                        Mi rol no es darte las respuestas, sino hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones. No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado.
+                     </p>
                 </div>
-
-                <div class="mt-16">
+                <div class="mt-16 max-w-3xl mx-auto">
                     <div class="relative wrap overflow-hidden h-full">
-                        <div class="border-2-2 absolute border-opacity-20 border-teal-700 h-full border" style="left: 50%" aria-hidden="true"></div>
-                        
+                        <div class="timeline-line" aria-hidden="true"></div>
                         <div class="mb-8 flex justify-between items-center w-full right-timeline">
                             <div class="order-1 w-5/12"></div>
                             <div class="z-20 flex items-center order-1 bg-teal-600 shadow-xl w-12 h-12 rounded-full">
                                 <h3 class="mx-auto font-semibold text-lg text-white" aria-label="Paso 1">1</h3>
                             </div>
-                            <div class="order-1 bg-teal-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 border border-stone-200">
                                 <h4 class="font-bold text-teal-800 text-xl">Diagnóstico y Claridad</h4>
-                                <p class="text-sm leading-snug tracking-wide text-stone-600">Analizamos tu situación actual para identificar los verdaderos obstáculos y las mayores oportunidades.</p>
+                                <p class="text-sm leading-snug tracking-wide text-stone-600 mt-1">Analizamos tu situación para identificar los verdaderos obstáculos y las mayores oportunidades de crecimiento.</p>
                             </div>
                         </div>
-
                         <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                             <div class="order-1 w-5/12"></div>
                              <div class="z-20 flex items-center order-1 bg-teal-600 shadow-xl w-12 h-12 rounded-full">
                                 <h3 class="mx-auto text-white font-semibold text-lg" aria-label="Paso 2">2</h3>
                             </div>
-                            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 border border-stone-200">
                                 <h4 class="font-bold text-stone-800 text-xl">Plan de Acción Estratégico</h4>
-                                <p class="text-sm leading-snug tracking-wide text-stone-600">Definimos un plan paso a paso, con metas claras y acciones priorizadas para que sepas qué hacer.</p>
+                                <p class="text-sm leading-snug tracking-wide text-stone-600 mt-1">Definimos un plan paso a paso, con metas claras y acciones priorizadas para que sepas exactamente qué hacer.</p>
                             </div>
                         </div>
-                        
                         <div class="mb-8 flex justify-between items-center w-full right-timeline">
                             <div class="order-1 w-5/12"></div>
                             <div class="z-20 flex items-center order-1 bg-teal-600 shadow-xl w-12 h-12 rounded-full">
                                 <h3 class="mx-auto font-semibold text-lg text-white" aria-label="Paso 3">3</h3>
                             </div>
-                            <div class="order-1 bg-teal-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4 border border-stone-200">
                                 <h4 class="font-bold text-teal-800 text-xl">Implementación y Acompañamiento</h4>
-                                <p class="text-sm leading-snug tracking-wide text-stone-600">Te acompaño en la ejecución, ajustando estrategias y fortaleciendo tu mentalidad para asegurar resultados.</p>
+                                <p class="text-sm leading-snug tracking-wide text-stone-600 mt-1">Te acompaño en la ejecución, ajustando estrategias y fortaleciendo tu mentalidad para asegurar resultados sostenibles.</p>
                             </div>
                         </div>
                     </div>
@@ -239,137 +273,96 @@
             </div>
         </section>
 
-        <section id="exito" class="py-16 md:py-24" aria-labelledby="exito-heading">
+        <section id="exito" class="py-16 md:py-24 bg-white" aria-labelledby="exito-heading">
             <div class="container mx-auto px-6">
                  <div class="text-center max-w-3xl mx-auto">
-                    <h2 id="exito-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Ellos Ya Están Transformando la Manera de Hacer Negocios.</h2>
+                    <h2 id="exito-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Lo que Dicen Mis Clientes</h2>
                      <p class="mt-4 text-lg text-stone-600">
-                        La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias, contadas con sus propias palabras. Son un reflejo de lo que tú también puedes lograr.
-                    </p>
+                        La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación.
+                     </p>
                 </div>
                 <div class="mt-16 relative w-full overflow-hidden">
                     <div id="testimonial-slider" class="flex" aria-roledescription="carrusel de testimonios" aria-live="off">
                     </div>
-                    <button id="prev-btn" class="absolute top-1/2 left-0 md:-left-4 transform -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 shadow-md transition" aria-label="Testimonio anterior">
+                    <button id="prev-btn" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 shadow-md transition" aria-label="Testimonio anterior">
                         <svg class="w-6 h-6 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
-                    <button id="next-btn" class="absolute top-1/2 right-0 md:-right-4 transform -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 shadow-md transition" aria-label="Siguiente testimonio">
+                    <button id="next-btn" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 shadow-md transition" aria-label="Siguiente testimonio">
                         <svg class="w-6 h-6 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </button>
                 </div>
             </div>
         </section>
-
-        <section id="colaboraciones" class="py-16 md:py-24 bg-stone-100" aria-labelledby="colaboraciones-heading">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h2 id="colaboraciones-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Donde He Colaborado</h2>
+        
+        <section id="recursos" class="py-16 md:py-24" aria-labelledby="recursos-heading">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-2xl mx-auto">
+                    <h2 id="recursos-heading" class="text-3xl md:text-4xl font-bold text-stone-900">Recursos para Acelerar tu Crecimiento</h2>
                     <p class="mt-4 text-lg text-stone-600">
-                        He tenido el privilegio de trabajar y colaborar con diversas organizaciones líderes en sus sectores, aportando al desarrollo de sus proyectos, estrategias y equipos.
+                        El conocimiento es poder. Por eso he creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan.
                     </p>
-                </div>
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center logo-grid">
-                    <img src="img/culinary.svg" alt="Logo Culinary" title="Instituto Profesional Culinary">
-                    <img src="img/ams-mobilesolutions.svg" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions">
-                    <img src="img/fedetur.png" alt="Logo Fedetur" title="FEDETUR">
-                    <img src="img/buinzoo.svg" alt="Logo Buin Zoo" title="Buin Zoo">
-                    <img src="img/uchile.png" alt="Logo Universidad de Chile" title="Universidad de Chile">
-                    <img src="img/sernatur.svg" alt="Logo Sernatur" title="Sernatur">
-                    <img src="img/codelco.svg" alt="Logo Codelco" title="CODELCO">
-                    <img src="img/esade.svg" alt="Logo ESADE" title="ESADE Business & Law School">
+                    <div class="mt-8 bg-white p-8 rounded-lg shadow-lg border border-stone-200 flex flex-col md:flex-row items-center gap-8 text-left">
+                        <!-- ======================================================================================================= -->
+                        <!-- == IMAGEN LEAD MAGNET | FORMATO: JPG | NOMBRE: guia-errores-negocio.jpg | TAMAÑO RECOMENDADO: 600x800px (proporcional) == -->
+                        <!-- ======================================================================================================= -->
+                        <img src="/img/guia-errores-negocio.jpg" alt="Portada de la Guía para Escalar tu Negocio" class="w-48 h-auto rounded-md shadow-md object-cover">
+                        <div>
+                            <h3 class="text-xl font-bold text-teal-700">GUÍA GRATUITA</h3>
+                            <p class="text-2xl font-bold text-stone-800 mt-1">Los 5 Errores que Frenan el Crecimiento de tu Negocio (y Cómo Solucionarlos)</p>
+                            <!-- ======================================================================================================= -->
+                            <!-- == LINK GUÍA GRATUITA | Sustituir "#" por el enlace directo al archivo PDF de la guía.                 == -->
+                            <!-- ======================================================================================================= -->
+                            <a href="#" class="mt-6 inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                                Descargar Guía
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- SECCIÓN CONVERSEMOS Y FAQ MODIFICADA -->
         <section id="conversemos" class="py-16 md:py-24 bg-blue-700 text-white" aria-labelledby="conversemos-heading">
             <div class="container mx-auto px-6 text-center">
-                 <h2 id="conversemos-heading" class="text-3xl md:text-4xl font-bold">¿Listo/a para Dejar de Hacer Malabares y Empezar a Construir el Futuro que Quieres?</h2>
+                 <h2 id="conversemos-heading" class="text-3xl md:text-4xl font-bold">Ahora que ya lo sabes: ¿Seguirás "navegando" o vas a tomar el camino lógico para ser un mejor líder?</h2>
                  <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
-                 <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="mt-10 inline-block bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-stone-100 transition-transform hover:scale-105">
-                    Conversemos de TUS planes
-                </a>
-            </div>
-            <div id="faq-section" class="container mx-auto px-6 mt-16 max-w-4xl" role="region" aria-labelledby="faq-heading">
-                <h3 id="faq-heading" class="text-2xl font-bold text-center mb-8 text-white">Preguntas Frecuentes</h3>
-                <div class="space-y-4">
-                    <div class="bg-blue-600/50 p-4 rounded-lg">
-                        <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
-                        <p id="faq-answer-1" class="mt-2 text-blue-200 faq-answer hidden">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica. No se trata solo de teoría; ni esoterismo trabajamos juntos en *tus* desafíos reales para generar resultados medibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda, no soluciones temporales.</p>
-                    </div>
-                    <div class="bg-blue-600/50 p-4 rounded-lg">
-                        <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
-                        <p id="faq-answer-2" class="mt-2 text-blue-200 faq-answer hidden">La dedicación se adapta a tus metas, pero desde nuestras primeras sesiones estableceremos un plan claro. Muchos de mis clientes comienzan a ver cambios significativos en su claridad y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en su negocio en los primeros 2-3 meses.</p>
-                    </div>
-                    <div class="bg-blue-600/50 p-4 rounded-lg">
-                        <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
-                        <p id="faq-answer-3" class="mt-2 text-blue-200 faq-answer hidden">Si sientes que podrías lograr más, si la complejidad te abruma, o si simplemente buscas una perspectiva experta para acelerar tu crecimiento y evitar errores costosos, este es el momento. Una breve conversación exploratoria, sin compromiso, nos ayudará a determinar si mi mentoría es el impulso que necesitas ahora.</p>
+                 <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-10 inline-block bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-stone-100 transition-transform hover:scale-105">
+                     Iniciemos TU diagnostico ahora!
+                 </a>
+                 <div id="faq-section" class="container mx-auto px-6 mt-16 max-w-4xl" role="region" aria-labelledby="faq-heading">
+                    <h3 id="faq-heading" class="text-2xl font-bold text-center mb-8 text-white">Preguntas Frecuentes</h3>
+                    <div class="space-y-4 text-left">
+                        <div class="bg-blue-600/50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
+                            <p id="faq-answer-0" class="mt-2 text-blue-200 faq-answer hidden">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia y visión para impulsar el desarrollo del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas y herramientas, ayuda a la persona a desarrollar habilidades específicas y a encontrar sus propias soluciones.</p>
+                        </div>
+                        <div class="bg-blue-600/50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
+                            <p id="faq-answer-1" class="mt-2 text-blue-200 faq-answer hidden">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica. No se trata de teoría ni esoterismo; trabajamos juntos en *tus* desafíos reales para generar resultados medibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda, no soluciones temporales.</p>
+                        </div>
+                        <div class="bg-blue-600/50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
+                            <p id="faq-answer-2" class="mt-2 text-blue-200 faq-answer hidden">La dedicación se adapta a tus metas, pero desde nuestras primeras sesiones estableceremos un plan claro. Muchos de mis clientes comienzan a ver cambios significativos en su claridad y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en su negocio en los primeros 2-3 meses.</p>
+                        </div>
+                        <div class="bg-blue-600/50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
+                            <p id="faq-answer-3" class="mt-2 text-blue-200 faq-answer hidden">Si sientes que podrías lograr más, si la complejidad te abruma, o si simplemente buscas una perspectiva experta para acelerar tu crecimiento y evitar errores costosos, este es el momento. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso que necesitas ahora.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
     
     <footer class="bg-stone-800 text-stone-400 py-8">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Esteban Zárate. Todos los derechos reservados.</p>
-            <p class="text-sm mt-2">Mentoría para Emprendedores y Ejecutivos. <a href="#" class="hover:text-blue-400">Política de Privacidad</a> | <a href="#" class="hover:text-blue-400">Términos de Servicio</a></p>
+            <p class="text-sm mt-2">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-blue-400">Política de Privacidad</a> | <a href="#" class="hover:text-blue-400">Términos de Servicio</a></p>
         </div>
     </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const appData = {
-        challenges: {
-            labels: ['Sobrecarga', 'Estancamiento', 'Incertidumbre', 'Soledad del Líder'],
-            details: [
-                {
-                    title: 'Sobrecarga y Agotamiento',
-                    text: 'Sientes que haces malabares para que todo funcione. La lista de tareas nunca termina y el agotamiento amenaza tu productividad y tu vida personal.'
-                },
-                {
-                    title: 'Estancamiento y Falta de Avance',
-                    text: 'Trabajas sin descanso pero no ves el avance real que esperabas. Te sientes atascado/a, repitiendo ciclos sin llegar al siguiente nivel.'
-                },
-                {
-                    title: 'Incertidumbre y Falta de Rumbo',
-                    text: 'Las dudas te asaltan. ¿Estoy tomando las decisiones correctas? La falta de un plan claro te hace vivir tus miedos en lugar de tus sueños.'
-                },
-                {
-                    title: 'Soledad del Líder',
-                    text: 'Ser emprendedor es una aventura solitaria. Te falta alguien con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias.'
-                }
-            ]
-        },
-        benefits: {
-            claridad: {
-                title: 'Consigue una Hoja de Ruta Clara y Accionable para Crecer Sostenidamente.',
-                text: 'Dejaremos atrás la improvisación. Juntos, definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles cada semana. Porque establecer una meta es el punto de partida de todo logro.'
-            },
-            liderazgo: {
-                title: 'Fortalece tu Liderazgo y Toma Decisiones con Confianza',
-                text: 'Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo, navegar la incertidumbre y tomar decisiones estratégicas con la seguridad de quien sabe hacia dónde va. Lograrás un aumento de la confianza que se reflejará en todo tu entorno.'
-            },
-            equilibrio: {
-                title: 'Alcanza tus Metas Más Ambiciosas Mientras Recuperas tu Equilibrio.',
-                text: 'Te ayudaré a optimizar tu enfoque y productividad para que logres ese crecimiento exponencial y la escalabilidad de tu negocio sin sacrificar tu bienestar. Porque el verdadero éxito es integral y mereces evitar errores comunes que llevan al desgaste.'
-            }
-        },
-        testimonials: [
-            {
-                quote: 'Antes de trabajar con Esteban, me sentía estancado/a y abrumado/a. Ahora tengo una claridad increíble y mis ingresos han aumentado un 40% en 6 meses. Su método fue la clave.',
-                author: 'Ana Pérez, CEO de TechInnova'
-            },
-            {
-                quote: 'La mentoría de Esteban fue fundamental para definir nuestro rumbo estratégico y aprender de los errores pasados. Nos ayudó a superar obstáculos que parecían insalvables.',
-                author: 'Carlos Gómez, Fundador de Soluciones Creativas'
-            },
-            {
-                quote: 'Gracias a Esteban, no solo logré escalar mi negocio a cifras que no imaginaba, sino que recuperé la pasión y el equilibrio en mi vida. ¡Su guía experta es totalmente recomendable!',
-                author: 'Laura Martínez, Directora de Proyectos Globales'
-            }
-        ]
-    };
-
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuButton.addEventListener('click', () => {
@@ -379,91 +372,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(link => {
-        link.addEventListener('click', () => {
-            // Solo cierra el menú si es visible (en móvil)
+        link.addEventListener('click', (e) => {
+            if (link.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
             }
         });
     });
-
-    const challengeDetails = document.getElementById('challenge-details');
-    if (document.getElementById('challengesChart')) {
-        const challengesChartCtx = document.getElementById('challengesChart').getContext('2d');
-        new Chart(challengesChartCtx, {
-            type: 'radar',
-            data: {
-                labels: appData.challenges.labels,
-                datasets: [{
-                    label: 'Nivel de Desafío Común',
-                    data: [8, 7, 9, 6],
-                    backgroundColor: 'rgba(13, 148, 136, 0.2)',
-                    borderColor: 'rgb(13, 148, 136)',
-                    pointBackgroundColor: 'rgb(13, 148, 136)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(13, 148, 136)'
-                }]
+    
+    const appData = {
+        testimonials: [
+            {
+                quote: 'Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables.',
+                author: 'Carlos Gómez',
+                title: 'Fundador de Soluciones Creativas',
+                image: 'cliente-carlos-gomez.jpg'
             },
-            options: {
-                maintainAspectRatio: false,
-                scales: {
-                    r: {
-                        angleLines: { display: false },
-                        suggestedMin: 0,
-                        suggestedMax: 10,
-                        pointLabels: { font: { size: 14, weight: '600' }, color: '#44403c' },
-                        ticks: { display: false }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        enabled: false,
-                        external: function(context) {
-                            const tooltipModel = context.tooltip;
-                            if (tooltipModel.opacity === 0) {
-                                challengeDetails.innerHTML = `<p class="text-stone-500 text-xl text-center italic">Pasa el cursor sobre un punto del gráfico para ver los detalles.</p>`;
-                                return;
-                            }
-                            const pointIndex = tooltipModel.dataPoints[0].dataIndex;
-                            const details = appData.challenges.details[pointIndex];
-                            challengeDetails.innerHTML = `
-                                <div class="text-left">
-                                    <h3 class="font-bold text-2xl text-teal-700">${details.title}</h3>
-                                    <p class="mt-2 text-stone-600 text-lg">${details.text}</p>
-                                </div>`;
-                        }
-                    }
-                }
+            {
+                quote: 'Antes de trabajar con Esteban, me sentía estancada y abrumada. En 6 meses, no solo tengo una claridad increíble sobre mi negocio, sino que mis ingresos aumentaron un 40%. Su método fue la clave.',
+                author: 'Ana Pérez',
+                title: 'CEO de TechInnova',
+                image: 'cliente-ana-perez.jpg'
+            },
+            {
+                quote: 'Gracias a su mentoría, no solo logré escalar mi negocio a cifras que no imaginaba, sino que recuperé la pasión y el equilibrio en mi vida. Su guía experta y su calidad humana son totalmente recomendables.',
+                author: 'Laura Martínez',
+                title: 'Directora de Proyectos Globales',
+                image: 'cliente-laura-martinez.jpg'
             }
-        });
-    }
-
-    const transformationCards = document.querySelectorAll('.transformation-card');
-    const benefitDetails = document.getElementById('benefit-details');
-    transformationCards.forEach(card => {
-        const clickOrEnter = () => {
-            transformationCards.forEach(c => c.classList.remove('bg-teal-50', 'border-teal-500'));
-            card.classList.add('bg-teal-50', 'border-teal-500');
-            const benefitKey = card.dataset.benefit;
-            const details = appData.benefits[benefitKey];
-            benefitDetails.innerHTML = `
-                <div class="text-left w-full">
-                    <h3 class="font-bold text-2xl text-stone-800">${details.title}</h3>
-                    <p class="mt-2 text-stone-600 text-lg">${details.text}</p>
-                </div>`;
-        };
-        card.addEventListener('click', clickOrEnter);
-        card.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                clickOrEnter();
-            }
-        });
-    });
-
+        ]
+    };
+    
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
         appData.testimonials.forEach((testimonial, index) => {
@@ -473,11 +420,16 @@ document.addEventListener('DOMContentLoaded', function () {
             card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
             card.setAttribute('aria-label', `Testimonio ${index + 1} de ${appData.testimonials.length}`);
             card.innerHTML = `
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-3xl mx-auto">
+                <div class="bg-stone-100 p-8 rounded-lg shadow-lg text-center max-w-3xl mx-auto">
+                    <!-- ======================================================================================================= -->
+                    <!-- == IMAGEN TESTIMONIO | FORMATO: JPG (círculo) | NOMBRE: ${testimonial.image} | TAMAÑO RECOMENDADO: 200x200px == -->
+                    <!-- ======================================================================================================= -->
+                    <img src="/img/${testimonial.image}" alt="Foto de ${testimonial.author}" class="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md">
                     <blockquote class="text-xl italic text-stone-600">
                         <p>"${testimonial.quote}"</p>
                     </blockquote>
                     <cite class="mt-6 block font-bold text-teal-700 text-lg not-italic">${testimonial.author}</cite>
+                    <p class="text-stone-500 text-sm">${testimonial.title}</p>
                 </div>`;
             testimonialSlider.appendChild(card);
         });
@@ -493,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         if (totalItems > 0) {
-             updateSlider();
+            updateSlider();
         
             document.getElementById('next-btn').addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % totalItems;
@@ -515,34 +467,39 @@ document.addEventListener('DOMContentLoaded', function () {
     
     const faqSection = document.getElementById('faq-section');
     const faqQuestions = faqSection.querySelectorAll('.faq-question');
-    const faqAnswers = faqSection.querySelectorAll('.faq-answer');
     
-    faqQuestions.forEach((question, index) => {
-        const answer = faqAnswers[index];
-        question.addEventListener('click', () => {
+    faqQuestions.forEach((question) => {
+        const clickHandler = () => {
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
             question.setAttribute('aria-expanded', !isExpanded);
+            const answer = document.getElementById(question.getAttribute('aria-controls'));
             answer.classList.toggle('hidden');
-        });
+        };
+        question.addEventListener('click', clickHandler);
         question.addEventListener('keypress', (event) => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
-                question.click();
+                clickHandler();
             }
         });
     });
 
     function generateFaqSchema() {
         const faqEntities = [];
-        faqQuestions.forEach((question, index) => {
-            faqEntities.push({
-                "@type": "Question",
-                "name": question.textContent,
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faqAnswers[index].textContent
-                }
-            });
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach((question) => {
+            const answerId = question.getAttribute('aria-controls');
+            const answer = document.getElementById(answerId);
+            if(answer) {
+                 faqEntities.push({
+                    "@type": "Question",
+                    "name": question.textContent.trim(),
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answer.textContent.trim()
+                    }
+                });
+            }
         });
         const faqSchema = {
             "@context": "https://schema.org",
@@ -553,17 +510,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     generateFaqSchema();
 
-    // ---- INICIO DE LA CORRECCIÓN ----
-    // Forzar la vista al inicio de la página después de que todo cargue
-    if (window.history.scrollRestoration) {
-        window.history.scrollRestoration = 'manual';
-    } else {
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        }
-    }
-    // ---- FIN DE LA CORRECCIÓN ----
-
+    window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+    });
 });
 </script>
 
