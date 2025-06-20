@@ -22,7 +22,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -37,7 +37,7 @@
             background-position: 0 0, 20px 20px;
         }
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif; /* Fuente con serifa para títulos, más artística */
+            font-family: 'Poppins', sans-serif; /* Modern, straight font for headings */
         }
        .gradient-text {
             background: linear-gradient(90deg, #F59E0B, #D97706); /* Ámbar a ámbar oscuro */
@@ -115,8 +115,9 @@
             margin: 0 auto 1rem;
             border: 2px solid #FCD34D; /* Borde ámbar claro */
         }
-       .challenge-icon-container span {
-            font-size: 2.5rem; /* Iconos más grandes */
+       .challenge-icon-container svg { /* Target SVG for formal icons */
+            width: 2.5rem; /* Iconos más grandes */
+            height: 2.5rem;
             color: #D97706; /* ámbar oscuro */
         }
         @media (min-width: 768px) {
@@ -143,8 +144,9 @@
             margin: 0 auto 1rem;
             border: 3px solid #FCD34D; /* Borde ámbar claro */
         }
-       .transform-icon-container span {
-            font-size: 3rem; /* Iconos aún más grandes */
+       .transform-icon-container svg { /* Target SVG for formal icons */
+            width: 3rem; /* Iconos aún más grandes */
+            height: 3rem;
             color: #D97706; /* ámbar oscuro */
         }
 
@@ -543,9 +545,9 @@
                 </div>
                 <div class="relative w-full h-full group animate-on-scroll right">
                     <div class="hero-image-wrapper">
-                        <img src="https://placehold.co/600x550/FFFBEB/D97706?text=Ilustracion+Esteban+Zarate" 
-                             onerror="this.onerror=null;this.src='https://placehold.co/600x550/FFFBEB/D97706?text=Mentor+Ilustrado';"
-                             alt="Ilustración de Esteban Zárate, un mentor de negocios en una sesión estratégica, enfocado y guiando." class="object-cover">
+                        <img src="https://placehold.co/600x550/FFFBEB/D97706?text=Equipo+Planeando+Estrategia" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x550/FFFBEB/D97706?text=Mentor%C3%ADa+Estrat%C3%A9gica';"
+                             alt="Ilustración de dos personas planeando una estrategia en un pizarrón, comunicando felicidad y actividad." class="object-cover">
                     </div>
                 </div>
             </div>
@@ -555,14 +557,14 @@
             <div class="container mx-auto px-6">
                 <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
-                    <img src="https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
+                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                    <img src="img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
+                    <img src="img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
+                    <img src="img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
+                    <img src="img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
                 </div>
             </div>
         </section>
@@ -579,28 +581,37 @@
                 <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto challenge-grid-desktop">
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
-                            <span role="img" aria-label="Icono de sobrecarga">⚡</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L13.5 21.75 16.5 12h-6.75Z" />
+                            </svg>
                         </div>
                         <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Sobrecarga y Agotamiento</h3>
                         <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
-                            <span role="img" aria-label="Icono de estancamiento">🛑</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
                         </div>
                         <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Estancamiento y Falta de Avance</h3>
                         <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
-                            <span role="img" aria-label="Icono de incertidumbre">❓</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                            </svg>
                         </div>
                         <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Incertidumbre y Falta de Rumbo</h3>
                         <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
-                            <span role="img" aria-label="Icono de soledad del líder">💭</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.75c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 15 17.027v-1.572a2.14 2.14 0 0 0-.798-.162c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 12 13.503c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 9 11.859V9.75m6 2.25c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 12 8.253c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 9 6.621v-1.572c0-.276.055-.543.162-.798A2.14 2.14 0 0 1 6.621 3H6c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 3.75 3H3.75m18 0c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 18.379 3H18c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 15.75 3H15.75m0 0a3.75 3.75 0 0 0-7.5 0m7.5 0a3.75 3.75 0 0 1 7.5 0m0 0v.008c.002.404.008.809.008 1.213L21 6.75v1.5c0 .276-.055.543-.162.798A2.14 2.14 0 0 1 18.379 11.25H18c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 15.75 12.753v1.5c0 .276-.055.543-.162.798A2.14 2.14 0 0 1 12.621 16.5H12c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 9.75 18.379V18.75m-6 0c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 3.75 17.027v-1.572c0-.276.055-.543.162-.798A2.14 2.14 0 0 1 6.621 13.503H6c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 3.75 11.859V9.75m0 9a3.75 3.75 0 0 0 7.5 0m-7.5 0a3.75 3.75 0 0 1-7.5 0m0 0H3.75c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 0 18.379V18c0-.276.055-.543.162-.798A2.14 2.14 0 0 1 3.75 15.75H3.75m0 0V18a3.75 3.75 0 0 0 7.5 0Z" />
+                            </svg>
+
                         </div>
                         <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">La Soledad del Líder</h3>
                         <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
@@ -620,23 +631,29 @@
                     <div class="mt-20 grid md:grid-cols-3 gap-10">
                         <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
                             <div class="transform-icon-container" aria-hidden="true">
-                                <span role="img" aria-label="Icono de hoja de ruta estratégica">🧭</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75H6m-2.25-4.5H4.5m1.5 6.75H7.5m-1.5 6.75H6m6 0h.75m-7.5-6.75h.75m7.5 0h.75m-7.5 0H9m-3 0V4.5m15 15.75h-8.25a.75.75 0 0 1-.75-.75V8.25a.75.75 0 0 1 .75-.75h8.25c.414 0 .75.336.75.75v11.25c0 .414-.336.75-.75.75ZM6 18H4.5V4.5H6m-2.25-4.5V9m0 12.75V18c0-.414-.336-.75-.75-.75H3" />
+                                </svg>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900">Hoja de Ruta Estratégica</h3>
                             <p class="mt-3 text-gray-700 leading-relaxed">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
                         </div>
                         <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
                             <div class="transform-icon-container" aria-hidden="true">
-                                <span role="img" aria-label="Icono de liderazgo de alto impacto">👑</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.123 5.145 5.518.442c.407.032.547.559.252.846l-4.28 3.771 1.139 5.86c.071.371-.302.668-.603.414L12 18.295l-5.073 3.105c-.301.246-.674-.043-.603-.415l1.139-5.861-4.28-3.771c-.295-.287-.155-.814.252-.846l5.518-.442 2.123-5.145Z" />
+                                </svg>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-900">Liderazgo de Alto Impacto</h3>
                             <p class="mt-3 text-gray-700 leading-relaxed">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
                         </div>
                         <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
                             <div class="transform-icon-container" aria-hidden="true">
-                                <span role="img" aria-label="Icono de crecimiento sostenible">🌱</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125l6 6 9-15m-3 0l6 6m-9-6l.969-.579 6 6m2.585-3.856l1.264 1.264M12 12.75h.008v.008H12v-.008Z" />
+                                </svg>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Crecimiento Sostenible</h3>
+                            <h3 class="2xl font-bold text-gray-900">Crecimiento Sostenible</h3>
                             <p class="mt-3 text-gray-700 leading-relaxed">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
                         </div>
                     </div>
@@ -782,28 +799,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const appData = {
         testimonials: [
             {
-                quote: "La mentoría de Esteban fue clave para redefinir la estrategia de mi startup. Su visión me dio la confianza para escalar mi negocio.",
-                author: "Andrea Fuentes",
-                title: "CEO, Tech Solutions Inc.",
-                image: "https://placehold.co/100x100/D97706/ffffff?text=AF"
+                quote: 'Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables.',
+                author: 'Gisella Lira',
+                title: 'Fundadora de Pocas Copas y Winehunter',
+                image: 'img/Gisella-7.jpg'
             },
             {
-                quote: "Gracias a Esteban, logré superar el estancamiento y ahora tengo una hoja de ruta clara. Su método es práctico y los resultados son tangibles.",
-                author: "Carlos Gómez",
-                title: "Director Comercial, Global Corp.",
-                image: "https://placehold.co/100x100/D97706/ffffff?text=CG"
+                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio.',
+                author: 'Daniela Salvador',
+                title: 'Directora Revista Canal HORECA',
+                image: 'img/daniela-salvador.jpg'
             },
+            // Duplicate testimonial removed, only unique ones listed. Add more as needed.
             {
                 quote: "Su enfoque en liderazgo me ayudó a inspirar a mi equipo y a tomar decisiones con mucha más seguridad. ¡Recomendado 100%!",
                 author: "María Paz Soto",
                 title: "Fundadora, Innova Creative",
-                image: "https://placehold.co/100x100/D97706/ffffff?text=MS"
+                image: "https://placehold.co/100x100/D97706/ffffff?text=MS" // Placeholder, if you have a real image, use "img/maria-paz-soto.jpg"
             },
             {
                 quote: "Esteban me proporcionó las herramientas para organizar mis prioridades y reducir el agotamiento. Mi productividad se disparó.",
                 author: "Ricardo Peña",
                 title: "Gerente General, Logística Express",
-                image: "https://placehold.co/100x100/D97706/ffffff?text=RP"
+                image: "https://placehold.co/100x100/D97706/ffffff?text=RP" // Placeholder, if you have a real image, use "img/ricardo-pena.jpg"
             }
         ]
     };
@@ -811,15 +829,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
         const totalOriginalItems = appData.testimonials.length;
-        // Creamos un array con los testimonios originales y una copia para un bucle más suave
-        const allTestimonials = [...appData.testimonials]; // No duplicamos para simplicidad si no es un carrusel continuo
+        const allTestimonials = [...appData.testimonials]; 
+
+        // Clear existing children to prevent duplicates on re-render/debugging
+        testimonialSlider.innerHTML = ''; 
 
         allTestimonials.forEach((testimonial, index) => {
             const card = document.createElement('div');
             card.className = 'testimonial-card-custom';
             card.setAttribute('role', 'group');
             card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
-            // Adjusted aria-label to reflect actual testimonial count for original items
             card.setAttribute('aria-label', `Testimonio ${index + 1} de ${totalOriginalItems}`); 
             card.innerHTML = `
                 <div class="testimonial-inner-card text-center">
@@ -857,22 +876,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.style.width = `${cardWidth}px`;
                 card.style.marginRight = `${gap}px`;
             });
-            updateSlider(false); // No animar al redimensionar
+            updateSlider(false); 
         };
 
         const updateSlider = (animate = true) => {
             if (totalOriginalItems === 0) return;
-            // Get the width of the first card, assuming all cards have the same width and margin
             const firstCard = testimonialSlider.children[0];
-            if (!firstCard) return; // Exit if no cards are present
+            if (!firstCard) return; 
             const cardWidthWithMargin = firstCard.offsetWidth + parseInt(getComputedStyle(firstCard).marginRight);
             
             testimonialSlider.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
             testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidthWithMargin}px)`;
 
-            // Update aria-hidden for accessibility
             Array.from(testimonialSlider.children).forEach((item, idx) => {
-                // Determine visibility based on current index and number of cards shown
                 const isVisible = (idx >= currentIndex && idx < currentIndex + Math.floor(testimonialSlider.parentElement.offsetWidth / cardWidthWithMargin));
                 item.setAttribute('aria-hidden', !isVisible);
             });
@@ -881,11 +897,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const moveSlider = (direction) => {
             currentIndex += direction;
 
-            // Handle wrap-around logic for continuous-like effect (simplified for non-cloned scenario)
             if (currentIndex >= totalOriginalItems) {
-                currentIndex = 0; // Go to first slide
+                currentIndex = 0; 
             } else if (currentIndex < 0) {
-                currentIndex = totalOriginalItems - 1; // Go to last slide
+                currentIndex = totalOriginalItems - 1; 
             }
             updateSlider();
             resetAutoSlide();
@@ -905,7 +920,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         window.addEventListener('resize', adjustTestimonialWidth);
-        adjustTestimonialWidth(); // Llama al cargar la página
+        adjustTestimonialWidth(); 
         startAutoSlide();
 
         document.getElementById('next-btn').addEventListener('click', () => moveSlider(1));
@@ -921,21 +936,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const answer = document.getElementById(question.getAttribute('aria-controls'));
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
 
-            // Cierra todas las demás preguntas
             faqQuestions.forEach(q => {
-                if (q !== question) { // Corrected comparison operator
+                if (q !== question) { 
                     q.setAttribute('aria-expanded', 'false');
                     document.getElementById(q.getAttribute('aria-controls')).classList.remove('is-expanded');
                 }
             });
 
-            // Abre o cierra la pregunta actual
             question.setAttribute('aria-expanded', !isExpanded);
             answer.classList.toggle('is-expanded');
         };
         question.addEventListener('click', clickHandler);
         question.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') { // Corrected logical OR operator
+            if (event.key === 'Enter' || event.key === ' ') { 
                 event.preventDefault();
                 clickHandler();
             }
@@ -947,14 +960,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
         root: null, // viewport
         rootMargin: '0px',
-        threshold: 0.1 // 10% del elemento visible para activar
+        threshold: 0.1 
     };
 
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Dejar de observar una vez que es visible
+                observer.unobserve(entry.target); 
             }
         });
     };
@@ -966,7 +979,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function generateFaqSchema() {
-        const faqEntities = []; // Corrected to empty array
+        const faqEntities = []; 
         const questions = document.querySelectorAll('.faq-question');
         questions.forEach((question) => {
             const answerId = question.getAttribute('aria-controls');
