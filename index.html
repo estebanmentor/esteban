@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban Zárate - Mentor de Negocios y Emprendedores - Potencia tu Liderazgo</title>
+    <title>Esteban Zárate - Mentor de Negocios y Emprendedores - Inmersión Narrativa</title>
     <meta name="description" content="Mentoría de negocios personalizada para fundadores y ejecutivos. Transforma desafíos complejos en crecimiento exponencial y alcanza tus metas con un plan estratégico y accionable. Desarrolla liderazgo de alto impacto.">
     <meta name="keywords" content="mentor de negocios, coaching ejecutivo, esteban zarate, mentor para emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching chile, mentoría online, desarrollo empresarial, transformación digital, planificación estratégica">
     
@@ -46,32 +46,78 @@
             text-fill-color: transparent;
         }
 
-       .hero-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 450px;
-            overflow: hidden;
-            border-radius: 1.5rem;
-            transform: rotate(1deg);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-            border: 4px solid #FCD34D;
-        }
-       .hero-image-wrapper img {
+        /* Hero Section with Video */
+       .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transform: rotate(-1deg) scale(1.05);
-            filter: saturate(1.1);
+            overflow: hidden;
+            z-index: -1;
         }
-        @media (min-width: 768px) {
-           .hero-image-wrapper {
-                height: 550px;
-                margin-left: 2rem;
-                transform: rotate(1deg);
-            }
-           .hero-image-wrapper img {
-                transform: rotate(-1deg) scale(1.05);
-            }
+       .hero-video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.6) grayscale(0.2); /* Darken and slightly desaturate for text readability */
+        }
+       .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay for text contrast */
+            z-index: 0;
+        }
+       .hero-content-area {
+            position: relative;
+            z-index: 1;
+            color: #FFFFFF; /* White text for contrast */
+        }
+       .hero-content-area h1,.hero-content-area h2,.hero-content-area p {
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+       .hero-content-area.gradient-text {
+            -webkit-text-fill-color: #FCD34D; /* Lighter amber for gradient on dark background */
+            text-fill-color: #FCD34D;
+            text-shadow: none;
+        }
+       .hero-content-area.cta-button {
+            background-color: #F59E0B; /* Brighter amber for CTA */
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+       .hero-content-area.cta-button:hover {
+            background-color: #D97706;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Parallax Image Styling */
+       .parallax-image-container {
+            position: relative;
+            height: 400px; /* Adjust as needed */
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+       .parallax-image-container img {
+            width: 100%;
+            height: 150%; /* Make image taller than container for parallax effect */
+            object-fit: cover;
+            position: absolute;
+            top: -25%; /* Start position for parallax */
+            left: 0;
+            will-change: transform; /* Optimize for animation */
         }
 
        .logo-grid img {
@@ -112,7 +158,7 @@
             border: 2px solid #FCD34D;
         }
        .challenge-icon-container span {
-            font-size: 2.5rem; /* Larger icon size */
+            font-size: 2.5rem;
             color: #D97706;
         }
         @media (min-width: 768px) {
@@ -508,30 +554,27 @@
     </header>
 
     <main>
-        <section id="hero" class="relative py-28 md:py-40 overflow-hidden bg-gradient-to-br from-amber-50 to-transparent" aria-labelledby="hero-heading">
-            <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10"></div>
-            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-                <div class="text-center md:text-left hero-text-align-desktop animate-on-scroll left">
-                    <h1 id="hero-heading" class="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
-                        Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mt-6">
-                        Transfórmate en un Líder de Impacto
-                    </h2>
-                    <p class="mt-8 max-w-xl mx-auto md:mx-0 text-xl text-gray-600 leading-relaxed">
-                        Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
-                    </p>
-                    <a href="#conversemos" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
-                        Iniciemos TU diagnóstico ahora
-                    </a>
-                </div>
-                <div class="relative w-full h-full group animate-on-scroll right">
-                    <div class="hero-image-wrapper">
-                        <img src="[https://placehold.co/600x550/FFFBEB/D97706?text=Ilustracion+Esteban+Zarate](https://placehold.co/600x550/FFFBEB/D97706?text=Ilustracion+Esteban+Zarate)" 
-                             onerror="this.onerror=null;this.src='[https://placehold.co/600x550/FFFBEB/D97706?text=Mentor+Ilustrado](https://placehold.co/600x550/FFFBEB/D97706?text=Mentor+Ilustrado)';"
-                             alt="Ilustración de Esteban Zárate, un mentor de negocios en una sesión estratégica, enfocado y guiando." class="object-cover">
-                    </div>
-                </div>
+        <section id="hero" class="relative py-28 md:py-40 overflow-hidden flex items-center justify-center text-center" aria-labelledby="hero-heading">
+            <div class="hero-video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="[https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-laptop-in-a-cafe-3453-large.mp4](https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-laptop-in-a-cafe-3453-large.mp4)" type="video/mp4">
+                    <img src="[https://placehold.co/1920x1080/4B5563/FCD34D?text=Video+de+Fondo](https://placehold.co/1920x1080/4B5563/FCD34D?text=Video+de+Fondo)" alt="Fondo de video de una sesión de mentoría">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container mx-auto px-6 hero-content-area animate-on-scroll">
+                <h1 id="hero-heading" class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+                    Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold mt-6">
+                    Transfórmate en un Líder de Impacto
+                </h2>
+                <p class="mt-8 max-w-xl mx-auto text-xl leading-relaxed">
+                    Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
+                </p>
+                <a href="#conversemos" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
+                    Iniciemos TU diagnóstico ahora
+                </a>
             </div>
         </section>
 
@@ -539,14 +582,14 @@
             <div class="container mx-auto px-6">
                 <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY](https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary](https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary)';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE](https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=AMS](https://placehold.co/180x60/FDFCEF/4B5563?text=AMS)';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR](https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur](https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur)';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO](https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo](https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo)';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR](https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur](https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur)';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE](https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE](https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE)';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO](https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo](https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo)';" alt="Logo Corfo" title="Corfo" loading="lazy">
-                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS](https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos](https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos)';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
+                    <img class="parallax-element" data-speed="0.1" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY](https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary](https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary)';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <img class="parallax-element" data-speed="0.05" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE](https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=AMS](https://placehold.co/180x60/FDFCEF/4B5563?text=AMS)';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <img class="parallax-element" data-speed="0.1" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR](https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur](https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur)';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <img class="parallax-element" data-speed="0.05" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO](https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo](https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo)';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                    <img class="parallax-element" data-speed="0.1" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR](https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur](https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur)';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
+                    <img class="parallax-element" data-speed="0.05" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE](https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE](https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE)';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
+                    <img class="parallax-element" data-speed="0.1" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO](https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo](https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo)';" alt="Logo Corfo" title="Corfo" loading="lazy">
+                    <img class="parallax-element" data-speed="0.05" src="[https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS](https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos](https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos)';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
                 </div>
             </div>
         </section>
@@ -682,7 +725,9 @@
                         El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan de acción efectivo.
                     </p>
                     <div class="mt-16 resource-section-card animate-on-scroll">
-                        <img src="[https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada](https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada)" onerror="this.onerror=null;this.src='[https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita](https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita)';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
+                        <div class="parallax-image-container w-56 h-auto">
+                            <img class="parallax-element" data-speed="0.1" src="[https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada](https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada)" onerror="this.onerror=null;this.src='[https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita](https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita)';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo.">
+                        </div>
                         <div class="md:ml-12 mt-8 md:mt-0">
                             <h3 class="text-2xl font-bold text-amber-700">GUÍA GRATUITA EXCLUSIVA</h3>
                             <p class="text-3xl font-bold text-gray-900 mt-2 leading-tight">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
@@ -735,6 +780,7 @@
         </div>
     </footer>
 
+<script src="[https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js](https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js)"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -769,7 +815,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
         const totalOriginalItems = appData.testimonials.length;
-        // Creamos un array con los testimonios originales y una copia para un bucle más suave
         const allTestimonials =;
 
         allTestimonials.forEach((testimonial, index) => {
@@ -814,7 +859,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.style.width = `${cardWidth}px`;
                 card.style.marginRight = `${gap}px`;
             });
-            updateSlider(false); // No animar al redimensionar
+            updateSlider(false);
         };
 
         const updateSlider = (animate = true) => {
@@ -837,16 +882,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     testimonialSlider.style.transition = 'none';
                     currentIndex = 0;
                     updateSlider(false);
-                }, 500); // Esperar que termine la animación de ir al último clon
-                currentIndex = totalOriginalItems; // Para que se vea el movimiento hacia el clon
+                }, 500);
+                currentIndex = totalOriginalItems;
                 updateSlider();
             } else if (currentIndex < 0) {
                 setTimeout(() => {
                     testimonialSlider.style.transition = 'none';
                     currentIndex = totalOriginalItems - 1;
                     updateSlider(false);
-                }, 500); // Esperar que termine la animación de ir al primer clon
-                currentIndex = -1; // Para que se vea el movimiento hacia el clon
+                }, 500);
+                currentIndex = -1;
                 updateSlider();
             } else {
                 updateSlider();
@@ -954,6 +999,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     generateFaqSchema();
 
+    // Initialize simpleParallax.js
+    var parallaxImages = document.querySelectorAll('.parallax-element');
+    if (parallaxImages.length > 0) {
+        new simpleParallax(parallaxImages, {
+            delay:.6,
+            transition: 'cubic-bezier(0,0,0,1)',
+            scale: 1.2, /* Increased scale for more noticeable effect */
+            orientation: 'up'
+        });
+    }
 });
 </script>
 
