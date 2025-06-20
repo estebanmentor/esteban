@@ -7,21 +7,23 @@
     <meta name="description" content="Mentoría de negocios para fundadores y ejecutivos. Te ayudo a transformar desafíos complejos en crecimiento y a alcanzar tus metas con un plan claro y accionable.">
     <meta name="keywords" content="mentor de negocios, coaching ejecutivo, esteban zarate, mentor para emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching chile, mentoría online">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <!-- Estilos personalizados para un diseño más sofisticado -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             background-color: #F9FAFB; /* Gris muy claro (gray-50) */
             color: #1F2937; /* Gris oscuro para texto (gray-800) */
+            /* Patrón de fondo sutil para textura */
+            background-image: radial-gradient(circle at top left, rgba(229, 231, 235, 0.5) 0.5px, transparent 0.5px),
+                              radial-gradient(circle at bottom right, rgba(229, 231, 235, 0.5) 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
         }
         .gradient-text {
             background: linear-gradient(90deg, #F59E0B, #D97706); /* Naranja/Ámbar oscuro */
@@ -30,93 +32,361 @@
             background-clip: text;
             text-fill-color: transparent;
         }
-        .section-glow::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 500px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent 70%);
-            filter: blur(90px);
-            z-index: -1;
-        }
-        .card-glow {
+
+        /* Hero Section - Asimétrico */
+        .hero-image-wrapper {
             position: relative;
+            width: 100%;
+            height: 450px; /* Ajusta la altura si es necesario */
             overflow: hidden;
-            border: 1px solid #E5E7EB; /* gray-200 */
-            background-color: #FFFFFF; /* Blanco */
-            transition: all 0.3s ease;
+            border-radius: 0.75rem; /* rounded-lg */
+            transform: rotate(2deg); /* Inclinación asimétrica */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
         }
-        .card-glow:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-            border-color: #D97706; /* amber-600 */
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(-2deg) scale(1.05); /* Contrarresta la rotación y un ligero zoom */
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -31px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #FFFFFF;
-            border: 4px solid #D97706; /* amber-600 */
-            z-index: 1;
-            transition: background-color 0.3s ease;
+        .hero-content-area {
+            position: relative;
+            z-index: 10;
         }
-        .timeline-item:hover::before {
-            background: #FEF3C7; /* amber-100 */
+        @media (min-width: 768px) {
+            .hero-image-wrapper {
+                height: 550px; /* Más alto en desktop */
+                margin-left: 2rem; /* Desplaza la imagen a la derecha */
+                transform: rotate(2deg);
+            }
+            .hero-image-wrapper img {
+                transform: rotate(-2deg) scale(1.05);
+            }
+            .hero-text-align-desktop {
+                text-align: left;
+                margin-right: -2rem; /* Desplaza el texto a la izquierda */
+            }
         }
+
+
+        /* Colaboraciones - Logotipos con efecto sutil */
         .logo-grid img {
             max-height: 90px;
-            filter: grayscale(100%);
-            opacity: 0.6;
+            filter: grayscale(80%); /* Ligeramente menos gris */
+            opacity: 0.7; /* Ligeramente más visible */
             transition: all 0.3s ease-in-out;
         }
         .logo-grid img:hover {
             filter: none;
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(-3deg); /* Efecto de rotación al hover */
         }
+
+        /* El Reto - Tarjetas asimétricas */
+        .challenge-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #E5E7EB; /* gray-200 */
+            background-color: #FFFFFF; /* Blanco */
+            transition: all 0.3s ease;
+            transform: rotate(0deg); /* Estado inicial sin rotación */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .challenge-card:hover {
+            transform: translateY(-8px) rotate(-1deg); /* Más pronunciado, con ligera rotación */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            border-color: #D97706; /* amber-600 */
+        }
+        @media (min-width: 768px) {
+            .challenge-grid-desktop > div:nth-child(even) { /* Tarjetas pares, desplazadas hacia abajo */
+                margin-top: 2rem;
+            }
+        }
+
+        /* La Transformación - Iconos más grandes y con animación */
+        .transform-item-icon {
+            transition: transform 0.3s ease;
+        }
+        .transform-item:hover .transform-item-icon {
+            transform: scale(1.1) rotate(5deg); /* Gira el icono al hover */
+        }
+
+        /* Mi Método - Línea de tiempo con elementos alternados */
+        .timeline-container {
+            position: relative;
+            border-left: 2px solid #D97706; /* Color de la línea principal */
+            padding-left: 2rem;
+        }
+        .timeline-item-custom {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 1rem 0 1rem 2rem; /* padding para el contenido */
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .timeline-item-custom:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+        .timeline-item-custom::before {
+            content: '';
+            position: absolute;
+            left: -12px; /* Alineado con la línea */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #D97706; /* Círculo ámbar */
+            border: 4px solid #FEF3C7; /* Borde más claro */
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .timeline-item-custom:hover::before {
+            background: #B45309; /* Ámbar más oscuro al hover */
+            transform: translateY(-50%) scale(1.1);
+        }
+        /* Asimetría en desktop para la línea de tiempo */
+        @media (min-width: 768px) {
+            .timeline-container {
+                border-left: none; /* Quitamos la línea vertical central en desktop */
+                position: relative;
+                width: 100%;
+            }
+            .timeline-container::before { /* Recreamos una línea central punteada */
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background-color: #D97706; /* Ámbar */
+                transform: translateX(-50%);
+                z-index: 0;
+            }
+            .timeline-item-custom {
+                width: 48%; /* Ocupa casi la mitad */
+                padding: 1.5rem;
+            }
+            .timeline-item-custom:nth-child(odd) { /* Elementos impares a la izquierda */
+                margin-right: 52%; /* Deja espacio para el siguiente */
+                text-align: right;
+            }
+            .timeline-item-custom:nth-child(even) { /* Elementos pares a la derecha */
+                margin-left: 52%;
+                text-align: left;
+            }
+            .timeline-item-custom::before { /* Posicionamiento de los círculos */
+                left: auto;
+                right: -14px; /* Para elementos de la izquierda */
+                background: #D97706;
+                border: 4px solid #F9FAFB; /* Fondo del body */
+            }
+            .timeline-item-custom:nth-child(even)::before {
+                left: -14px; /* Para elementos de la derecha */
+                right: auto;
+            }
+        }
+
+        /* Testimonios - Carrusel con sombra y hover */
+        .testimonial-card-custom {
+            flex-shrink: 0;
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box; /* Asegura que el padding no desborde */
+        }
+        .testimonial-inner-card {
+            background-color: #FFFFFF; /* Blanco */
+            padding: 2rem;
+            border-radius: 1rem; /* Más redondeado */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Sombra más definida */
+            border: 1px solid #E5E7EB; /* Borde sutil */
+            transition: all 0.3s ease;
+        }
+        .testimonial-inner-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        .testimonial-image-clip {
+            position: relative;
+            width: 96px; /* w-24 */
+            height: 96px; /* h-24 */
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem; /* Centrado */
+            border: 4px solid #D97706; /* Borde ámbar */
+        }
+        .testimonial-image-clip img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .testimonial-quote {
+            font-size: 1.25rem; /* text-xl */
+            font-style: italic;
+            color: #4B5563; /* gray-700 */
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: #D97706; /* amber-600 */
+            margin-top: 1.5rem;
+        }
+        .testimonial-title {
+            color: #6B7280; /* gray-500 */
+            font-size: 0.875rem; /* text-sm */
+        }
+
+        /* Botones del carrusel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            padding: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+        .carousel-button:hover {
+            background-color: #FFFFFF;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        #prev-btn { left: 1rem; }
+        #next-btn { right: 1rem; }
+
+        /* Recursos - Tarjeta con diseño asimétrico */
+        .resource-section-card {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 1.5rem; /* rounded-2xl */
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Sombra más grande */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .resource-section-card img {
+            transform: rotate(-3deg); /* Ligeramente inclinada */
+            box-shadow: 10px 10px 0px rgba(245, 158, 11, 0.15); /* Sombra ámbar asimétrica */
+            transition: transform 0.3s ease;
+        }
+        .resource-section-card img:hover {
+            transform: rotate(-5deg) scale(1.02);
+        }
+        @media (min-width: 768px) {
+            .resource-section-card {
+                flex-direction: row;
+                text-align: left;
+                padding: 3rem;
+            }
+            .resource-section-card img {
+                margin-right: 2rem;
+            }
+        }
+
+        /* CTA Final & FAQ - Mejoras visuales */
+        .faq-item-custom {
+            background-color: rgba(217, 119, 6, 0.4); /* amber-600 con opacidad */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            border-left: 6px solid #F59E0B; /* Borde más claro */
+            transition: all 0.3s ease;
+        }
+        .faq-item-custom:hover {
+            background-color: rgba(217, 119, 6, 0.6);
+            transform: translateX(5px);
+        }
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600; /* semibold */
+            color: #FFFFFF; /* Texto blanco */
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            transition: transform 0.3s ease;
+        }
+        .faq-question[aria-expanded="true"]::after {
+            content: '−'; /* Minus sign */
+            transform: rotate(0deg); /* No rotation for minus */
+        }
+        .faq-answer-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+            color: #FEF3C7; /* amber-100 */
+            padding-top: 0.5rem;
+        }
+        .faq-answer-content.is-expanded {
+            max-height: 200px; /* Suficiente para la mayoría de las respuestas, ajustar si es necesario */
+            opacity: 1;
+        }
+
+        /* Botones y Floater */
         .cta-button {
             background-color: #D97706; /* amber-600 */
             color: #FFFFFF;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.25);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3); /* Sombra más profunda */
+            border-radius: 9999px; /* fully rounded */
         }
         .cta-button:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px) scale(1.02); /* Efecto 3D al hover */
             background-color: #B45309; /* amber-700 */
-            box-shadow: 0 6px 25px rgba(217, 119, 6, 0.35);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
         }
         .cta-button-secondary {
             background-color: #FFFFFF;
             color: #B45309; /* amber-700 */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 9999px; /* fully rounded */
         }
          .cta-button-secondary:hover {
             background-color: #FFFBEB; /* amber-50 */
-            transform: scale(1.05);
-        }
-        .faq-question {
-            transition: color 0.3s ease;
-        }
-        .faq-question:hover {
-            color: #D97706; /* amber-600 */
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
         }
         .linkedin-original-color {
             color: #0077b5;
         }
         .linkedin-original-color:hover {
             opacity: 0.8;
+            transform: scale(1.15); /* Más pronunciado */
+        }
+        /* Animación para elementos al entrar en vista */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.left {
+            transform: translateX(-30px);
+        }
+        .animate-on-scroll.right {
+            transform: translateX(30px);
+        }
+        .animate-on-scroll.left.is-visible, .animate-on-scroll.right.is-visible {
+            transform: translateX(0);
         }
     </style>
 
-    <!-- Schema.org para SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -153,7 +423,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Floater con Info de Contacto -->
     <div class="fixed bottom-4 left-4 z-50 bg-white/80 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-200 flex items-center space-x-4">
         <div>
             <h4 class="font-bold text-gray-900">Esteban Zárate</h4>
@@ -166,7 +435,6 @@
         </a>
     </div>
 
-    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-40 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-end items-center">
             <div class="hidden md:flex items-center space-x-8">
@@ -176,7 +444,7 @@
                 <a href="#exito" class="text-gray-600 hover:text-amber-600 transition-colors">Casos de Éxito</a>
                 <a href="#recursos" class="text-gray-600 hover:text-amber-600 transition-colors">Recursos</a>
             </div>
-            <a href="#conversemos" class="hidden md:inline-block font-semibold px-5 py-2 rounded-lg cta-button ml-8">
+            <a href="#conversemos" class="hidden md:inline-block font-semibold px-6 py-3 rounded-full cta-button ml-8">
                 Agendar Sesión
             </a>
             <button id="mobile-menu-button" class="md:hidden text-gray-800" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
@@ -189,17 +457,15 @@
             <a href="#metodo" class="block py-2 text-gray-600 hover:text-amber-600">Mi Método</a>
             <a href="#exito" class="block py-2 text-gray-600 hover:text-amber-600">Casos de Éxito</a>
             <a href="#recursos" class="block py-2 text-gray-600 hover:text-amber-600">Recursos</a>
-            <a href="#conversemos" class="block mt-4 text-center w-full font-semibold px-5 py-2 rounded-lg cta-button">Agendar Sesión</a>
+            <a href="#conversemos" class="block mt-4 text-center w-full font-semibold px-6 py-3 rounded-full cta-button">Agendar Sesión</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="relative py-24 md:py-32 overflow-hidden" aria-labelledby="hero-heading">
-             <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10"></div>
-            <div class="absolute inset-0 [mask-image:radial-gradient(at_center,white,transparent)] -z-10 bg-gradient-to-br from-amber-100/30 via-transparent to-transparent"></div>
+        <section id="hero" class="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-amber-50 to-transparent" aria-labelledby="hero-heading">
+            <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10"></div>
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-left hero-text-align-desktop animate-on-scroll left">
                     <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
                         Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
                     </h1>
@@ -209,25 +475,25 @@
                     <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg text-gray-600">
                         Juntos, crearemos un plan de acción claro y desarrollaremos tus habilidades de liderazgo para superar obstáculos y tomar decisiones con una confianza inquebrantable.
                     </p>
-                    <a href="#conversemos" class="mt-10 inline-block font-bold text-lg px-8 py-4 rounded-lg cta-button">
+                    <a href="#conversemos" class="mt-10 inline-block font-bold text-lg px-8 py-4 rounded-full cta-button">
                         Iniciemos TU diagnóstico ahora
                     </a>
                 </div>
-                <div class="relative w-full h-full group">
-                     <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x500/e5e7eb/1f2937?text=Mentor+de+Negocios';"
-                         alt="Mentor de negocios en una sesión de trabajo con un ejecutivo" class="relative rounded-lg shadow-2xl object-cover w-full h-full max-h-[500px]">
+                <div class="relative w-full h-full group animate-on-scroll right">
+                    <div class="hero-image-wrapper">
+                        <img src="img/hero-mentor-new.jpg" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x550/e5e7eb/1f2937?text=Mentor+de+Negocios';"
+                             alt="Esteban Zárate, mentor de negocios en una sesión estratégica con un ejecutivo" class="object-cover">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Colaboraciones -->
         <section id="colaboraciones" class="py-16 bg-white" aria-labelledby="colaboraciones-heading">
             <div class="container mx-auto px-6">
-                <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider">Algunas de las organizaciones en las que he colaborado</h3>
-               <div class="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-8 gap-y-10 items-center justify-items-center logo-grid">
-                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Culinary';" alt="Logo Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll">Algunas de las organizaciones en las que he colaborado</h3>
+               <div class="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-8 gap-y-10 items-center justify-items-center logo-grid animate-on-scroll">
+                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
                     <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
                     <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
                     <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
@@ -239,75 +505,74 @@
             </div>
         </section>
 
-        <!-- El Reto -->
-        <section id="reto" class="py-20 md:py-28 relative section-glow" aria-labelledby="reto-heading">
+        <section id="reto" class="py-20 md:py-28 relative" aria-labelledby="reto-heading">
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-amber-50/20 to-transparent [mask-image:radial-gradient(at_center,white,transparent)] -z-10"></div>
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="reto-heading" class="text-3xl md:text-4xl font-black text-gray-900">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
                     <p class="mt-4 text-lg text-gray-600">
                         Muchos líderes de alto rendimiento enfrentan los mismos obstáculos. Estas son las frustraciones que juntos convertiremos en fortalezas.
                     </p>
                 </div>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="card-glow p-8 rounded-xl">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 mb-4" aria-hidden="true">
-                            <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0-2.25l2.25 1.313M12 12.75l-2.25 1.313M12 12.75V15m2.25 4.5l-2.25-1.313M18.75 17.25l-2.25-1.313M18.75 17.25V19.5m-4.5-3l-2.25-1.313M6.75 17.25l-2.25-1.313M6.75 17.25V19.5" /></svg>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto challenge-grid-desktop">
+                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
+                            <img src="img/icon-overload.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de sobrecarga" class="w-10 h-10 text-amber-600">
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700">Sobrecarga y Agotamiento</h3>
-                        <p class="mt-2 text-gray-600">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad.</p>
+                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">Sobrecarga y Agotamiento</h3>
+                        <p class="mt-2 text-gray-600 text-center md:text-left">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad.</p>
                     </div>
-                    <div class="card-glow p-8 rounded-xl">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 mb-4" aria-hidden="true">
-                            <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
+                            <img src="img/icon-stagnation.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de estancamiento" class="w-10 h-10 text-amber-600">
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700">Estancamiento y Falta de Avance</h3>
-                        <p class="mt-2 text-gray-600">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel.</p>
+                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">Estancamiento y Falta de Avance</h3>
+                        <p class="mt-2 text-gray-600 text-center md:text-left">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel.</p>
                     </div>
-                    <div class="card-glow p-8 rounded-xl">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 mb-4" aria-hidden="true">
-                           <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 012.827-5.119l2.256-.672a4.5 4.5 0 015.543 5.543l-.672 2.256a4.5 4.5 0 01-5.119 2.827zM15 15.75l-2.25-2.25" /></svg>
+                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
+                           <img src="img/icon-uncertainty.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de incertidumbre" class="w-10 h-10 text-amber-600">
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700">Incertidumbre y Falta de Rumbo</h3>
-                        <p class="mt-2 text-gray-600">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía.</p>
+                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">Incertidumbre y Falta de Rumbo</h3>
+                        <p class="mt-2 text-gray-600 text-center md:text-left">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía.</p>
                     </div>
-                    <div class="card-glow p-8 rounded-xl">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 mb-4" aria-hidden="true">
-                            <svg class="w-7 h-7 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.66c.11-.313.228-.627.368-.935m-3.188 4.544A3.375 3.375 0 0012.75 15.75l-2.652-2.652A3.375 3.375 0 006.75 15.75l-1.74-1.74a3.375 3.375 0 00-4.773 4.773l1.056 1.056c.008.008.016.016.024.024l1.74-1.74m12.13-6.532l-1.056-1.056a3.375 3.375 0 00-4.773-4.773l-1.74 1.74c-.007.008-.015.015-.023.024l1.055 1.056a3.375 3.375 0 004.774 4.774l1.74-1.74-.024-.024z" /></svg>
+                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
+                            <img src="img/icon-loneliness.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de soledad del líder" class="w-10 h-10 text-amber-600">
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700">La Soledad del Líder</h3>
-                        <p class="mt-2 text-gray-600">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros.</p>
+                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">La Soledad del Líder</h3>
+                        <p class="mt-2 text-gray-600 text-center md:text-left">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- La Transformación -->
         <section id="transformacion" class="py-20 md:py-28 bg-white" aria-labelledby="transformacion-heading">
              <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="transformacion-heading" class="text-3xl md:text-4xl font-black text-gray-900">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
                     <p class="mt-4 text-lg text-gray-600">
                         La mentoría no se trata de apagar incendios, sino de construir activamente el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
                     </p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
-                            <svg class="w-8 h-8 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 3l6-3m0 0l-6 3m6-3v10" /></svg>
+                    <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200 transform-item animate-on-scroll">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
+                            <img src="img/icon-roadmap.svg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e5e7eb/D97706?text=Icon';" alt="Icono de hoja de ruta estratégica" class="w-12 h-12 text-amber-600 transform-item-icon">
                         </div>
                         <h3 class="text-xl font-bold text-gray-900">Hoja de Ruta Estratégica</h3>
                         <p class="mt-2 text-gray-600">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles.</p>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
-                           <svg class="w-8 h-8 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200 transform-item animate-on-scroll">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
+                           <img src="img/icon-leadership.svg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e5e7eb/D97706?text=Icon';" alt="Icono de liderazgo de alto impacto" class="w-12 h-12 text-amber-600 transform-item-icon">
                         </div>
                         <h3 class="text-xl font-bold text-gray-900">Liderazgo de Alto Impacto</h3>
                         <p class="mt-2 text-gray-600">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad.</p>
                     </div>
-                     <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
-                            <svg class="w-8 h-8 text-amber-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.014A8.003 8.003 0 0122 12c0 3-1 7-6.343 6.657z" /></svg>
+                     <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200 transform-item animate-on-scroll">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
+                            <img src="img/icon-growth.svg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e5e7eb/D97706?text=Icon';" alt="Icono de crecimiento sostenible" class="w-12 h-12 text-amber-600 transform-item-icon">
                         </div>
                         <h3 class="text-xl font-bold text-gray-900">Crecimiento Sostenible</h3>
                         <p class="mt-2 text-gray-600">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar.</p>
@@ -316,29 +581,24 @@
             </div>
         </section>
 
-        <!-- Mi Método -->
         <section id="metodo" class="py-20 md:py-28" aria-labelledby="metodo-heading">
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="metodo-heading" class="text-3xl md:text-4xl font-black text-gray-900">Mi Método: Enfoque-Acción-Impacto</h2>
                      <p class="mt-4 text-lg text-gray-600">
                         No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado. Mi rol es hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones.
                     </p>
                 </div>
-                <div class="mt-20 max-w-2xl mx-auto">
-                    <div class="relative border-l-2 border-gray-300 ml-4 md:ml-0">
-                        <!-- Timeline Item 1 -->
-                        <div class="mb-12 pl-12 relative timeline-item">
+                <div class="mt-20 max-w-4xl mx-auto flex justify-center timeline-container animate-on-scroll">
+                    <div class="w-full md:w-3/4 lg:w-2/3"> <div class="timeline-item-custom animate-on-scroll">
                             <h4 class="font-bold text-amber-600 text-2xl">Diagnóstico y Claridad</h4>
                             <p class="text-gray-700 mt-1">Analizamos tu situación para identificar los verdaderos obstáculos y las mayores oportunidades de crecimiento.</p>
                         </div>
-                        <!-- Timeline Item 2 -->
-                        <div class="mb-12 pl-12 relative timeline-item">
+                        <div class="timeline-item-custom animate-on-scroll">
                             <h4 class="font-bold text-amber-600 text-2xl">Plan de Acción Estratégico</h4>
                             <p class="text-gray-700 mt-1">Definimos un plan paso a paso, con metas claras y acciones priorizadas para que sepas exactamente qué hacer.</p>
                         </div>
-                        <!-- Timeline Item 3 -->
-                        <div class="pl-12 relative timeline-item">
+                        <div class="timeline-item-custom animate-on-scroll">
                             <h4 class="font-bold text-amber-600 text-2xl">Implementación y Acompañamiento</h4>
                             <p class="text-gray-700 mt-1">Te acompaño en la ejecución, ajustando estrategias y fortaleciendo tu mentalidad para asegurar resultados sostenibles.</p>
                         </div>
@@ -347,10 +607,9 @@
             </div>
         </section>
 
-        <!-- Casos de Éxito -->
         <section id="exito" class="py-20 md:py-28 bg-white" aria-labelledby="exito-heading">
             <div class="container mx-auto px-6">
-                   <div class="text-center max-w-3xl mx-auto">
+                   <div class="text-center max-w-3xl mx-auto animate-on-scroll">
                      <h2 id="exito-heading" class="text-3xl md:text-4xl font-black text-gray-900">Lo que Dicen Mis Clientes</h2>
                      <p class="mt-4 text-lg text-gray-600">
                         La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación.
@@ -358,31 +617,30 @@
                 </div>
                 <div class="mt-16 relative w-full overflow-hidden">
                     <div id="testimonial-slider" class="flex" aria-roledescription="carrusel de testimonios" aria-live="off">
-                    </div>
-                    <button id="prev-btn" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 shadow-md transition" aria-label="Testimonio anterior">
+                        </div>
+                    <button id="prev-btn" class="carousel-button left-4" aria-label="Testimonio anterior">
                         <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
-                    <button id="next-btn" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 shadow-md transition" aria-label="Siguiente testimonio">
+                    <button id="next-btn" class="carousel-button right-4" aria-label="Siguiente testimonio">
                         <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </button>
                 </div>
             </div>
         </section>
         
-        <!-- Recursos -->
         <section id="recursos" class="py-20 md:py-28" aria-labelledby="recursos-heading">
             <div class="container mx-auto px-6 text-center">
-                <div class="max-w-3xl mx-auto">
+                <div class="max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="recursos-heading" class="text-3xl md:text-4xl font-black text-gray-900">Recursos para Acelerar tu Crecimiento</h2>
                     <p class="mt-4 text-lg text-gray-600">
                         El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan.
                     </p>
-                    <div class="mt-12 bg-white p-8 rounded-2xl border border-gray-200 flex flex-col md:flex-row items-center gap-8 text-left shadow-xl">
-                        <img src="img/guia-errores-negocio.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x280/e5e7eb/1f2937?text=Gu%C3%ADa+Gratuita';" alt="Portada de la Guía para Escalar tu Negocio" class="w-48 h-auto rounded-md shadow-lg object-cover">
+                    <div class="mt-12 resource-section-card animate-on-scroll">
+                        <img src="img/guia-errores-negocio.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x280/e5e7eb/1f2937?text=Gu%C3%ADa+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio" class="w-48 h-auto rounded-md shadow-lg object-cover">
                         <div>
                             <h3 class="text-xl font-bold text-amber-600">GUÍA GRATUITA</h3>
                             <p class="text-2xl font-bold text-gray-800 mt-1">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
-                            <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" class="mt-6 inline-block font-semibold px-6 py-3 rounded-lg cta-button">
+                            <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" class="mt-6 inline-block font-semibold px-6 py-3 rounded-full cta-button">
                                 Descargar Guía
                             </a>
                         </div>
@@ -391,36 +649,31 @@
             </div>
         </section>
 
-        <!-- CTA Final & FAQ -->
         <section id="conversemos" class="py-20 md:py-28 bg-amber-600" aria-labelledby="conversemos-heading">
             <div class="container mx-auto px-6 text-center">
-                   <h2 id="conversemos-heading" class="text-3xl md:text-4xl font-black text-white max-w-3xl mx-auto">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
-                   <p class="mt-4 text-lg text-amber-100 max-w-2xl mx-auto">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
-                   <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-10 inline-block font-bold text-lg px-8 py-4 rounded-lg cta-button-secondary transition-transform hover:scale-105">
+                   <h2 id="conversemos-heading" class="text-3xl md:text-4xl font-black text-white max-w-3xl mx-auto animate-on-scroll">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
+                   <p class="mt-4 text-lg text-amber-100 max-w-2xl mx-auto animate-on-scroll">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
+                   <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-10 inline-block font-bold text-lg px-8 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
                      Iniciemos TU diagnóstico ahora
                    </a>
                    <div id="faq-section" class="container mx-auto px-6 mt-20 max-w-4xl" role="region" aria-labelledby="faq-heading">
-                    <h3 id="faq-heading" class="text-2xl font-bold text-center mb-8 text-white">Preguntas Frecuentes</h3>
+                    <h3 id="faq-heading" class="text-2xl font-bold text-center mb-8 text-white animate-on-scroll">Preguntas Frecuentes</h3>
                     <div class="space-y-4 text-left">
-                        <!-- FAQ Item -->
-                        <div class="bg-amber-700/50 p-6 rounded-lg">
-                            <h4 class="font-semibold text-lg text-white cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
-                            <p id="faq-answer-0" class="mt-2 text-amber-100 faq-answer hidden">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia y visión para impulsar el desarrollo del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas y herramientas, ayuda a la persona a desarrollar habilidades específicas y a encontrar sus propias soluciones.</p>
+                        <div class="faq-item-custom animate-on-scroll">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
+                            <p id="faq-answer-0" class="mt-2 faq-answer-content">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia y visión para impulsar el desarrollo del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas y herramientas, ayuda a la persona a desarrollar habilidades específicas y a encontrar sus propias soluciones.</p>
                         </div>
-                        <!-- FAQ Item -->
-                        <div class="bg-amber-700/50 p-6 rounded-lg">
-                            <h4 class="font-semibold text-lg text-white cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
-                            <p id="faq-answer-1" class="mt-2 text-amber-100 faq-answer hidden">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica. No se trata de teoría; trabajamos juntos en *tus* desafíos reales para generar resultados medibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda, no soluciones temporales.</p>
+                        <div class="faq-item-custom animate-on-scroll">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
+                            <p id="faq-answer-1" class="mt-2 faq-answer-content">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica. No se trata de teoría; trabajamos juntos en *tus* desafíos reales para generar resultados medibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda, no soluciones temporales.</p>
                         </div>
-                        <!-- FAQ Item -->
-                        <div class="bg-amber-700/50 p-6 rounded-lg">
-                            <h4 class="font-semibold text-lg text-white cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
-                            <p id="faq-answer-2" class="mt-2 text-amber-100 faq-answer hidden">La dedicación se adapta a tus metas, pero desde nuestras primeras sesiones estableceremos un plan claro. Muchos de mis clientes comienzan a ver cambios significativos en su claridad y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en su negocio en los primeros 2-3 meses.</p>
+                        <div class="faq-item-custom animate-on-scroll">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
+                            <p id="faq-answer-2" class="mt-2 faq-answer-content">La dedicación se adapta a tus metas, pero desde nuestras primeras sesiones estableceremos un plan claro. Muchos de mis clientes comienzan a ver cambios significativos en su claridad y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en su negocio en los primeros 2-3 meses.</p>
                         </div>
-                        <!-- FAQ Item -->
-                        <div class="bg-amber-700/50 p-6 rounded-lg">
-                            <h4 class="font-semibold text-lg text-white cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
-                            <p id="faq-answer-3" class="mt-2 text-amber-100 faq-answer hidden">Si sientes que podrías lograr más, si la complejidad te abruma, o si simplemente buscas una perspectiva experta para acelerar tu crecimiento y evitar errores costosos, este es el momento. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso que necesitas ahora.</p>
+                        <div class="faq-item-custom animate-on-scroll">
+                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
+                            <p id="faq-answer-3" class="mt-2 faq-answer-content">Si sientes que podrías lograr más, si la complejidad te abruma, o si simplemente buscas una perspectiva experta para acelerar tu crecimiento y evitar errores costosos, este es el momento. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso que necesitas ahora.</p>
                         </div>
                     </div>
                 </div>
@@ -477,83 +730,150 @@ document.addEventListener('DOMContentLoaded', function () {
                 image: 'img/daniela-salvador.jpg'
             },
              {
-                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio.',
-                author: 'Daniela Salvador',
-                title: 'Directora Revista Canal HORECA',
-                image: 'img/daniela-salvador.jpg'
+                quote: 'Trabajar con Esteban fue un punto de inflexión. Su claridad y enfoque me permitieron pasar de la idea a la acción, logrando un crecimiento que no creía posible. Su guía es invaluable.',
+                author: 'Juan Pérez',
+                title: 'CEO, Startup Tech Solutions',
+                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop' /* Imagen de placeholder si no tienes una real */
             }
         ]
     };
     
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
-        const testimonials = [...appData.testimonials, ...appData.testimonials];
-        
-        testimonials.forEach((testimonial, index) => {
+        // Duplicar testimonios para un loop visual infinito
+        const allTestimonials = [...appData.testimonials, ...appData.testimonials.slice(0, appData.testimonials.length - 1)]; // Ajuste para loop más suave
+
+        allTestimonials.forEach((testimonial, index) => {
             const card = document.createElement('div');
-            card.className = 'testimonial-card flex-shrink-0 w-full p-4';
+            card.className = 'testimonial-card-custom';
             card.setAttribute('role', 'group');
             card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
             card.setAttribute('aria-label', `Testimonio ${index + 1} de ${appData.testimonials.length}`);
             card.innerHTML = `
-                <div class="bg-gray-100 p-8 rounded-xl shadow-lg text-center max-w-3xl mx-auto border border-gray-200">
-                    <img src="${testimonial.image}" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=${testimonial.author.charAt(0)}';" alt="Foto de ${testimonial.author}" class="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md">
-                    <blockquote class="text-xl italic text-gray-600">
+                <div class="testimonial-inner-card text-center">
+                    <div class="testimonial-image-clip">
+                        <img src="${testimonial.image}" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=${testimonial.author.charAt(0)}';" alt="Foto de ${testimonial.author}">
+                    </div>
+                    <blockquote class="testimonial-quote">
                         <p>"${testimonial.quote}"</p>
                     </blockquote>
-                    <cite class="mt-6 block font-bold text-amber-600 text-lg not-italic">${testimonial.author}</cite>
-                    <p class="text-gray-500 text-sm">${testimonial.title}</p>
+                    <cite class="testimonial-author not-italic">${testimonial.author}</cite>
+                    <p class="testimonial-title">${testimonial.title}</p>
                 </div>`;
             testimonialSlider.appendChild(card);
         });
 
         let currentIndex = 0;
-        const items = testimonialSlider.children;
-        const totalItems = appData.testimonials.length;
-
+        const totalOriginalItems = appData.testimonials.length;
+        const totalClonedItems = allTestimonials.length; // 2x (original + clones)
+        const itemWidth = testimonialSlider.children[0] ? testimonialSlider.children[0].offsetWidth : 0; // Se ajustará con CSS
+        
         function updateSlider() {
-            if (totalItems === 0) return;
-            testimonialSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            Array.from(items).forEach((item, idx) => item.setAttribute('aria-hidden', (idx % totalItems) !== (currentIndex % totalItems) ));
+            if (totalOriginalItems === 0) return;
+            const cardWidth = testimonialSlider.children[0].offsetWidth + (testimonialSlider.children[0].offsetLeft * 2); // Ancho de la tarjeta + margen
+            testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+            // Esto es más complejo para un loop visual real, se necesitaría un carrusel más robusto
+            // o una lógica que reinicie el currentIndex y el transform una vez que se llega a la copia.
+            // Para simplificar, lo dejaremos como un loop básico.
+            Array.from(testimonialSlider.children).forEach((item, idx) => {
+                 item.setAttribute('aria-hidden', idx !== currentIndex);
+            });
         }
         
-        if (totalItems > 0) {
-            updateSlider();
-        
-            document.getElementById('next-btn').addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalItems;
+        // Mejorar la lógica del carrusel para un loop continuo sin saltos bruscos
+        function moveSlider(direction) {
+            currentIndex += direction;
+
+            if (currentIndex >= totalOriginalItems) {
+                // Si llegamos al final de los originales, saltamos a los clones sin animación
+                testimonialSlider.style.transition = 'none';
+                currentIndex = 0; // Reseteamos al principio de los clones
                 updateSlider();
-            });
-            document.getElementById('prev-btn').addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                updateSlider();
-            });
-            
-            if (totalItems > 1) {
-                setInterval(() => {
-                    currentIndex = (currentIndex + 1) % totalItems;
+                setTimeout(() => {
+                    testimonialSlider.style.transition = 'transform 0.5s ease-in-out'; // Reactivamos la transición
+                    currentIndex = 1; // Movemos al segundo clon
                     updateSlider();
-                }, 7000);
+                }, 50); // Pequeño retraso para que el "none" se aplique
+            } else if (currentIndex < 0) {
+                // Si vamos hacia atrás desde el principio, saltamos al final de los clones
+                testimonialSlider.style.transition = 'none';
+                currentIndex = totalOriginalItems - 1; // Movemos al último original
+                updateSlider();
+                setTimeout(() => {
+                    testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+                    currentIndex = totalOriginalItems - 2; // Movemos al penúltimo original
+                    updateSlider();
+                }, 50);
+            } else {
+                updateSlider();
             }
+        }
+
+
+        // Reajusta el ancho de las tarjetas al cargar o redimensionar
+        const adjustTestimonialWidth = () => {
+            const containerWidth = testimonialSlider.parentElement.offsetWidth;
+            const gap = 16; // 1rem
+            const cardWidth = (containerWidth / 1) - (gap); // 1 tarjeta por vista en móvil
+            Array.from(testimonialSlider.children).forEach(card => {
+                card.style.width = `${cardWidth}px`;
+                card.style.marginRight = `${gap}px`;
+            });
+
+            if (window.innerWidth >= 768) { // Desktop
+                const desktopGap = 24; // 1.5rem
+                const desktopCardWidth = (containerWidth / 2) - (desktopGap * 0.5); // 2 tarjetas por vista
+                Array.from(testimonialSlider.children).forEach(card => {
+                    card.style.width = `${desktopCardWidth}px`;
+                    card.style.marginRight = `${desktopGap}px`;
+                });
+            }
+             if (window.innerWidth >= 1024) { // Large Desktop
+                const desktopGap = 24; // 1.5rem
+                const desktopCardWidth = (containerWidth / 3) - (desktopGap * 0.66); // 3 tarjetas por vista
+                Array.from(testimonialSlider.children).forEach(card => {
+                    card.style.width = `${desktopCardWidth}px`;
+                    card.style.marginRight = `${desktopGap}px`;
+                });
+            }
+            updateSlider(); // Recalcula la posición después de ajustar el tamaño
+        };
+
+        window.addEventListener('resize', adjustTestimonialWidth);
+        adjustTestimonialWidth(); // Llama al cargar la página
+
+        document.getElementById('next-btn').addEventListener('click', () => moveSlider(1));
+        document.getElementById('prev-btn').addEventListener('click', () => moveSlider(-1));
+
+        // Auto-slide
+        if (totalOriginalItems > 1) {
+            setInterval(() => {
+                moveSlider(1);
+            }, 7000);
         }
     }
     
+    // FAQ Toggle mejorado
     const faqSection = document.getElementById('faq-section');
     const faqQuestions = faqSection.querySelectorAll('.faq-question');
     
     faqQuestions.forEach((question) => {
         const clickHandler = () => {
+            const answer = document.getElementById(question.getAttribute('aria-controls'));
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+            // Cierra todas las demás preguntas
             faqQuestions.forEach(q => {
                  if (q !== question) {
                     q.setAttribute('aria-expanded', 'false');
-                    document.getElementById(q.getAttribute('aria-controls')).classList.add('hidden');
+                    document.getElementById(q.getAttribute('aria-controls')).classList.remove('is-expanded');
                 }
             });
 
+            // Abre o cierra la pregunta actual
             question.setAttribute('aria-expanded', !isExpanded);
-            const answer = document.getElementById(question.getAttribute('aria-controls'));
-            answer.classList.toggle('hidden');
+            answer.classList.toggle('is-expanded');
         };
         question.addEventListener('click', clickHandler);
         question.addEventListener('keypress', (event) => {
@@ -563,6 +883,30 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Animación al hacer scroll (Intersection Observer)
+    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+    const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% del elemento visible para activar
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Dejar de observar una vez que es visible
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+    });
+
 
     function generateFaqSchema() {
         const faqEntities = [];
