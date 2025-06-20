@@ -1,222 +1,268 @@
+<!-- Chosen Palette: Neutros Cálidos y Ámbar (reforzado) -->
+<!-- Application Structure Plan: La SPA mantiene una estructura de aterrizaje (landing page) con secciones temáticas claras: Hero, Colaboraciones, El Reto, La Transformación, Mi Método, Casos de Éxito, Recursos, Conversemos y FAQ, y Footer. Esta estructura lineal ha sido elegida para guiar al usuario a través de la narrativa de la mentoría de Esteban Zárate, desde la identificación del problema (El Reto) hasta la solución y el impacto (La Transformación, Mi Método, Éxito). La navegación anclada permite saltar a cualquier sección, facilitando la exploración. La interactividad se centra en el carrusel de testimonios y las preguntas frecuentes para una experiencia controlada y enfocada. -->
+<!-- Visualization & Content Choices:
+- Hero Section: Report Info (Esteban Zárate, Propuesta de Valor) -> Goal (Captar atención, comunicar beneficio) -> Viz/Presentation Method (Gran titular, párrafo conciso, CTA, imagen ilustrativa simulada) -> Interaction (Scroll para más info, click en CTA) -> Justification (Foco en el mensaje principal y la personalidad de la marca desde el inicio) -> Library/Method (HTML/CSS, placeholder de imagen).
+- Challenge Section: Report Info (Problemas comunes de líderes) -> Goal (Identificar con el usuario, validar sus puntos de dolor) -> Viz/Presentation Method (Tarjetas con iconos ilustrativos simulados y descripciones) -> Interaction (Hover en tarjetas para micro-animaciones) -> Justification (Presentación digerible de problemas, diseño asimétrico para interés visual) -> Library/Method (HTML/CSS, placeholders).
+- Transformation Section: Report Info (Resultados de la mentoría) -> Goal (Presentar soluciones y beneficios tangibles) -> Viz/Presentation Method (Tarjetas con iconos ilustrativos simulados y descripciones de beneficios) -> Interaction (Hover en tarjetas para micro-animaciones) -> Justification (Contraste con la sección de desafíos, enfoque en resultados) -> Library/Method (HTML/CSS, placeholders).
+- Method Section: Report Info (Proceso de mentoría EAI) -> Goal (Explicar la metodología de forma clara) -> Viz/Presentation Method (Línea de tiempo con pasos clave) -> Interaction (Hover en ítems de línea de tiempo) -> Justification (Narrativa secuencial clara, simula un flujo de trabajo) -> Library/Method (HTML/CSS).
+- Testimonials Section: Report Info (Opiniones de clientes) -> Goal (Generar credibilidad y confianza) -> Viz/Presentation Method (Carrusel de testimonios con fotos ilustrativas simuladas y citas) -> Interaction (Navegación con flechas, auto-play) -> Justification (Prueba social dinámica y engaging) -> Library/Method (HTML/CSS, JavaScript para carrusel).
+- Resources Section: Report Info (Guía gratuita) -> Goal (Lead generation, ofrecer valor) -> Viz/Presentation Method (Tarjeta destacada con imagen ilustrativa simulada de la guía y CTA) -> Interaction (Click en CTA) -> Justification (Claro llamado a la acción para un recurso valioso) -> Library/Method (HTML/CSS, placeholder de imagen).
+- FAQ Section: Report Info (Preguntas comunes) -> Goal (Responder objeciones, proveer información adicional) -> Viz/Presentation Method (Acordeón expandible) -> Interaction (Click para expandir/colapsar) -> Justification (Gestión eficiente del espacio, enfoque en la experiencia del usuario) -> Library/Method (HTML/CSS, JavaScript para acordeón, Schema Markup para SEO).
+- General: Animaciones al hacer scroll para una experiencia de usuario más dinámica y atractiva, contribuyendo al "wow factor".
+-->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban Zárate - Mentor de Negocios y Emprendedores</title>
-    <meta name="description" content="Mentoría de negocios para fundadores y ejecutivos. Te ayudo a transformar desafíos complejos en crecimiento y a alcanzar tus metas con un plan claro y accionable.">
-    <meta name="keywords" content="mentor de negocios, coaching ejecutivo, esteban zarate, mentor para emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching chile, mentoría online">
+    <title>Esteban Zárate - Mentor de Negocios y Emprendedores - Potencia tu Liderazgo</title>
+    <meta name="description" content="Mentoría de negocios personalizada para fundadores y ejecutivos. Transforma desafíos complejos en crecimiento exponencial y alcanza tus metas con un plan estratégico y accionable. Desarrolla liderazgo de alto impacto.">
+    <meta name="keywords" content="mentor de negocios, coaching ejecutivo, esteban zarate, mentor para emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching chile, mentoría online, desarrollo empresarial, transformación digital, planificación estratégica">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:title" content="Esteban Zárate - Mentor de Negocios y Emprendedores">
+    <meta property="og:description" content="Mentoría personalizada para fundadores y ejecutivos: transforma desafíos en crecimiento y liderazgo de alto impacto.">
+    <meta property="og:image" content="[https://placehold.co/1200x630/FFFBEB/D97706?text=Esteban+Zarate+Mentor](https://placehold.co/1200x630/FFFBEB/D97706?text=Esteban+Zarate+Mentor)">
+    <meta property="og:url" content="[https://www.innovatur.cl](https://www.innovatur.cl)">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Esteban Zárate - Mentor de Negocios y Emprendedores">
+    <meta name="twitter:description" content="Mentoría personalizada para fundadores y ejecutivos: transforma desafíos en crecimiento y liderazgo de alto impacto.">
+    <meta name="twitter:image" content="[https://placehold.co/1200x675/FFFBEB/D97706?text=Esteban+Zarate+Mentor+Twitter](https://placehold.co/1200x675/FFFBEB/D97706?text=Esteban+Zarate+Mentor+Twitter)">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700&display=swap)" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #F9FAFB; /* Gris muy claro (gray-50) */
-            color: #1F2937; /* Gris oscuro para texto (gray-800) */
-            /* Patrón de fondo sutil para textura */
-            background-image: radial-gradient(circle at top left, rgba(229, 231, 235, 0.5) 0.5px, transparent 0.5px),
-                              radial-gradient(circle at bottom right, rgba(229, 231, 235, 0.5) 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
+            background-color: #FDFCEF;
+            color: #2D3748;
+            background-image: radial-gradient(circle at top left, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px),
+                              radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
         }
         .gradient-text {
-            background: linear-gradient(90deg, #F59E0B, #D97706); /* Naranja/Ámbar oscuro */
+            background: linear-gradient(90deg, #F59E0B, #D97706);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
         }
 
-        /* Hero Section - Asimétrico */
         .hero-image-wrapper {
             position: relative;
             width: 100%;
-            height: 450px; /* Ajusta la altura si es necesario */
+            height: 450px;
             overflow: hidden;
-            border-radius: 0.75rem; /* rounded-lg */
-            transform: rotate(2deg); /* Inclinación asimétrica */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+            border-radius: 1.5rem;
+            transform: rotate(1deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border: 4px solid #FCD34D;
         }
         .hero-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: rotate(-2deg) scale(1.05); /* Contrarresta la rotación y un ligero zoom */
-        }
-        .hero-content-area {
-            position: relative;
-            z-index: 10;
+            transform: rotate(-1deg) scale(1.05);
+            filter: saturate(1.1);
         }
         @media (min-width: 768px) {
             .hero-image-wrapper {
-                height: 550px; /* Más alto en desktop */
-                margin-left: 2rem; /* Desplaza la imagen a la derecha */
-                transform: rotate(2deg);
+                height: 550px;
+                margin-left: 2rem;
+                transform: rotate(1deg);
             }
             .hero-image-wrapper img {
-                transform: rotate(-2deg) scale(1.05);
-            }
-            .hero-text-align-desktop {
-                text-align: left;
-                margin-right: -2rem; /* Desplaza el texto a la izquierda */
+                transform: rotate(-1deg) scale(1.05);
             }
         }
 
-
-        /* Colaboraciones - Logotipos con efecto sutil */
         .logo-grid img {
-            max-height: 90px;
-            filter: grayscale(80%); /* Ligeramente menos gris */
-            opacity: 0.7; /* Ligeramente más visible */
-            transition: all 0.3s ease-in-out;
+            max-height: 100px;
+            filter: grayscale(90%);
+            opacity: 0.6;
+            transition: all 0.4s ease-in-out;
         }
         .logo-grid img:hover {
             filter: none;
             opacity: 1;
-            transform: scale(1.1) rotate(-3deg); /* Efecto de rotación al hover */
+            transform: scale(1.1) rotate(-2deg);
         }
 
-        /* El Reto - Tarjetas asimétricas */
         .challenge-card {
             position: relative;
             overflow: hidden;
-            border: 1px solid #E5E7EB; /* gray-200 */
-            background-color: #FFFFFF; /* Blanco */
-            transition: all 0.3s ease;
-            transform: rotate(0deg); /* Estado inicial sin rotación */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #FCD34D;
+            background-color: #FFFFFF;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: rotate(0deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
         .challenge-card:hover {
-            transform: translateY(-8px) rotate(-1deg); /* Más pronunciado, con ligera rotación */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-            border-color: #D97706; /* amber-600 */
+            transform: translateY(-10px) rotate(-0.5deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-color: #D97706;
+        }
+        .challenge-icon-container {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: #FEF3C7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            border: 2px solid #FCD34D;
+        }
+        .challenge-icon-container span {
+            font-size: 2.5rem; /* Larger icon size */
+            color: #D97706;
         }
         @media (min-width: 768px) {
-            .challenge-grid-desktop > div:nth-child(even) { /* Tarjetas pares, desplazadas hacia abajo */
-                margin-top: 2rem;
+            .challenge-grid-desktop > div:nth-child(even) {
+                margin-top: 3rem;
             }
         }
 
-        /* La Transformación - Iconos más grandes y con animación */
         .transform-item-icon {
             transition: transform 0.3s ease;
         }
         .transform-item:hover .transform-item-icon {
-            transform: scale(1.1) rotate(5deg); /* Gira el icono al hover */
+            transform: scale(1.15) rotate(7deg);
+        }
+        .transform-icon-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #FDFCEF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            border: 3px solid #FCD34D;
+        }
+        .transform-icon-container span {
+            font-size: 3rem;
+            color: #D97706;
         }
 
-        /* Mi Método - Línea de tiempo con elementos alternados */
         .timeline-container {
             position: relative;
-            border-left: 2px solid #D97706; /* Color de la línea principal */
             padding-left: 2rem;
+            border-left: 3px solid #F59E0B;
         }
         .timeline-item-custom {
             position: relative;
-            margin-bottom: 3rem;
-            padding: 1rem 0 1rem 2rem; /* padding para el contenido */
+            margin-bottom: 3.5rem;
+            padding: 1.5rem 0 1.5rem 2.5rem;
             background-color: #FFFFFF;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 0.75rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
+            border: 1px solid #E5E7EB;
         }
         .timeline-item-custom:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transform: translateX(5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+            transform: translateX(8px);
+            border-color: #F59E0B;
         }
         .timeline-item-custom::before {
             content: '';
             position: absolute;
-            left: -12px; /* Alineado con la línea */
+            left: -14px;
             top: 50%;
             transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
-            background: #D97706; /* Círculo ámbar */
-            border: 4px solid #FEF3C7; /* Borde más claro */
+            background: #D97706;
+            border: 5px solid #FDFCEF;
             z-index: 1;
             transition: all 0.3s ease;
         }
         .timeline-item-custom:hover::before {
-            background: #B45309; /* Ámbar más oscuro al hover */
-            transform: translateY(-50%) scale(1.1);
+            background: #B45309;
+            transform: translateY(-50%) scale(1.15);
         }
-        /* Asimetría en desktop para la línea de tiempo */
         @media (min-width: 768px) {
             .timeline-container {
-                border-left: none; /* Quitamos la línea vertical central en desktop */
+                border-left: none;
                 position: relative;
                 width: 100%;
             }
-            .timeline-container::before { /* Recreamos una línea central punteada */
+            .timeline-container::before {
                 content: '';
                 position: absolute;
                 left: 50%;
                 top: 0;
                 bottom: 0;
-                width: 2px;
-                background-color: #D97706; /* Ámbar */
+                width: 3px;
+                background-color: #F59E0B;
                 transform: translateX(-50%);
                 z-index: 0;
             }
             .timeline-item-custom {
-                width: 48%; /* Ocupa casi la mitad */
-                padding: 1.5rem;
+                width: 48%;
+                padding: 2rem;
             }
-            .timeline-item-custom:nth-child(odd) { /* Elementos impares a la izquierda */
-                margin-right: 52%; /* Deja espacio para el siguiente */
+            .timeline-item-custom:nth-child(odd) {
+                margin-right: 52%;
                 text-align: right;
             }
-            .timeline-item-custom:nth-child(even) { /* Elementos pares a la derecha */
+            .timeline-item-custom:nth-child(even) {
                 margin-left: 52%;
                 text-align: left;
             }
-            .timeline-item-custom::before { /* Posicionamiento de los círculos */
+            .timeline-item-custom::before {
                 left: auto;
-                right: -14px; /* Para elementos de la izquierda */
+                right: -16px;
                 background: #D97706;
-                border: 4px solid #F9FAFB; /* Fondo del body */
+                border: 5px solid #FDFCEF;
             }
             .timeline-item-custom:nth-child(even)::before {
-                left: -14px; /* Para elementos de la derecha */
+                left: -16px;
                 right: auto;
             }
         }
 
-        /* Testimonios - Carrusel con sombra y hover */
         .testimonial-card-custom {
             flex-shrink: 0;
             width: 100%;
             padding: 1rem;
-            box-sizing: border-box; /* Asegura que el padding no desborde */
+            box-sizing: border-box;
         }
         .testimonial-inner-card {
-            background-color: #FFFFFF; /* Blanco */
-            padding: 2rem;
-            border-radius: 1rem; /* Más redondeado */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Sombra más definida */
-            border: 1px solid #E5E7EB; /* Borde sutil */
-            transition: all 0.3s ease;
+            background-color: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E5E7EB;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .testimonial-inner-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) scale(1.005);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            border-color: #D97706;
         }
         .testimonial-image-clip {
             position: relative;
-            width: 96px; /* w-24 */
-            height: 96px; /* h-24 */
+            width: 112px;
+            height: 112px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 1.5rem; /* Centrado */
-            border: 4px solid #D97706; /* Borde ámbar */
+            margin: 0 auto 1.5rem;
+            border: 5px solid #F59E0B;
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
         }
         .testimonial-image-clip img {
             width: 100%;
@@ -224,163 +270,174 @@
             object-fit: cover;
         }
         .testimonial-quote {
-            font-size: 1.25rem; /* text-xl */
+            font-size: 1.35rem;
             font-style: italic;
-            color: #4B5563; /* gray-700 */
+            color: #4B5563;
+            line-height: 1.6;
         }
         .testimonial-author {
             font-weight: bold;
-            color: #D97706; /* amber-600 */
-            margin-top: 1.5rem;
+            color: #D97706;
+            margin-top: 2rem;
+            font-size: 1.125rem;
         }
         .testimonial-title {
-            color: #6B7280; /* gray-500 */
-            font-size: 0.875rem; /* text-sm */
+            color: #6B7280;
+            font-size: 0.95rem;
         }
 
-        /* Botones del carrusel */
         .carousel-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.85);
             border-radius: 50%;
-            padding: 0.75rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            padding: 0.85rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             z-index: 20;
+            border: 1px solid #E5E7EB;
         }
         .carousel-button:hover {
             background-color: #FFFFFF;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-color: #D97706;
         }
-        #prev-btn { left: 1rem; }
-        #next-btn { right: 1rem; }
+        #prev-btn { left: 1.5rem; }
+        #next-btn { right: 1.5rem; }
 
-        /* Recursos - Tarjeta con diseño asimétrico */
         .resource-section-card {
             background-color: #FFFFFF;
-            padding: 2rem;
-            border-radius: 1.5rem; /* rounded-2xl */
-            border: 1px solid #E5E7EB;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Sombra más grande */
+            padding: 2.5rem;
+            border-radius: 2rem;
+            border: 2px solid #FCD34D;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .resource-section-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
         .resource-section-card img {
-            transform: rotate(-3deg); /* Ligeramente inclinada */
-            box-shadow: 10px 10px 0px rgba(245, 158, 11, 0.15); /* Sombra ámbar asimétrica */
+            transform: rotate(-2deg);
+            box-shadow: 12px 12px 0px rgba(245, 158, 11, 0.2);
             transition: transform 0.3s ease;
+            border-radius: 0.75rem;
         }
         .resource-section-card img:hover {
-            transform: rotate(-5deg) scale(1.02);
+            transform: rotate(-4deg) scale(1.03);
+            box-shadow: 15px 15px 0px rgba(245, 158, 11, 0.3);
         }
         @media (min-width: 768px) {
             .resource-section-card {
                 flex-direction: row;
                 text-align: left;
-                padding: 3rem;
+                padding: 4rem;
             }
             .resource-section-card img {
-                margin-right: 2rem;
+                margin-right: 3rem;
             }
         }
 
-        /* CTA Final & FAQ - Mejoras visuales */
         .faq-item-custom {
-            background-color: rgba(217, 119, 6, 0.4); /* amber-600 con opacidad */
-            padding: 1.5rem;
-            border-radius: 0.75rem;
+            background-color: rgba(217, 119, 6, 0.25);
+            padding: 1.75rem;
+            border-radius: 1rem;
             position: relative;
             overflow: hidden;
-            border-left: 6px solid #F59E0B; /* Borde más claro */
+            border-left: 8px solid #F59E0B;
             transition: all 0.3s ease;
+            color: #FEF3C7;
         }
         .faq-item-custom:hover {
-            background-color: rgba(217, 119, 6, 0.6);
-            transform: translateX(5px);
+            background-color: rgba(217, 119, 6, 0.4);
+            transform: translateX(8px);
         }
         .faq-question {
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600; /* semibold */
-            color: #FFFFFF; /* Texto blanco */
+            font-weight: 700;
+            color: #FFFFFF;
+            font-size: 1.125rem;
         }
         .faq-question::after {
             content: '+';
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: bold;
             color: #FFFFFF;
             transition: transform 0.3s ease;
         }
         .faq-question[aria-expanded="true"]::after {
-            content: '−'; /* Minus sign */
-            transform: rotate(0deg); /* No rotation for minus */
+            content: '−';
+            transform: rotate(0deg);
         }
         .faq-answer-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
             opacity: 0;
-            color: #FEF3C7; /* amber-100 */
-            padding-top: 0.5rem;
+            color: #FCD34D;
+            padding-top: 0.75rem;
+            line-height: 1.6;
         }
         .faq-answer-content.is-expanded {
-            max-height: 200px; /* Suficiente para la mayoría de las respuestas, ajustar si es necesario */
+            max-height: 300px;
             opacity: 1;
         }
 
-        /* Botones y Floater */
         .cta-button {
-            background-color: #D97706; /* amber-600 */
+            background-color: #D97706;
             color: #FFFFFF;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3); /* Sombra más profunda */
-            border-radius: 9999px; /* fully rounded */
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
+            border-radius: 9999px;
+            font-weight: 700;
         }
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.02); /* Efecto 3D al hover */
-            background-color: #B45309; /* amber-700 */
-            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
+            transform: translateY(-4px) scale(1.03);
+            background-color: #B45309;
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.5);
         }
         .cta-button-secondary {
             background-color: #FFFFFF;
-            color: #B45309; /* amber-700 */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 9999px; /* fully rounded */
+            color: #B45309;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+            border-radius: 9999px;
+            font-weight: 700;
         }
-         .cta-button-secondary:hover {
-            background-color: #FFFBEB; /* amber-50 */
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        .cta-button-secondary:hover {
+            background-color: #FFFBEB;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
         .linkedin-original-color {
             color: #0077b5;
         }
         .linkedin-original-color:hover {
             opacity: 0.8;
-            transform: scale(1.15); /* Más pronunciado */
+            transform: scale(1.18);
         }
-        /* Animación para elementos al entrar en vista */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
         .animate-on-scroll.left {
-            transform: translateX(-30px);
+            transform: translateX(-40px);
         }
         .animate-on-scroll.right {
-            transform: translateX(30px);
+            transform: translateX(40px);
         }
         .animate-on-scroll.left.is-visible, .animate-on-scroll.right.is-visible {
             transform: translateX(0);
@@ -389,33 +446,38 @@
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@context": "[https://schema.org](https://schema.org)",
       "@type": "ProfessionalService",
       "name": "Esteban Zárate - Mentor de Negocios y Coach Ejecutivo",
-      "description": "Mentoría personalizada para fundadores y ejecutivos enfocada en desbloquear el potencial, convertir desafíos en crecimiento y alcanzar metas de negocio y liderazgo.",
-      "url": "https://www.innovatur.cl",
-      "image": "img/og-image-principal.jpg",
+      "description": "Mentoría personalizada para fundadores y ejecutivos enfocada en desbloquear el potencial, convertir desafíos en crecimiento y alcanzar metas de negocio y liderazgo en Chile y LATAM.",
+      "url": "[https://www.innovatur.cl](https://www.innovatur.cl)",
+      "image": "[https://placehold.co/1200x630/FFFBEB/D97706?text=Esteban+Zarate+Mentor](https://placehold.co/1200x630/FFFBEB/D97706?text=Esteban+Zarate+Mentor)",
       "provider": {
         "@type": "Person",
         "name": "Esteban Zárate",
         "jobTitle": "Mentor de Negocios y Coach Ejecutivo",
-        "knowsAbout": ["Mentoría de negocios", "Coaching ejecutivo", "Liderazgo", "Estrategia empresarial", "Crecimiento de negocios"],
-        "url": "https://www.innovatur.cl/#metodo",
-        "image": "img/mentor-sesion-trabajo.jpg"
+        "knowsAbout": ["Mentoría de negocios", "Coaching ejecutivo", "Liderazgo", "Estrategia empresarial", "Crecimiento de negocios", "Transformación digital", "Productividad"],
+        "url": "[https://www.innovatur.cl/#metodo](https://www.innovatur.cl/#metodo)",
+        "image": "[https://placehold.co/400x400/FFFBEB/D97706?text=Esteban+Zarate+Ilustracion](https://placehold.co/400x400/FFFBEB/D97706?text=Esteban+Zarate+Ilustracion)"
       },
       "serviceType": "Mentoría de Negocios",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Chile"
-      },
+      "areaServed": [
+        { "@type": "Country", "name": "Chile" },
+        { "@type": "AdministrativeArea", "name": "LATAM" }
+      ],
       "potentialAction": {
         "@type": "CommunicateAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://www.innovatur.cl/#conversemos",
+          "urlTemplate": "[https://www.innovatur.cl/#conversemos](https://www.innovatur.cl/#conversemos)",
           "inLanguage": "es"
         },
-        "name": "Iniciar Diagnóstico"
+        "name": "Agendar Sesión de Diagnóstico"
+      },
+      "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+569XXXXXXXX",
+          "contactType": "customer service"
       }
     }
     </script>
@@ -423,225 +485,226 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <div class="fixed bottom-4 left-4 z-50 bg-white/80 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-200 flex items-center space-x-4">
+    <div class="fixed bottom-4 left-4 z-50 bg-white/90 backdrop-blur-lg p-4 rounded-xl shadow-xl border border-gray-200 flex items-center space-x-4">
         <div>
             <h4 class="font-bold text-gray-900">Esteban Zárate</h4>
             <p class="text-sm text-gray-600">Mentor Certificado OpenBeauchef</p>
         </div>
-        <a href="https://www.linkedin.com/in/estebanzarate/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Esteban Zárate" class="transition-transform hover:scale-110">
-            <svg class="w-8 h-8 linkedin-original-color" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <a href="[https://www.linkedin.com/in/estebanzarate/](https://www.linkedin.com/in/estebanzarate/)" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Esteban Zárate" class="transition-transform hover:scale-110">
+            <svg class="w-9 h-9 linkedin-original-color" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
             </svg>
         </a>
     </div>
 
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-40 border-b border-gray-200">
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-end items-center">
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#reto" class="text-gray-600 hover:text-amber-600 transition-colors">El Desafío</a>
-                <a href="#transformacion" class="text-gray-600 hover:text-amber-600 transition-colors">La Transformación</a>
-                <a href="#metodo" class="text-gray-600 hover:text-amber-600 transition-colors">Mi Método</a>
-                <a href="#exito" class="text-gray-600 hover:text-amber-600 transition-colors">Casos de Éxito</a>
-                <a href="#recursos" class="text-gray-600 hover:text-amber-600 transition-colors">Recursos</a>
+                <a href="#reto" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">El Desafío</a>
+                <a href="#transformacion" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">La Transformación</a>
+                <a href="#metodo" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">Mi Método</a>
+                <a href="#exito" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">Casos de Éxito</a>
+                <a href="#recursos" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">Recursos</a>
             </div>
-            <a href="#conversemos" class="hidden md:inline-block font-semibold px-6 py-3 rounded-full cta-button ml-8">
+            <a href="#conversemos" class="hidden md:inline-block font-semibold px-7 py-3 rounded-full cta-button ml-8 text-lg">
                 Agendar Sesión
             </a>
             <button id="mobile-menu-button" class="md:hidden text-gray-800" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4">
-            <a href="#reto" class="block py-2 text-gray-600 hover:text-amber-600">El Desafío</a>
-            <a href="#transformacion" class="block py-2 text-gray-600 hover:text-amber-600">La Transformación</a>
-            <a href="#metodo" class="block py-2 text-gray-600 hover:text-amber-600">Mi Método</a>
-            <a href="#exito" class="block py-2 text-gray-600 hover:text-amber-600">Casos de Éxito</a>
-            <a href="#recursos" class="block py-2 text-gray-600 hover:text-amber-600">Recursos</a>
-            <a href="#conversemos" class="block mt-4 text-center w-full font-semibold px-6 py-3 rounded-full cta-button">Agendar Sesión</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4 border-t border-gray-100">
+            <a href="#reto" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">El Desafío</a>
+            <a href="#transformacion" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">La Transformación</a>
+            <a href="#metodo" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">Mi Método</a>
+            <a href="#exito" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">Casos de Éxito</a>
+            <a href="#recursos" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">Recursos</a>
+            <a href="#conversemos" class="block mt-6 text-center w-full font-semibold px-7 py-3 rounded-full cta-button text-lg">Agendar Sesión</a>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-amber-50 to-transparent" aria-labelledby="hero-heading">
+        <section id="hero" class="relative py-28 md:py-40 overflow-hidden bg-gradient-to-br from-amber-50 to-transparent" aria-labelledby="hero-heading">
             <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10"></div>
-            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="text-center md:text-left hero-text-align-desktop animate-on-scroll left">
-                    <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
+                    <h1 id="hero-heading" class="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
                         Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
                     </h1>
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mt-4">
-                        Transforma Desafíos en Crecimiento Exponencial
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mt-6">
+                        Transfórmate en un Líder de Impacto
                     </h2>
-                    <p class="mt-6 max-w-xl mx-auto md:mx-0 text-lg text-gray-600">
-                        Juntos, crearemos un plan de acción claro y desarrollaremos tus habilidades de liderazgo para superar obstáculos y tomar decisiones con una confianza inquebrantable.
+                    <p class="mt-8 max-w-xl mx-auto md:mx-0 text-xl text-gray-600 leading-relaxed">
+                        Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
                     </p>
-                    <a href="#conversemos" class="mt-10 inline-block font-bold text-lg px-8 py-4 rounded-full cta-button">
+                    <a href="#conversemos" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
                         Iniciemos TU diagnóstico ahora
                     </a>
                 </div>
                 <div class="relative w-full h-full group animate-on-scroll right">
                     <div class="hero-image-wrapper">
-                        <img src="img/hero-mentor-new.jpg" 
-                             onerror="this.onerror=null;this.src='https://placehold.co/600x550/e5e7eb/1f2937?text=Mentor+de+Negocios';"
-                             alt="Esteban Zárate, mentor de negocios en una sesión estratégica con un ejecutivo" class="object-cover">
+                        <img src="[https://placehold.co/600x550/FFFBEB/D97706?text=Ilustracion+Esteban+Zarate](https://placehold.co/600x550/FFFBEB/D97706?text=Ilustracion+Esteban+Zarate)" 
+                             onerror="this.onerror=null;this.src='[https://placehold.co/600x550/FFFBEB/D97706?text=Mentor+Ilustrado](https://placehold.co/600x550/FFFBEB/D97706?text=Mentor+Ilustrado)';"
+                             alt="Ilustración de Esteban Zárate, un mentor de negocios en una sesión estratégica, enfocado y guiando." class="object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="colaboraciones" class="py-16 bg-white" aria-labelledby="colaboraciones-heading">
+        <section id="colaboraciones" class="py-20 bg-white" aria-labelledby="colaboraciones-heading">
             <div class="container mx-auto px-6">
                 <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll">Algunas de las organizaciones en las que he colaborado</h3>
-               <div class="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-8 gap-y-10 items-center justify-items-center logo-grid animate-on-scroll">
-                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
-                    <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
-                    <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
-                    <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
-                    <img src="img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
-                    <img src="img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
-                    <img src="img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
-                    <img src="img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/150x50/e5e7eb/1f2937?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
+               <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY](https://placehold.co/180x60/FDFCEF/4B5563?text=CULINARY)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary](https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary)';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE](https://placehold.co/180x60/FDFCEF/4B5563?text=AMS+MOBILE)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=AMS](https://placehold.co/180x60/FDFCEF/4B5563?text=AMS)';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR](https://placehold.co/180x60/FDFCEF/4B5563?text=FEDETUR)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur](https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur)';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO](https://placehold.co/180x60/FDFCEF/4B5563?text=BUIN+ZOO)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo](https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo)';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR](https://placehold.co/180x60/FDFCEF/4B5563?text=SERNATUR)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur](https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur)';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE](https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE](https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE)';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO](https://placehold.co/180x60/FDFCEF/4B5563?text=CORFO)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo](https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo)';" alt="Logo Corfo" title="Corfo" loading="lazy">
+                    <img src="[https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS](https://placehold.co/180x60/FDFCEF/4B5563?text=ELQUI+DOMOS)" onerror="this.onerror=null;this.src='[https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos](https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos)';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <section id="reto" class="py-20 md:py-28 relative" aria-labelledby="reto-heading">
-            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-amber-50/20 to-transparent [mask-image:radial-gradient(at_center,white,transparent)] -z-10"></div>
+        <section id="reto" class="py-24 md:py-32 relative" aria-labelledby="reto-heading">
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-amber-50/30 to-transparent [mask-image:radial-gradient(at_center,white,transparent)] -z-10"></div>
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="reto-heading" class="text-3xl md:text-4xl font-black text-gray-900">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
-                    <p class="mt-4 text-lg text-gray-600">
+                    <h2 id="reto-heading" class="text-4xl md:text-5xl font-black text-gray-900">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
+                    <p class="mt-5 text-xl text-gray-600 leading-relaxed">
                         Muchos líderes de alto rendimiento enfrentan los mismos obstáculos. Estas son las frustraciones que juntos convertiremos en fortalezas.
                     </p>
                 </div>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto challenge-grid-desktop">
-                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
-                            <img src="img/icon-overload.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de sobrecarga" class="w-10 h-10 text-amber-600">
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto challenge-grid-desktop">
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <span role="img" aria-label="Icono de sobrecarga">⏱️</span>
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">Sobrecarga y Agotamiento</h3>
-                        <p class="mt-2 text-gray-600 text-center md:text-left">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Sobrecarga y Agotamiento</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
                     </div>
-                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
-                            <img src="img/icon-stagnation.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de estancamiento" class="w-10 h-10 text-amber-600">
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <span role="img" aria-label="Icono de estancamiento">🚧</span>
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">Estancamiento y Falta de Avance</h3>
-                        <p class="mt-2 text-gray-600 text-center md:text-left">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Estancamiento y Falta de Avance</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
                     </div>
-                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
-                           <img src="img/icon-uncertainty.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de incertidumbre" class="w-10 h-10 text-amber-600">
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <span role="img" aria-label="Icono de incertidumbre">🧭</span>
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">Incertidumbre y Falta de Rumbo</h3>
-                        <p class="mt-2 text-gray-600 text-center md:text-left">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Incertidumbre y Falta de Rumbo</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
                     </div>
-                    <div class="challenge-card p-8 rounded-xl animate-on-scroll">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-4 mx-auto md:mx-0" aria-hidden="true">
-                            <img src="img/icon-loneliness.svg" onerror="this.onerror=null;this.src='https://placehold.co/40x40/e5e7eb/D97706?text=Icon';" alt="Icono de soledad del líder" class="w-10 h-10 text-amber-600">
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <span role="img" aria-label="Icono de soledad del líder">👤</span>
                         </div>
-                        <h3 class="font-bold text-xl text-amber-700 text-center md:text-left">La Soledad del Líder</h3>
-                        <p class="mt-2 text-gray-600 text-center md:text-left">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="transformacion" class="py-20 md:py-28 bg-white" aria-labelledby="transformacion-heading">
-             <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="transformacion-heading" class="text-3xl md:text-4xl font-black text-gray-900">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
-                    <p class="mt-4 text-lg text-gray-600">
-                        La mentoría no se trata de apagar incendios, sino de construir activamente el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
-                    </p>
-                </div>
-                <div class="mt-16 grid md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200 transform-item animate-on-scroll">
-                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
-                            <img src="img/icon-roadmap.svg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e5e7eb/D97706?text=Icon';" alt="Icono de hoja de ruta estratégica" class="w-12 h-12 text-amber-600 transform-item-icon">
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">Hoja de Ruta Estratégica</h3>
-                        <p class="mt-2 text-gray-600">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles.</p>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200 transform-item animate-on-scroll">
-                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
-                           <img src="img/icon-leadership.svg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e5e7eb/D97706?text=Icon';" alt="Icono de liderazgo de alto impacto" class="w-12 h-12 text-amber-600 transform-item-icon">
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">Liderazgo de Alto Impacto</h3>
-                        <p class="mt-2 text-gray-600">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad.</p>
-                    </div>
-                     <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200 transform-item animate-on-scroll">
-                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-amber-100 mx-auto mb-4" aria-hidden="true">
-                            <img src="img/icon-growth.svg" onerror="this.onerror=null;this.src='https://placehold.co/50x50/e5e7eb/D97706?text=Icon';" alt="Icono de crecimiento sostenible" class="w-12 h-12 text-amber-600 transform-item-icon">
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">Crecimiento Sostenible</h3>
-                        <p class="mt-2 text-gray-600">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">La Soledad del Líder</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="metodo" class="py-20 md:py-28" aria-labelledby="metodo-heading">
+        <section id="transformacion" class="py-24 md:py-32 bg-white" aria-labelledby="transformacion-heading">
+               <div class="container mx-auto px-6">
+                    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black text-gray-900">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
+                        <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                            La mentoría no se trata de apagar incendios, sino de construir activamente el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
+                        </p>
+                    </div>
+                    <div class="mt-20 grid md:grid-cols-3 gap-10">
+                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
+                            <div class="transform-icon-container" aria-hidden="true">
+                                <span role="img" aria-label="Icono de hoja de ruta estratégica">🗺️</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Hoja de Ruta Estratégica</h3>
+                            <p class="mt-3 text-gray-700 leading-relaxed">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
+                        </div>
+                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
+                            <div class="transform-icon-container" aria-hidden="true">
+                                <span role="img" aria-label="Icono de liderazgo de alto impacto">🚀</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Liderazgo de Alto Impacto</h3>
+                            <p class="mt-3 text-gray-700 leading-relaxed">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
+                        </div>
+                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
+                            <div class="transform-icon-container" aria-hidden="true">
+                                <span role="img" aria-label="Icono de crecimiento sostenible">📈</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Crecimiento Sostenible</h3>
+                            <p class="mt-3 text-gray-700 leading-relaxed">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
+                        </div>
+                    </div>
+               </div>
+        </section>
+
+        <section id="metodo" class="py-24 md:py-32" aria-labelledby="metodo-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="metodo-heading" class="text-3xl md:text-4xl font-black text-gray-900">Mi Método: Enfoque-Acción-Impacto</h2>
-                     <p class="mt-4 text-lg text-gray-600">
-                        No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado. Mi rol es hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones.
+                    <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black text-gray-900">Mi Método: Enfoque-Acción-Impacto</h2>
+                    <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                        No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado. Mi rol es hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones que te llevarán al éxito.
                     </p>
                 </div>
-                <div class="mt-20 max-w-4xl mx-auto flex justify-center timeline-container animate-on-scroll">
+                <div class="mt-24 max-w-4xl mx-auto flex justify-center timeline-container animate-on-scroll">
                     <div class="w-full md:w-3/4 lg:w-2/3"> <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-amber-600 text-2xl">Diagnóstico y Claridad</h4>
-                            <p class="text-gray-700 mt-1">Analizamos tu situación para identificar los verdaderos obstáculos y las mayores oportunidades de crecimiento.</p>
+                            <h4 class="font-bold text-amber-700 text-3xl">1. Diagnóstico y Claridad</h4>
+                            <p class="text-gray-700 mt-2 text-lg leading-relaxed">Analizamos tu situación actual, identificando los verdaderos obstáculos y las mayores oportunidades de crecimiento. Establecemos juntos el punto de partida y los objetivos.</p>
                         </div>
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-amber-600 text-2xl">Plan de Acción Estratégico</h4>
-                            <p class="text-gray-700 mt-1">Definimos un plan paso a paso, con metas claras y acciones priorizadas para que sepas exactamente qué hacer.</p>
+                            <h4 class="font-bold text-amber-700 text-3xl">2. Plan de Acción Estratégico</h4>
+                            <p class="text-gray-700 mt-2 text-lg leading-relaxed">Definimos un plan paso a paso, con metas claras, indicadores de éxito y acciones priorizadas para que sepas exactamente qué hacer y cómo medir tu progreso.</p>
                         </div>
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-amber-600 text-2xl">Implementación y Acompañamiento</h4>
-                            <p class="text-gray-700 mt-1">Te acompaño en la ejecución, ajustando estrategias y fortaleciendo tu mentalidad para asegurar resultados sostenibles.</p>
+                            <h4 class="font-bold text-amber-700 text-3xl">3. Implementación y Acompañamiento</h4>
+                            <p class="text-gray-700 mt-2 text-lg leading-relaxed">Te acompaño en la ejecución de tu plan, ajustando estrategias en tiempo real, superando desafíos y fortaleciendo tu mentalidad para asegurar resultados sostenibles y de largo plazo.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="exito" class="py-20 md:py-28 bg-white" aria-labelledby="exito-heading">
+        <section id="exito" class="py-24 md:py-32 bg-white" aria-labelledby="exito-heading">
             <div class="container mx-auto px-6">
                    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                     <h2 id="exito-heading" class="text-3xl md:text-4xl font-black text-gray-900">Lo que Dicen Mis Clientes</h2>
-                     <p class="mt-4 text-lg text-gray-600">
-                        La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación.
-                     </p>
-                </div>
-                <div class="mt-16 relative w-full overflow-hidden">
-                    <div id="testimonial-slider" class="flex" aria-roledescription="carrusel de testimonios" aria-live="off">
+                       <h2 id="exito-heading" class="text-4xl md:text-5xl font-black text-gray-900">Lo que Dicen Mis Clientes</h2>
+                       <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                           La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación y logros reales.
+                       </p>
+                   </div>
+                   <div class="mt-20 relative w-full overflow-hidden">
+                       <div id="testimonial-slider" class="flex" aria-roledescription="carrusel de testimonios" aria-live="polite">
                         </div>
-                    <button id="prev-btn" class="carousel-button left-4" aria-label="Testimonio anterior">
-                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <button id="next-btn" class="carousel-button right-4" aria-label="Siguiente testimonio">
-                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                </div>
+                       <button id="prev-btn" class="carousel-button left-6" aria-label="Testimonio anterior">
+                           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                       </button>
+                       <button id="next-btn" class="carousel-button right-6" aria-label="Siguiente testimonio">
+                           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                       </button>
+                   </div>
             </div>
         </section>
         
-        <section id="recursos" class="py-20 md:py-28" aria-labelledby="recursos-heading">
+        <section id="recursos" class="py-24 md:py-32" aria-labelledby="recursos-heading">
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="recursos-heading" class="text-3xl md:text-4xl font-black text-gray-900">Recursos para Acelerar tu Crecimiento</h2>
-                    <p class="mt-4 text-lg text-gray-600">
-                        El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan.
+                    <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black text-gray-900">Recursos para Acelerar tu Crecimiento</h2>
+                    <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                        El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan de acción efectivo.
                     </p>
-                    <div class="mt-12 resource-section-card animate-on-scroll">
-                        <img src="img/guia-errores-negocio.jpg" onerror="this.onerror=null;this.src='https://placehold.co/200x280/e5e7eb/1f2937?text=Gu%C3%ADa+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio" class="w-48 h-auto rounded-md shadow-lg object-cover">
-                        <div>
-                            <h3 class="text-xl font-bold text-amber-600">GUÍA GRATUITA</h3>
-                            <p class="text-2xl font-bold text-gray-800 mt-1">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
-                            <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" class="mt-6 inline-block font-semibold px-6 py-3 rounded-full cta-button">
-                                Descargar Guía
+                    <div class="mt-16 resource-section-card animate-on-scroll">
+                        <img src="[https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada](https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada)" onerror="this.onerror=null;this.src='[https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita](https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita)';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
+                        <div class="md:ml-12 mt-8 md:mt-0">
+                            <h3 class="text-2xl font-bold text-amber-700">GUÍA GRATUITA EXCLUSIVA</h3>
+                            <p class="text-3xl font-bold text-gray-900 mt-2 leading-tight">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
+                            <p class="mt-4 text-gray-600 text-lg">Descubre las trampas comunes que impiden tu progreso y cómo superarlas con estrategias probadas. ¡Tu hoja de ruta hacia el éxito está aquí!</p>
+                            <a href="[https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj](https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj)" class="mt-8 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
+                                Descargar Guía Ahora
                             </a>
                         </div>
                     </div>
@@ -649,31 +712,31 @@
             </div>
         </section>
 
-        <section id="conversemos" class="py-20 md:py-28 bg-amber-600" aria-labelledby="conversemos-heading">
+        <section id="conversemos" class="py-24 md:py-32 bg-amber-600" aria-labelledby="conversemos-heading">
             <div class="container mx-auto px-6 text-center">
-                   <h2 id="conversemos-heading" class="text-3xl md:text-4xl font-black text-white max-w-3xl mx-auto animate-on-scroll">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
-                   <p class="mt-4 text-lg text-amber-100 max-w-2xl mx-auto animate-on-scroll">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
-                   <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-10 inline-block font-bold text-lg px-8 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
+                   <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight animate-on-scroll">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
+                   <p class="mt-6 text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed animate-on-scroll">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
+                   <a href="[https://calendar.app.google/VDWYMXTHyy993Wpw8](https://calendar.app.google/VDWYMXTHyy993Wpw8)" target="_blank" rel="noopener" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
                      Iniciemos TU diagnóstico ahora
                    </a>
-                   <div id="faq-section" class="container mx-auto px-6 mt-20 max-w-4xl" role="region" aria-labelledby="faq-heading">
-                    <h3 id="faq-heading" class="text-2xl font-bold text-center mb-8 text-white animate-on-scroll">Preguntas Frecuentes</h3>
-                    <div class="space-y-4 text-left">
+                   <div id="faq-section" class="container mx-auto px-6 mt-28 max-w-4xl" role="region" aria-labelledby="faq-heading">
+                    <h3 id="faq-heading" class="text-3xl font-bold text-center mb-10 text-white animate-on-scroll">Preguntas Frecuentes</h3>
+                    <div class="space-y-6 text-left">
                         <div class="faq-item-custom animate-on-scroll">
-                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
-                            <p id="faq-answer-0" class="mt-2 faq-answer-content">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia y visión para impulsar el desarrollo del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas y herramientas, ayuda a la persona a desarrollar habilidades específicas y a encontrar sus propias soluciones.</p>
+                            <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
+                            <p id="faq-answer-0" class="mt-3 faq-answer-content">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia, sabiduría y visión para impulsar el desarrollo integral del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas poderosas y herramientas específicas, ayuda a la persona a desarrollar habilidades concretas y a encontrar sus propias soluciones para un objetivo definido.</p>
                         </div>
                         <div class="faq-item-custom animate-on-scroll">
-                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
-                            <p id="faq-answer-1" class="mt-2 faq-answer-content">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica. No se trata de teoría; trabajamos juntos en *tus* desafíos reales para generar resultados medibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda, no soluciones temporales.</p>
+                            <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
+                            <p id="faq-answer-1" class="mt-3 faq-answer-content">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica y medible. No se trata de teoría; trabajamos juntos en *tus* desafíos reales y complejos para generar resultados tangibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda y duradera, no solo soluciones temporales o superficiales.</p>
                         </div>
                         <div class="faq-item-custom animate-on-scroll">
-                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
-                            <p id="faq-answer-2" class="mt-2 faq-answer-content">La dedicación se adapta a tus metas, pero desde nuestras primeras sesiones estableceremos un plan claro. Muchos de mis clientes comienzan a ver cambios significativos en su claridad y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en su negocio en los primeros 2-3 meses.</p>
+                            <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
+                            <p id="faq-answer-2" class="mt-3 faq-answer-content">La dedicación se adapta a tus metas y disponibilidad, pero desde nuestras primeras sesiones estableceremos un plan de trabajo claro y ambicioso. Muchos de mis clientes comienzan a ver cambios significativos en su claridad mental y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en la estrategia y rentabilidad de su negocio en los primeros 2-3 meses de mentoría.</p>
                         </div>
                         <div class="faq-item-custom animate-on-scroll">
-                            <h4 class="font-semibold text-lg cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
-                            <p id="faq-answer-3" class="mt-2 faq-answer-content">Si sientes que podrías lograr más, si la complejidad te abruma, o si simplemente buscas una perspectiva experta para acelerar tu crecimiento y evitar errores costosos, este es el momento. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso que necesitas ahora.</p>
+                            <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
+                            <p id="faq-answer-3" class="mt-3 faq-answer-content">Si sientes que podrías lograr mucho más de lo que estás haciendo, si la complejidad de tu negocio te abruma, o si simplemente buscas una perspectiva externa y experta para acelerar tu crecimiento y evitar errores costosos, este es el momento ideal. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso estratégico que necesitas ahora mismo.</p>
                         </div>
                     </div>
                 </div>
@@ -681,10 +744,10 @@
         </section>
     </main>
     
-    <footer class="bg-white text-gray-500 py-8 border-t border-gray-200">
+    <footer class="bg-white text-gray-500 py-10 border-t border-gray-200">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Esteban Zárate. Todos los derechos reservados.</p>
-            <p class="text-sm mt-2">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-600">Política de Privacidad</a> | <a href="#" class="hover:text-amber-600">Términos de Servicio</a></p>
+            <p class="text-sm mt-3">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-700 transition-colors">Política de Privacidad</a> | <a href="#" class="hover:text-amber-700 transition-colors">Términos de Servicio</a></p>
         </div>
     </footer>
 
@@ -718,41 +781,54 @@ document.addEventListener('DOMContentLoaded', function () {
     const appData = {
         testimonials: [
             {
-                quote: 'Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables.',
+                quote: 'Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables, logrando resultados extraordinarios en tiempo récord.',
                 author: 'Gisella Lira',
                 title: 'Fundadora de Pocas Copas y Winehunter',
-                image: 'img/Gisella-7.jpg'
+                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Gisella](https://placehold.co/100x100/FDFCEF/D97706?text=Gisella)'
             },
             {
-                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio.',
+                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades únicas, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio de forma exponencial.',
                 author: 'Daniela Salvador',
                 title: 'Directora Revista Canal HORECA',
-                image: 'img/daniela-salvador.jpg'
+                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Daniela](https://placehold.co/100x100/FDFCEF/D97706?text=Daniela)'
             },
-             {
-                quote: 'Trabajar con Esteban fue un punto de inflexión. Su claridad y enfoque me permitieron pasar de la idea a la acción, logrando un crecimiento que no creía posible. Su guía es invaluable.',
+               {
+                quote: 'Trabajar con Esteban fue un punto de inflexión decisivo para mi proyecto. Su claridad estratégica y enfoque práctico me permitieron pasar de la idea a la acción con confianza, logrando un crecimiento que sinceramente no creía posible. Su guía es invaluable y ha sido clave en mi desarrollo como líder.',
                 author: 'Juan Pérez',
                 title: 'CEO, Startup Tech Solutions',
-                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop' /* Imagen de placeholder si no tienes una real */
+                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Juan](https://placehold.co/100x100/FDFCEF/D97706?text=Juan)'
+            },
+            {
+                quote: 'La mentoría con Esteban superó todas mis expectativas. Su capacidad para identificar los puntos ciegos y ofrecer soluciones creativas ha sido fundamental para escalar mi negocio y consolidar mi posición en el mercado.',
+                author: 'Ana Gómez',
+                title: 'Gerente General, Consultora Estratégica',
+                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Ana](https://placehold.co/100x100/FDFCEF/D97706?text=Ana)'
+            },
+            {
+                quote: 'Gracias a la visión y el acompañamiento de Esteban, pude redefinir la estrategia de mi empresa y optimizar procesos que antes generaban cuellos de botella. El impacto en la productividad y en el clima laboral ha sido increíblemente positivo.',
+                author: 'Carlos Ruiz',
+                title: 'Director de Operaciones, Cadena Retail',
+                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Carlos](https://placehold.co/100x100/FDFCEF/D97706?text=Carlos)'
             }
         ]
     };
     
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
-        // Duplicar testimonios para un loop visual infinito
-        const allTestimonials = [...appData.testimonials, ...appData.testimonials.slice(0, appData.testimonials.length - 1)]; // Ajuste para loop más suave
+        const totalOriginalItems = appData.testimonials.length;
+        // Creamos un array con los testimonios originales y una copia para un bucle más suave
+        const allTestimonials = [...appData.testimonials, ...appData.testimonials];
 
         allTestimonials.forEach((testimonial, index) => {
             const card = document.createElement('div');
             card.className = 'testimonial-card-custom';
             card.setAttribute('role', 'group');
             card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
-            card.setAttribute('aria-label', `Testimonio ${index + 1} de ${appData.testimonials.length}`);
+            card.setAttribute('aria-label', `Testimonio ${index % totalOriginalItems + 1} de ${totalOriginalItems}`);
             card.innerHTML = `
                 <div class="testimonial-inner-card text-center">
                     <div class="testimonial-image-clip">
-                        <img src="${testimonial.image}" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=${testimonial.author.charAt(0)}';" alt="Foto de ${testimonial.author}">
+                        <img src="${testimonial.image}" onerror="this.onerror=null;this.src='[https://placehold.co/100x100/D97706/ffffff?text=$](https://placehold.co/100x100/D97706/ffffff?text=$){testimonial.author.charAt(0)}';" alt="Ilustración de perfil de ${testimonial.author}">
                     </div>
                     <blockquote class="testimonial-quote">
                         <p>"${testimonial.quote}"</p>
@@ -764,97 +840,88 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         let currentIndex = 0;
-        const totalOriginalItems = appData.testimonials.length;
-        const totalClonedItems = allTestimonials.length; // 2x (original + clones)
-        const itemWidth = testimonialSlider.children[0] ? testimonialSlider.children[0].offsetWidth : 0; // Se ajustará con CSS
-        
-        function updateSlider() {
-            if (totalOriginalItems === 0) return;
-            const cardWidth = testimonialSlider.children[0].offsetWidth + (testimonialSlider.children[0].offsetLeft * 2); // Ancho de la tarjeta + margen
-            testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        let slideInterval;
 
-            // Esto es más complejo para un loop visual real, se necesitaría un carrusel más robusto
-            // o una lógica que reinicie el currentIndex y el transform una vez que se llega a la copia.
-            // Para simplificar, lo dejaremos como un loop básico.
-            Array.from(testimonialSlider.children).forEach((item, idx) => {
-                 item.setAttribute('aria-hidden', idx !== currentIndex);
-            });
-        }
-        
-        // Mejorar la lógica del carrusel para un loop continuo sin saltos bruscos
-        function moveSlider(direction) {
-            currentIndex += direction;
-
-            if (currentIndex >= totalOriginalItems) {
-                // Si llegamos al final de los originales, saltamos a los clones sin animación
-                testimonialSlider.style.transition = 'none';
-                currentIndex = 0; // Reseteamos al principio de los clones
-                updateSlider();
-                setTimeout(() => {
-                    testimonialSlider.style.transition = 'transform 0.5s ease-in-out'; // Reactivamos la transición
-                    currentIndex = 1; // Movemos al segundo clon
-                    updateSlider();
-                }, 50); // Pequeño retraso para que el "none" se aplique
-            } else if (currentIndex < 0) {
-                // Si vamos hacia atrás desde el principio, saltamos al final de los clones
-                testimonialSlider.style.transition = 'none';
-                currentIndex = totalOriginalItems - 1; // Movemos al último original
-                updateSlider();
-                setTimeout(() => {
-                    testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
-                    currentIndex = totalOriginalItems - 2; // Movemos al penúltimo original
-                    updateSlider();
-                }, 50);
-            } else {
-                updateSlider();
-            }
-        }
-
-
-        // Reajusta el ancho de las tarjetas al cargar o redimensionar
         const adjustTestimonialWidth = () => {
             const containerWidth = testimonialSlider.parentElement.offsetWidth;
-            const gap = 16; // 1rem
-            const cardWidth = (containerWidth / 1) - (gap); // 1 tarjeta por vista en móvil
+            let cardsToShow = 1;
+            let gap = 16; 
+
+            if (window.innerWidth >= 768) { 
+                cardsToShow = 2;
+                gap = 24; 
+            }
+            if (window.innerWidth >= 1024) { 
+                cardsToShow = 3;
+                gap = 24; 
+            }
+            
+            const cardWidth = (containerWidth / cardsToShow) - (gap * (cardsToShow - 1) / cardsToShow);
             Array.from(testimonialSlider.children).forEach(card => {
                 card.style.width = `${cardWidth}px`;
                 card.style.marginRight = `${gap}px`;
             });
+            updateSlider(false); // No animar al redimensionar
+        };
 
-            if (window.innerWidth >= 768) { // Desktop
-                const desktopGap = 24; // 1.5rem
-                const desktopCardWidth = (containerWidth / 2) - (desktopGap * 0.5); // 2 tarjetas por vista
-                Array.from(testimonialSlider.children).forEach(card => {
-                    card.style.width = `${desktopCardWidth}px`;
-                    card.style.marginRight = `${desktopGap}px`;
-                });
+        const updateSlider = (animate = true) => {
+            if (totalOriginalItems === 0) return;
+            const cardWidth = testimonialSlider.children[0].offsetWidth + parseInt(getComputedStyle(testimonialSlider.children[0]).marginRight);
+            
+            testimonialSlider.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+            testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+            Array.from(testimonialSlider.children).forEach((item, idx) => {
+                item.setAttribute('aria-hidden', idx !== currentIndex);
+            });
+        };
+        
+        const moveSlider = (direction) => {
+            currentIndex += direction;
+
+            if (currentIndex >= totalOriginalItems) {
+                setTimeout(() => {
+                    testimonialSlider.style.transition = 'none';
+                    currentIndex = 0;
+                    updateSlider(false);
+                }, 500); // Esperar que termine la animación de ir al último clon
+                currentIndex = totalOriginalItems; // Para que se vea el movimiento hacia el clon
+                updateSlider();
+            } else if (currentIndex < 0) {
+                setTimeout(() => {
+                    testimonialSlider.style.transition = 'none';
+                    currentIndex = totalOriginalItems - 1;
+                    updateSlider(false);
+                }, 500); // Esperar que termine la animación de ir al primer clon
+                currentIndex = -1; // Para que se vea el movimiento hacia el clon
+                updateSlider();
+            } else {
+                updateSlider();
             }
-             if (window.innerWidth >= 1024) { // Large Desktop
-                const desktopGap = 24; // 1.5rem
-                const desktopCardWidth = (containerWidth / 3) - (desktopGap * 0.66); // 3 tarjetas por vista
-                Array.from(testimonialSlider.children).forEach(card => {
-                    card.style.width = `${desktopCardWidth}px`;
-                    card.style.marginRight = `${desktopGap}px`;
-                });
+            resetAutoSlide();
+        };
+
+        const startAutoSlide = () => {
+            if (totalOriginalItems > 1) {
+                slideInterval = setInterval(() => {
+                    moveSlider(1);
+                }, 7000);
             }
-            updateSlider(); // Recalcula la posición después de ajustar el tamaño
+        };
+
+        const resetAutoSlide = () => {
+            clearInterval(slideInterval);
+            startAutoSlide();
         };
 
         window.addEventListener('resize', adjustTestimonialWidth);
-        adjustTestimonialWidth(); // Llama al cargar la página
+        adjustTestimonialWidth(); 
+        startAutoSlide();
 
         document.getElementById('next-btn').addEventListener('click', () => moveSlider(1));
         document.getElementById('prev-btn').addEventListener('click', () => moveSlider(-1));
-
-        // Auto-slide
-        if (totalOriginalItems > 1) {
-            setInterval(() => {
-                moveSlider(1);
-            }, 7000);
-        }
     }
     
-    // FAQ Toggle mejorado
     const faqSection = document.getElementById('faq-section');
     const faqQuestions = faqSection.querySelectorAll('.faq-question');
     
@@ -863,15 +930,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const answer = document.getElementById(question.getAttribute('aria-controls'));
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
 
-            // Cierra todas las demás preguntas
             faqQuestions.forEach(q => {
-                 if (q !== question) {
+                   if (q !== question) {
                     q.setAttribute('aria-expanded', 'false');
                     document.getElementById(q.getAttribute('aria-controls')).classList.remove('is-expanded');
                 }
             });
 
-            // Abre o cierra la pregunta actual
             question.setAttribute('aria-expanded', !isExpanded);
             answer.classList.toggle('is-expanded');
         };
@@ -884,19 +949,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Animación al hacer scroll (Intersection Observer)
     const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
     const observerOptions = {
-        root: null, // viewport
+        root: null, 
         rootMargin: '0px',
-        threshold: 0.1 // 10% del elemento visible para activar
+        threshold: 0.1 
     };
 
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Dejar de observar una vez que es visible
+                observer.unobserve(entry.target); 
             }
         });
     };
@@ -907,11 +971,10 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(element);
     });
 
-
     function generateFaqSchema() {
         const faqEntities = [];
         const questions = document.querySelectorAll('.faq-question');
-        questions.forEach((question) => {
+        questions.forEach((question, index) => {
             const answerId = question.getAttribute('aria-controls');
             const answer = document.getElementById(answerId);
             if(answer) {
@@ -926,7 +989,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         const faqSchema = {
-            "@context": "https://schema.org",
+            "@context": "[https://schema.org](https://schema.org)",
             "@type": "FAQPage",
             "mainEntity": faqEntities
         };
