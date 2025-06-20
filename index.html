@@ -1,16 +1,3 @@
-<!-- Chosen Palette: Neutros Cálidos y Ámbar (reforzado) -->
-<!-- Application Structure Plan: La SPA mantiene una estructura de aterrizaje (landing page) con secciones temáticas claras: Hero, Colaboraciones, El Reto, La Transformación, Mi Método, Casos de Éxito, Recursos, Conversemos y FAQ, y Footer. Esta estructura lineal ha sido elegida para guiar al usuario a través de la narrativa de la mentoría de Esteban Zárate, desde la identificación del problema (El Reto) hasta la solución y el impacto (La Transformación, Mi Método, Éxito). La navegación anclada permite saltar a cualquier sección, facilitando la exploración. La interactividad se centra en el carrusel de testimonios y las preguntas frecuentes para una experiencia controlada y enfocada. -->
-<!-- Visualization & Content Choices:
-- Hero Section: Report Info (Esteban Zárate, Propuesta de Valor) -> Goal (Captar atención, comunicar beneficio) -> Viz/Presentation Method (Gran titular, párrafo conciso, CTA, imagen ilustrativa simulada) -> Interaction (Scroll para más info, click en CTA) -> Justification (Foco en el mensaje principal y la personalidad de la marca desde el inicio) -> Library/Method (HTML/CSS, placeholder de imagen).
-- Challenge Section: Report Info (Problemas comunes de líderes) -> Goal (Identificar con el usuario, validar sus puntos de dolor) -> Viz/Presentation Method (Tarjetas con iconos ilustrativos simulados y descripciones) -> Interaction (Hover en tarjetas para micro-animaciones) -> Justification (Presentación digerible de problemas, diseño asimétrico para interés visual) -> Library/Method (HTML/CSS, placeholders).
-- Transformation Section: Report Info (Resultados de la mentoría) -> Goal (Presentar soluciones y beneficios tangibles) -> Viz/Presentation Method (Tarjetas con iconos ilustrativos simulados y descripciones de beneficios) -> Interaction (Hover en tarjetas para micro-animaciones) -> Justification (Contraste con la sección de desafíos, enfoque en resultados) -> Library/Method (HTML/CSS, placeholders).
-- Method Section: Report Info (Proceso de mentoría EAI) -> Goal (Explicar la metodología de forma clara) -> Viz/Presentation Method (Línea de tiempo con pasos clave) -> Interaction (Hover en ítems de línea de tiempo) -> Justification (Narrativa secuencial clara, simula un flujo de trabajo) -> Library/Method (HTML/CSS).
-- Testimonials Section: Report Info (Opiniones de clientes) -> Goal (Generar credibilidad y confianza) -> Viz/Presentation Method (Carrusel de testimonios con fotos ilustrativas simuladas y citas) -> Interaction (Navegación con flechas, auto-play) -> Justification (Prueba social dinámica y engaging) -> Library/Method (HTML/CSS, JavaScript para carrusel).
-- Resources Section: Report Info (Guía gratuita) -> Goal (Lead generation, ofrecer valor) -> Viz/Presentation Method (Tarjeta destacada con imagen ilustrativa simulada de la guía y CTA) -> Interaction (Click en CTA) -> Justification (Claro llamado a la acción para un recurso valioso) -> Library/Method (HTML/CSS, placeholder de imagen).
-- FAQ Section: Report Info (Preguntas comunes) -> Goal (Responder objeciones, proveer información adicional) -> Viz/Presentation Method (Acordeón expandible) -> Interaction (Click para expandir/colapsar) -> Justification (Gestión eficiente del espacio, enfoque en la experiencia del usuario) -> Library/Method (HTML/CSS, JavaScript para acordeón, Schema Markup para SEO).
-- General: Animaciones al hacer scroll para una experiencia de usuario más dinámica y atractiva, contribuyendo al "wow factor".
--->
-<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,7 +38,7 @@
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
-        .gradient-text {
+       .gradient-text {
             background: linear-gradient(90deg, #F59E0B, #D97706);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -59,7 +46,7 @@
             text-fill-color: transparent;
         }
 
-        .hero-image-wrapper {
+       .hero-image-wrapper {
             position: relative;
             width: 100%;
             height: 450px;
@@ -69,7 +56,7 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
             border: 4px solid #FCD34D;
         }
-        .hero-image-wrapper img {
+       .hero-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -77,29 +64,29 @@
             filter: saturate(1.1);
         }
         @media (min-width: 768px) {
-            .hero-image-wrapper {
+           .hero-image-wrapper {
                 height: 550px;
                 margin-left: 2rem;
                 transform: rotate(1deg);
             }
-            .hero-image-wrapper img {
+           .hero-image-wrapper img {
                 transform: rotate(-1deg) scale(1.05);
             }
         }
 
-        .logo-grid img {
+       .logo-grid img {
             max-height: 100px;
             filter: grayscale(90%);
             opacity: 0.6;
             transition: all 0.4s ease-in-out;
         }
-        .logo-grid img:hover {
+       .logo-grid img:hover {
             filter: none;
             opacity: 1;
             transform: scale(1.1) rotate(-2deg);
         }
 
-        .challenge-card {
+       .challenge-card {
             position: relative;
             overflow: hidden;
             border: 1px solid #FCD34D;
@@ -108,12 +95,12 @@
             transform: rotate(0deg);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
-        .challenge-card:hover {
+       .challenge-card:hover {
             transform: translateY(-10px) rotate(-0.5deg);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
             border-color: #D97706;
         }
-        .challenge-icon-container {
+       .challenge-icon-container {
             width: 64px;
             height: 64px;
             border-radius: 50%;
@@ -124,23 +111,23 @@
             margin: 0 auto 1rem;
             border: 2px solid #FCD34D;
         }
-        .challenge-icon-container span {
+       .challenge-icon-container span {
             font-size: 2.5rem; /* Larger icon size */
             color: #D97706;
         }
         @media (min-width: 768px) {
-            .challenge-grid-desktop > div:nth-child(even) {
+           .challenge-grid-desktop > div:nth-child(even) {
                 margin-top: 3rem;
             }
         }
 
-        .transform-item-icon {
+       .transform-item-icon {
             transition: transform 0.3s ease;
         }
-        .transform-item:hover .transform-item-icon {
+       .transform-item:hover.transform-item-icon {
             transform: scale(1.15) rotate(7deg);
         }
-        .transform-icon-container {
+       .transform-icon-container {
             width: 80px;
             height: 80px;
             border-radius: 50%;
@@ -151,17 +138,17 @@
             margin: 0 auto 1rem;
             border: 3px solid #FCD34D;
         }
-        .transform-icon-container span {
+       .transform-icon-container span {
             font-size: 3rem;
             color: #D97706;
         }
 
-        .timeline-container {
+       .timeline-container {
             position: relative;
             padding-left: 2rem;
             border-left: 3px solid #F59E0B;
         }
-        .timeline-item-custom {
+       .timeline-item-custom {
             position: relative;
             margin-bottom: 3.5rem;
             padding: 1.5rem 0 1.5rem 2.5rem;
@@ -171,12 +158,12 @@
             transition: all 0.3s ease;
             border: 1px solid #E5E7EB;
         }
-        .timeline-item-custom:hover {
+       .timeline-item-custom:hover {
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
             transform: translateX(8px);
             border-color: #F59E0B;
         }
-        .timeline-item-custom::before {
+       .timeline-item-custom::before {
             content: '';
             position: absolute;
             left: -14px;
@@ -190,17 +177,17 @@
             z-index: 1;
             transition: all 0.3s ease;
         }
-        .timeline-item-custom:hover::before {
+       .timeline-item-custom:hover::before {
             background: #B45309;
             transform: translateY(-50%) scale(1.15);
         }
         @media (min-width: 768px) {
-            .timeline-container {
+           .timeline-container {
                 border-left: none;
                 position: relative;
                 width: 100%;
             }
-            .timeline-container::before {
+           .timeline-container::before {
                 content: '';
                 position: absolute;
                 left: 50%;
@@ -211,37 +198,37 @@
                 transform: translateX(-50%);
                 z-index: 0;
             }
-            .timeline-item-custom {
+           .timeline-item-custom {
                 width: 48%;
                 padding: 2rem;
             }
-            .timeline-item-custom:nth-child(odd) {
+           .timeline-item-custom:nth-child(odd) {
                 margin-right: 52%;
                 text-align: right;
             }
-            .timeline-item-custom:nth-child(even) {
+           .timeline-item-custom:nth-child(even) {
                 margin-left: 52%;
                 text-align: left;
             }
-            .timeline-item-custom::before {
+           .timeline-item-custom::before {
                 left: auto;
                 right: -16px;
                 background: #D97706;
                 border: 5px solid #FDFCEF;
             }
-            .timeline-item-custom:nth-child(even)::before {
+           .timeline-item-custom:nth-child(even)::before {
                 left: -16px;
                 right: auto;
             }
         }
 
-        .testimonial-card-custom {
+       .testimonial-card-custom {
             flex-shrink: 0;
             width: 100%;
             padding: 1rem;
             box-sizing: border-box;
         }
-        .testimonial-inner-card {
+       .testimonial-inner-card {
             background-color: #FFFFFF;
             padding: 2.5rem;
             border-radius: 1.5rem;
@@ -249,12 +236,12 @@
             border: 1px solid #E5E7EB;
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        .testimonial-inner-card:hover {
+       .testimonial-inner-card:hover {
             transform: translateY(-8px) scale(1.005);
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
             border-color: #D97706;
         }
-        .testimonial-image-clip {
+       .testimonial-image-clip {
             position: relative;
             width: 112px;
             height: 112px;
@@ -264,29 +251,29 @@
             border: 5px solid #F59E0B;
             box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
         }
-        .testimonial-image-clip img {
+       .testimonial-image-clip img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .testimonial-quote {
+       .testimonial-quote {
             font-size: 1.35rem;
             font-style: italic;
             color: #4B5563;
             line-height: 1.6;
         }
-        .testimonial-author {
+       .testimonial-author {
             font-weight: bold;
             color: #D97706;
             margin-top: 2rem;
             font-size: 1.125rem;
         }
-        .testimonial-title {
+       .testimonial-title {
             color: #6B7280;
             font-size: 0.95rem;
         }
 
-        .carousel-button {
+       .carousel-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -298,7 +285,7 @@
             z-index: 20;
             border: 1px solid #E5E7EB;
         }
-        .carousel-button:hover {
+       .carousel-button:hover {
             background-color: #FFFFFF;
             transform: translateY(-50%) scale(1.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -307,7 +294,7 @@
         #prev-btn { left: 1.5rem; }
         #next-btn { right: 1.5rem; }
 
-        .resource-section-card {
+       .resource-section-card {
             background-color: #FFFFFF;
             padding: 2.5rem;
             border-radius: 2rem;
@@ -319,32 +306,32 @@
             text-align: center;
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        .resource-section-card:hover {
+       .resource-section-card:hover {
             transform: translateY(-5px) scale(1.01);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
-        .resource-section-card img {
+       .resource-section-card img {
             transform: rotate(-2deg);
             box-shadow: 12px 12px 0px rgba(245, 158, 11, 0.2);
             transition: transform 0.3s ease;
             border-radius: 0.75rem;
         }
-        .resource-section-card img:hover {
+       .resource-section-card img:hover {
             transform: rotate(-4deg) scale(1.03);
             box-shadow: 15px 15px 0px rgba(245, 158, 11, 0.3);
         }
         @media (min-width: 768px) {
-            .resource-section-card {
+           .resource-section-card {
                 flex-direction: row;
                 text-align: left;
                 padding: 4rem;
             }
-            .resource-section-card img {
+           .resource-section-card img {
                 margin-right: 3rem;
             }
         }
 
-        .faq-item-custom {
+       .faq-item-custom {
             background-color: rgba(217, 119, 6, 0.25);
             padding: 1.75rem;
             border-radius: 1rem;
@@ -354,11 +341,11 @@
             transition: all 0.3s ease;
             color: #FEF3C7;
         }
-        .faq-item-custom:hover {
+       .faq-item-custom:hover {
             background-color: rgba(217, 119, 6, 0.4);
             transform: translateX(8px);
         }
-        .faq-question {
+       .faq-question {
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -367,18 +354,18 @@
             color: #FFFFFF;
             font-size: 1.125rem;
         }
-        .faq-question::after {
+       .faq-question::after {
             content: '+';
             font-size: 1.75rem;
             font-weight: bold;
             color: #FFFFFF;
             transition: transform 0.3s ease;
         }
-        .faq-question[aria-expanded="true"]::after {
+       .faq-question[aria-expanded="true"]::after {
             content: '−';
             transform: rotate(0deg);
         }
-        .faq-answer-content {
+       .faq-answer-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
@@ -387,12 +374,12 @@
             padding-top: 0.75rem;
             line-height: 1.6;
         }
-        .faq-answer-content.is-expanded {
+       .faq-answer-content.is-expanded {
             max-height: 300px;
             opacity: 1;
         }
 
-        .cta-button {
+       .cta-button {
             background-color: #D97706;
             color: #FFFFFF;
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -400,46 +387,46 @@
             border-radius: 9999px;
             font-weight: 700;
         }
-        .cta-button:hover {
+       .cta-button:hover {
             transform: translateY(-4px) scale(1.03);
             background-color: #B45309;
             box-shadow: 0 10px 30px rgba(217, 119, 6, 0.5);
         }
-        .cta-button-secondary {
+       .cta-button-secondary {
             background-color: #FFFFFF;
             color: #B45309;
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
             border-radius: 9999px;
             font-weight: 700;
         }
-        .cta-button-secondary:hover {
+       .cta-button-secondary:hover {
             background-color: #FFFBEB;
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
-        .linkedin-original-color {
+       .linkedin-original-color {
             color: #0077b5;
         }
-        .linkedin-original-color:hover {
+       .linkedin-original-color:hover {
             opacity: 0.8;
             transform: scale(1.18);
         }
-        .animate-on-scroll {
+       .animate-on-scroll {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
-        .animate-on-scroll.is-visible {
+       .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .animate-on-scroll.left {
+       .animate-on-scroll.left {
             transform: translateX(-40px);
         }
-        .animate-on-scroll.right {
+       .animate-on-scroll.right {
             transform: translateX(40px);
         }
-        .animate-on-scroll.left.is-visible, .animate-on-scroll.right.is-visible {
+       .animate-on-scroll.left.is-visible,.animate-on-scroll.right.is-visible {
             transform: translateX(0);
         }
     </style>
@@ -456,15 +443,12 @@
         "@type": "Person",
         "name": "Esteban Zárate",
         "jobTitle": "Mentor de Negocios y Coach Ejecutivo",
-        "knowsAbout": ["Mentoría de negocios", "Coaching ejecutivo", "Liderazgo", "Estrategia empresarial", "Crecimiento de negocios", "Transformación digital", "Productividad"],
+        "knowsAbout":,
         "url": "[https://www.innovatur.cl/#metodo](https://www.innovatur.cl/#metodo)",
         "image": "[https://placehold.co/400x400/FFFBEB/D97706?text=Esteban+Zarate+Ilustracion](https://placehold.co/400x400/FFFBEB/D97706?text=Esteban+Zarate+Ilustracion)"
       },
       "serviceType": "Mentoría de Negocios",
-      "areaServed": [
-        { "@type": "Country", "name": "Chile" },
-        { "@type": "AdministrativeArea", "name": "LATAM" }
-      ],
+      "areaServed":,
       "potentialAction": {
         "@type": "CommunicateAction",
         "target": {
@@ -757,7 +741,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuButton.addEventListener('click', () => {
         const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenuButton.setAttribute('aria-expanded',!isExpanded);
         mobileMenu.classList.toggle('hidden');
     });
 
@@ -771,7 +755,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            if (mobileMenu &&!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
             }
@@ -779,45 +763,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
     const appData = {
-        testimonials: [
-            {
-                quote: 'Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables, logrando resultados extraordinarios en tiempo récord.',
-                author: 'Gisella Lira',
-                title: 'Fundadora de Pocas Copas y Winehunter',
-                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Gisella](https://placehold.co/100x100/FDFCEF/D97706?text=Gisella)'
-            },
-            {
-                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades únicas, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio de forma exponencial.',
-                author: 'Daniela Salvador',
-                title: 'Directora Revista Canal HORECA',
-                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Daniela](https://placehold.co/100x100/FDFCEF/D97706?text=Daniela)'
-            },
-               {
-                quote: 'Trabajar con Esteban fue un punto de inflexión decisivo para mi proyecto. Su claridad estratégica y enfoque práctico me permitieron pasar de la idea a la acción con confianza, logrando un crecimiento que sinceramente no creía posible. Su guía es invaluable y ha sido clave en mi desarrollo como líder.',
-                author: 'Juan Pérez',
-                title: 'CEO, Startup Tech Solutions',
-                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Juan](https://placehold.co/100x100/FDFCEF/D97706?text=Juan)'
-            },
-            {
-                quote: 'La mentoría con Esteban superó todas mis expectativas. Su capacidad para identificar los puntos ciegos y ofrecer soluciones creativas ha sido fundamental para escalar mi negocio y consolidar mi posición en el mercado.',
-                author: 'Ana Gómez',
-                title: 'Gerente General, Consultora Estratégica',
-                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Ana](https://placehold.co/100x100/FDFCEF/D97706?text=Ana)'
-            },
-            {
-                quote: 'Gracias a la visión y el acompañamiento de Esteban, pude redefinir la estrategia de mi empresa y optimizar procesos que antes generaban cuellos de botella. El impacto en la productividad y en el clima laboral ha sido increíblemente positivo.',
-                author: 'Carlos Ruiz',
-                title: 'Director de Operaciones, Cadena Retail',
-                image: '[https://placehold.co/100x100/FDFCEF/D97706?text=Carlos](https://placehold.co/100x100/FDFCEF/D97706?text=Carlos)'
-            }
-        ]
+        testimonials:
     };
     
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
         const totalOriginalItems = appData.testimonials.length;
         // Creamos un array con los testimonios originales y una copia para un bucle más suave
-        const allTestimonials = [...appData.testimonials, ...appData.testimonials];
+        const allTestimonials =;
 
         allTestimonials.forEach((testimonial, index) => {
             const card = document.createElement('div');
@@ -866,13 +819,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const updateSlider = (animate = true) => {
             if (totalOriginalItems === 0) return;
-            const cardWidth = testimonialSlider.children[0].offsetWidth + parseInt(getComputedStyle(testimonialSlider.children[0]).marginRight);
+            const cardWidth = testimonialSlider.children.offsetWidth + parseInt(getComputedStyle(testimonialSlider.children).marginRight);
             
-            testimonialSlider.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+            testimonialSlider.style.transition = animate? 'transform 0.5s ease-in-out' : 'none';
             testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 
             Array.from(testimonialSlider.children).forEach((item, idx) => {
-                item.setAttribute('aria-hidden', idx !== currentIndex);
+                item.setAttribute('aria-hidden', idx!== currentIndex);
             });
         };
         
@@ -931,18 +884,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const isExpanded = question.getAttribute('aria-expanded') === 'true';
 
             faqQuestions.forEach(q => {
-                   if (q !== question) {
+                   if (q!== question) {
                     q.setAttribute('aria-expanded', 'false');
                     document.getElementById(q.getAttribute('aria-controls')).classList.remove('is-expanded');
                 }
             });
 
-            question.setAttribute('aria-expanded', !isExpanded);
+            question.setAttribute('aria-expanded',!isExpanded);
             answer.classList.toggle('is-expanded');
         };
         question.addEventListener('click', clickHandler);
         question.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
+            if (event.key === 'Enter' |
+| event.key === ' ') {
                 event.preventDefault();
                 clickHandler();
             }
@@ -972,7 +926,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function generateFaqSchema() {
-        const faqEntities = [];
+        const faqEntities =;
         const questions = document.querySelectorAll('.faq-question');
         questions.forEach((question, index) => {
             const answerId = question.getAttribute('aria-controls');
