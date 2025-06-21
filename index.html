@@ -351,7 +351,6 @@
             overflow: hidden;
             border-left: 8px solid #F59E0B; /* Borde ámbar más grueso */
             transition: all 0.3s ease;
-            color: #FEF3C7; /* ámbar muy claro para texto */
         }
        .faq-item-custom:hover {
             background-color: rgba(217, 119, 6, 0.4); /* Más opacidad al hover */
@@ -382,7 +381,7 @@
             overflow: hidden;
             transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
             opacity: 0;
-            color: #FCD34D; /* ámbar claro */
+            color: #4B5563; /* Gris oscuro para mayor visibilidad */
             padding-top: 0.75rem; /* Más padding */
             line-height: 1.6; /* Mejor legibilidad */
         }
@@ -957,4 +956,46 @@ document.addEventListener('DOMContentLoaded', function () {
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target); 
             }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    function generateFaqSchema() {
+        const faqEntities = []; 
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach((question) => {
+            const answerId = question.getAttribute('aria-controls');
+            const answer = document.getElementById(answerId);
+            if(answer) {
+                faqEntities.push({
+                    "@type": "Question",
+                    "name": question.textContent.trim(),
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answer.textContent.trim()
+                    }
+                });
+            }
+        });
+        const faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqEntities
+        };
+        const schemaScript = document.getElementById('faq-schema');
+        if (schemaScript) {
+            schemaScript.textContent = JSON.stringify(faqSchema, null, 2);
         }
+    }
+    generateFaqSchema();
+
+});
+</script>
+
+</body>
+</html>
