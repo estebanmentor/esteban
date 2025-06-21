@@ -690,14 +690,37 @@
                        </p>
                    </div>
                    <div class="mt-20 relative w-full overflow-hidden">
-                       <div id="testimonial-slider" class="flex" aria-roledescription="carrusel de testimonios" aria-live="polite">
+                       <div id="testimonial-slider" class="flex justify-center"> <div class="testimonial-card-custom">
+                                <div class="testimonial-inner-card text-center">
+                                    <div class="testimonial-image-clip">
+                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
+                                    </div>
+                                    <blockquote class="testimonial-quote">
+                                        <p>"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
+                                    </blockquote>
+                                    <cite class="testimonial-author not-italic">Gisella Lira</cite>
+                                    <p class="testimonial-title">Fundadora de Pocas Copas y Winehunter</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-card-custom">
+                                <div class="testimonial-inner-card text-center">
+                                    <div class="testimonial-image-clip">
+                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
+                                    </div>
+                                    <blockquote class="testimonial-quote">
+                                        <p>"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
+                                    </blockquote>
+                                    <cite class="testimonial-author not-italic">Daniela Salvador</cite>
+                                    <p class="testimonial-title">Directora Revista Canal HORECA</p>
+                                </div>
+                            </div>
                         </div>
-                       <button id="prev-btn" class="carousel-button left-6" aria-label="Testimonio anterior">
-                           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                       </button>
-                       <button id="next-btn" class="carousel-button right-6" aria-label="Siguiente testimonio">
-                           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                       </button>
+                        <button id="prev-btn" class="carousel-button left-6 hidden" aria-label="Testimonio anterior">
+                            <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="next-btn" class="carousel-button right-6 hidden" aria-label="Siguiente testimonio">
+                            <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
                    </div>
             </div>
         </section>
@@ -790,128 +813,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    const appData = {
-        testimonials: [
-            {
-                quote: 'Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables.',
-                author: 'Gisella Lira',
-                title: 'Fundadora de Pocas Copas y Winehunter',
-                image: 'img/Gisella-7.jpg'
-            },
-            {
-                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio.',
-                author: 'Daniela Salvador',
-                title: 'Directora Revista Canal HORECA',
-                image: 'img/daniela-salvador.jpg'
-            },
-            {
-                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio.',
-                author: 'Daniela Salvador',
-                title: 'Directora Revista Canal HORECA',
-                image: 'img/daniela-salvador.jpg'
-            }
-        ]
-    };
+    // Eliminamos el array appData.testimonials ya que los testimonios ahora están hardcodeados
+    // y no necesitamos la lógica de carrusel dinámico.
     
+    // Modificamos el script para que no intente manipular el carrusel dinámicamente
+    // ya que ahora está fijo en el HTML.
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
-        const totalOriginalItems = appData.testimonials.length;
-        const allTestimonials = [...appData.testimonials]; 
+        // Desactivamos completamente la lógica del carrusel si no es necesaria
+        // Ocultamos los botones de navegación mediante CSS para mayor seguridad,
+        // aunque ya están con `hidden` en el HTML.
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        if (prevBtn) prevBtn.classList.add('hidden');
+        if (nextBtn) nextBtn.classList.add('hidden');
 
-        // Clear existing children to prevent duplicates on re-render/debugging
-        testimonialSlider.innerHTML = ''; 
-
-        allTestimonials.forEach((testimonial, index) => {
-            const card = document.createElement('div');
-            card.className = 'testimonial-card-custom';
-            card.setAttribute('role', 'group');
-            card.setAttribute('aria-roledescription', 'diapositiva de testimonio');
-            card.setAttribute('aria-label', `Testimonio ${index + 1} de ${totalOriginalItems}`); 
-            card.innerHTML = `
-                <div class="testimonial-inner-card text-center">
-                    <div class="testimonial-image-clip">
-                        <img src="${testimonial.image}" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=${testimonial.author.charAt(0)}';" alt="Ilustración de perfil de ${testimonial.author}">
-                    </div>
-                    <blockquote class="testimonial-quote">
-                        <p>"${testimonial.quote}"</p>
-                    </blockquote>
-                    <cite class="testimonial-author not-italic">${testimonial.author}</cite>
-                    <p class="testimonial-title">${testimonial.title}</p>
-                </div>`;
-            testimonialSlider.appendChild(card);
-        });
-
-        let currentIndex = 0;
-        let slideInterval;
-
-        const adjustTestimonialWidth = () => {
-            const containerWidth = testimonialSlider.parentElement.offsetWidth;
-            let cardsToShow = 1;
-            let gap = 16; 
-
-            if (window.innerWidth >= 768) { 
-                cardsToShow = 2;
-                gap = 24; 
-            }
-            if (window.innerWidth >= 1024) { 
-                cardsToShow = 3;
-                gap = 24; 
-            }
-            
-            const cardWidth = (containerWidth - (gap * (cardsToShow - 1))) / cardsToShow;
-            Array.from(testimonialSlider.children).forEach(card => {
-                card.style.width = `${cardWidth}px`;
-                card.style.marginRight = `${gap}px`;
-            });
-            updateSlider(false); 
-        };
-
-        const updateSlider = (animate = true) => {
-            if (totalOriginalItems === 0) return;
-            const firstCard = testimonialSlider.children[0];
-            if (!firstCard) return; 
-            const cardWidthWithMargin = firstCard.offsetWidth + parseInt(getComputedStyle(firstCard).marginRight);
-            
-            testimonialSlider.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
-            testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidthWithMargin}px)`;
-
-            Array.from(testimonialSlider.children).forEach((item, idx) => {
-                const isVisible = (idx >= currentIndex && idx < currentIndex + Math.floor(testimonialSlider.parentElement.offsetWidth / cardWidthWithMargin));
-                item.setAttribute('aria-hidden', !isVisible);
-            });
-        };
-        
-        const moveSlider = (direction) => {
-            currentIndex += direction;
-
-            if (currentIndex >= totalOriginalItems) {
-                currentIndex = 0; 
-            } else if (currentIndex < 0) {
-                currentIndex = totalOriginalItems - 1; 
-            }
-            updateSlider();
-            resetAutoSlide();
-        };
-
-        const startAutoSlide = () => {
-            if (totalOriginalItems > 1) {
-                slideInterval = setInterval(() => {
-                    moveSlider(1);
-                }, 7000);
-            }
-        };
-
-        const resetAutoSlide = () => {
-            clearInterval(slideInterval);
-            startAutoSlide();
-        };
-
-        window.addEventListener('resize', adjustTestimonialWidth);
-        adjustTestimonialWidth(); 
-        startAutoSlide();
-
-        document.getElementById('next-btn').addEventListener('click', () => moveSlider(1));
-        document.getElementById('prev-btn').addEventListener('click', () => moveSlider(-1));
+        // Para asegurar que se muestren correctamente dos columnas en desktop,
+        // ajustamos los estilos del contenedor del slider si fuera necesario,
+        // aunque Tailwind CSS ya debería manejarlo con un `grid` o `flex` bien configurado.
+        // Aquí no se requiere JavaScript adicional para el diseño fijo.
     }
     
     // FAQ Toggle mejorado
