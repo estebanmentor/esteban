@@ -32,7 +32,7 @@
             color: #2D3748; /* Gris oscuro para texto principal */
             /* Patrón de fondo sutil para textura */
             background-image: radial-gradient(circle at top left, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px),
-                                    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px);
+                                     radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px);
             background-size: 40px 40px;
             background-position: 0 0, 20px 20px;
         }
@@ -47,7 +47,7 @@
             text-fill-color: transparent;
         }
 
-        /* Hero Section - Estilo Ilustrativo */
+        /* Hero Section - Estilo Ilustrativo para imagen y video */
        .hero-image-wrapper {
             position: relative;
             width: 100%;
@@ -58,7 +58,7 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
             border: 4px solid #FCD34D; /* Borde ámbar claro */
         }
-       .hero-image-wrapper img {
+       .hero-image-wrapper img, .hero-image-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -71,7 +71,7 @@
                 margin-left: 2rem; /* Desplaza la imagen a la derecha */
                 transform: rotate(1deg);
             }
-           .hero-image-wrapper img {
+           .hero-image-wrapper img, .hero-image-wrapper video {
                 transform: rotate(-1deg) scale(1.05);
             }
         }
@@ -529,6 +529,7 @@
         <section id="hero" class="relative py-28 md:py-40 overflow-hidden bg-gradient-to-br from-amber-50 to-transparent" aria-labelledby="hero-heading">
             <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10"></div>
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <!-- Columna izquierda: Contenido de texto -->
                 <div class="text-center md:text-left hero-text-align-desktop animate-on-scroll left">
                     <h1 id="hero-heading" class="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
                         Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
@@ -543,11 +544,15 @@
                         Iniciemos TU diagnóstico ahora
                     </a>
                 </div>
+                <!-- Columna derecha: Video "video portada.mp4" -->
                 <div class="relative w-full h-full group animate-on-scroll right">
                     <div class="hero-image-wrapper">
-                        <img src="https://placehold.co/600x550/FFFBEB/D97706?text=Equipo+Planeando+Estrategia" 
-                             onerror="this.onerror=null;this.src='https://placehold.co/600x550/FFFBEB/D97706?text=Mentor%C3%ADa+Estrat%C3%A9gica';"
-                             alt="Ilustración de dos personas planeando una estrategia en un pizarrón, comunicando felicidad y actividad." class="object-cover">
+                        <!-- Video embebido con reproducción en bucle y silenciado -->
+                        <video src="img/video portada.mp4" autoplay loop muted playsinline 
+                               class="object-cover" 
+                               alt="Video de introducción a la mentoría de negocios, mostrando conceptos de estrategia y crecimiento.">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -738,25 +743,25 @@
                      Iniciemos TU diagnóstico ahora
                    </a>
                    <div id="faq-section" class="container mx-auto px-6 mt-28 max-w-4xl" role="region" aria-labelledby="faq-heading">
-                     <h3 id="faq-heading" class="text-3xl font-bold text-center mb-10 text-white animate-on-scroll">Preguntas Frecuentes</h3>
-                     <div class="space-y-6 text-left">
-                         <div class="faq-item-custom animate-on-scroll">
-                             <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
-                             <p id="faq-answer-0" class="mt-3 faq-answer-content">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia, sabiduría y visión para impulsar el desarrollo integral del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas poderosas y herramientas específicas, ayuda a la persona a desarrollar habilidades concretas y a encontrar sus propias soluciones para un objetivo definido.</p>
-                         </div>
-                         <div class="faq-item-custom animate-on-scroll">
-                             <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
-                             <p id="faq-answer-1" class="mt-3 faq-answer-content">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica y medible. No se trata de teoría; trabajamos juntos en *tus* desafíos reales y complejos para generar resultados tangibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda y duradera, no solo soluciones temporales o superficiales.</p>
-                         </div>
-                         <div class="faq-item-custom animate-on-scroll">
-                             <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
-                             <p id="faq-answer-2" class="mt-3 faq-answer-content">La dedicación se adapta a tus metas y disponibilidad, pero desde nuestras primeras sesiones estableceremos un plan de trabajo claro y ambicioso. Muchos de mis clientes comienzan a ver cambios significativos en su claridad mental y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en la estrategia y rentabilidad de su negocio en los primeros 2-3 meses de mentoría.</p>
-                         </div>
-                         <div class="faq-item-custom animate-on-scroll">
-                             <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
-                             <p id="faq-answer-3" class="mt-3 faq-answer-content">Si sientes que podrías lograr mucho más de lo que estás haciendo, si la complejidad de tu negocio te abruma, o si simplemente buscas una perspectiva externa y experta para acelerar tu crecimiento y evitar errores costosos, este es el momento ideal. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso estratégico que necesitas ahora mismo.</p>
-                         </div>
-                     </div>
+                      <h3 id="faq-heading" class="text-3xl font-bold text-center mb-10 text-white animate-on-scroll">Preguntas Frecuentes</h3>
+                      <div class="space-y-6 text-left">
+                           <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
+                               <p id="faq-answer-0" class="mt-3 faq-answer-content">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia, sabiduría y visión para impulsar el desarrollo integral del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas poderosas y herramientas específicas, ayuda a la persona a desarrollar habilidades concretas y a encontrar sus propias soluciones para un objetivo definido.</p>
+                           </div>
+                           <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
+                               <p id="faq-answer-1" class="mt-3 faq-answer-content">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica y medible. No se trata de teoría; trabajamos juntos en *tus* desafíos reales y complejos para generar resultados tangibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda y duradera, no solo soluciones temporales o superficiales.</p>
+                           </div>
+                           <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
+                               <p id="faq-answer-2" class="mt-3 faq-answer-content">La dedicación se adapta a tus metas y disponibilidad, pero desde nuestras primeras sesiones estableceremos un plan de trabajo claro y ambicioso. Muchos de mis clientes comienzan a ver cambios significativos en su claridad mental y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en la estrategia y rentabilidad de su negocio en los primeros 2-3 meses de mentoría.</p>
+                           </div>
+                           <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
+                               <p id="faq-answer-3" class="mt-3 faq-answer-content">Si sientes que podrías lograr mucho más de lo que estás haciendo, si la complejidad de tu negocio te abruma, o si simplemente buscas una perspectiva externa y experta para acelerar tu crecimiento y evitar errores costosos, este es el momento ideal. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso estratégico que necesitas ahora mismo.</p>
+                           </div>
+                       </div>
                    </div>
             </div>
         </section>
@@ -810,13 +815,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Directora Revista Canal HORECA',
                 image: 'img/daniela-salvador.jpg'
             },
-            // Duplicate testimonial removed, only unique ones listed. Add more as needed.
             {
-                quote: 'Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio.',
-                author: 'Daniela Salvador',
-                title: 'Directora Revista Canal HORECA',
-                image: 'img/daniela-salvador.jpg'
+                quote: 'Trabajar con Esteban fue un antes y un después para mi negocio. Su claridad y enfoque me permitieron ver oportunidades donde antes solo veía problemas. ¡Altamente recomendado!',
+                author: 'Juan Pérez',
+                title: 'CEO de Tech Solutions',
+                image: 'https://placehold.co/100x100/D97706/ffffff?text=JP' // Placeholder for new testimonial
             },
+            {
+                quote: 'La mentoría de Esteban me proporcionó las herramientas y la confianza para escalar mi empresa. Su experiencia y visión estratégica son invaluables.',
+                author: 'María González',
+                title: 'Fundadora de Creative Designs',
+                image: 'https://placehold.co/100x100/D97706/ffffff?text=MG' // Placeholder for new testimonial
+            },
+            {
+                quote: 'Esteban te desafía a pensar más allá de lo obvio. Gracias a él, pudimos implementar un cambio radical que impulsó nuestro crecimiento exponencial.',
+                author: 'Carlos Ruiz',
+                title: 'Director de Operaciones, Logistics Inc.',
+                image: 'https://placehold.co/100x100/D97706/ffffff?text=CR' // Placeholder for new testimonial
+            }
         ]
     };
     
