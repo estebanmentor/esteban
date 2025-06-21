@@ -233,10 +233,21 @@
         /* Testimonios - Carrusel con sombra y hover */
        .testimonial-card-custom {
             flex-shrink: 0;
-            width: 100%;
+            /* Se establece un ancho base y luego se ajusta con media queries */
+            width: 90%; /* Ancho predeterminado para móvil, ocupando más espacio */
             padding: 1rem;
             box-sizing: border-box; /* Asegura que el padding no desborde */
         }
+        @media (min-width: 768px) { /* Tablet y Desktop */
+            .testimonial-card-custom {
+                width: calc(50% - 1.5rem); /* Dos columnas con un margen de 1.5rem entre ellas */
+                margin: 0 0.75rem; /* Margen a ambos lados para el espaciado entre tarjetas */
+            }
+        }
+        @media (min-width: 1024px) { /* Desktop más grande, si se quisiera 3 columnas */
+            /* No se aplica aquí, ya que el pedido es mantener solo dos testimonios */
+        }
+
        .testimonial-inner-card {
             background-color: #FFFFFF; /* Blanco */
             padding: 2.5rem; /* Más padding */
@@ -690,7 +701,7 @@
                        </p>
                    </div>
                    <div class="mt-20 relative w-full overflow-hidden">
-                       <div id="testimonial-slider" class="flex justify-center"> <div class="testimonial-card-custom">
+                       <div id="testimonial-slider" class="flex justify-center flex-wrap"> <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-center">
                                     <div class="testimonial-image-clip">
                                         <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
@@ -813,25 +824,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    // Eliminamos el array appData.testimonials ya que los testimonios ahora están hardcodeados
-    // y no necesitamos la lógica de carrusel dinámico.
-    
-    // Modificamos el script para que no intente manipular el carrusel dinámicamente
-    // ya que ahora está fijo en el HTML.
+    // Desactivamos completamente la lógica del carrusel en JavaScript
     const testimonialSlider = document.getElementById('testimonial-slider');
     if (testimonialSlider) {
-        // Desactivamos completamente la lógica del carrusel si no es necesaria
-        // Ocultamos los botones de navegación mediante CSS para mayor seguridad,
-        // aunque ya están con `hidden` en el HTML.
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        if (prevBtn) prevBtn.classList.add('hidden');
-        if (nextBtn) nextBtn.classList.add('hidden');
-
-        // Para asegurar que se muestren correctamente dos columnas en desktop,
-        // ajustamos los estilos del contenedor del slider si fuera necesario,
-        // aunque Tailwind CSS ya debería manejarlo con un `grid` o `flex` bien configurado.
-        // Aquí no se requiere JavaScript adicional para el diseño fijo.
+        if (prevBtn) prevBtn.classList.add('hidden'); // Asegura que los botones estén ocultos
+        if (nextBtn) nextBtn.classList.add('hidden'); // Asegura que los botones estén ocultos
     }
     
     // FAQ Toggle mejorado
