@@ -15,7 +15,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Esteban Zárate - Mentor de Negocios y Emprendedores">
-    <meta name="twitter:description" content="Mentoría personalizada para fundadores y ejecutivos: transforma desafíos en crecimiento y liderazgo de alto impacto.">
+    <meta property="twitter:description" content="Mentoría personalizada para fundadores y ejecutivos: transforma desafíos en crecimiento y liderazgo de alto impacto.">
     <meta name="twitter:image" content="https://placehold.co/1200x675/FFFBEB/D97706?text=Esteban+Zarate+Mentor+Twitter+Ilustrado">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,24 +23,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue */
             scroll-behavior: smooth;
-            background-color: #FDFCEF; /* Fondo muy claro, casi blanco */
-            color: #2D3748; /* Gris oscuro para texto principal */
-            /* Patrón de fondo sutil para textura */
-            background-image: radial-gradient(circle at top left, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px),
-                               radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.05) 0.5px, transparent 0.5px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White for main text */
+            background-image: none; /* Removed subtle background pattern for stark look */
+            text-transform: uppercase; /* All text uppercase */
         }
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif; /* Modern, straight font for headings */
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue */
+            color: #FF0000; /* Red for headings */
+            text-transform: uppercase;
         }
        .gradient-text {
-            background: linear-gradient(90deg, #F59E0B, #D97706); /* Ámbar a ámbar oscuro */
+            background: linear-gradient(90deg, #FF0000, #FF3333); /* Red gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -49,99 +49,95 @@
 
         /* Colaboraciones - Logotipos con efecto sutil */
        .logo-grid img {
-            max-height: 100px; /* Logotipos un poco más grandes */
-            filter: grayscale(90%); /* Más gris */
-            opacity: 0.6; /* Menos visible */
-            transition: all 0.4s ease-in-out; /* Transición más lenta */
+            max-height: 100px;
+            filter: grayscale(100%); /* Full grayscale for starkness */
+            opacity: 0.8; /* More visible on dark background */
+            transition: all 0.4s ease-in-out;
         }
        .logo-grid img:hover {
             filter: none;
             opacity: 1;
-            transform: scale(1.1) rotate(-2deg); /* Efecto de rotación al hover */
+            transform: scale(1.1) rotate(-2deg);
         }
 
         /* El Reto - Tarjetas asimétricas y con iconos ilustrativos */
        .challenge-card {
             position: relative;
             overflow: hidden;
-            border: 1px solid #FCD34D; /* Borde ámbar claro */
-            background-color: #FFFFFF; /* Blanco */
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición más suave y pronunciada */
-            transform: rotate(0deg); /* Estado inicial sin rotación */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra más definida */
+            border: 1px solid #FF0000; /* Red border */
+            background-color: #1a1a1a; /* Dark gray for cards */
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: rotate(0deg);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2); /* Red shadow */
+            color: #FFFFFF; /* White text on cards */
         }
        .challenge-card:hover {
-            transform: translateY(-10px) rotate(-0.5deg); /* Más pronunciado, con ligera rotación */
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-            border-color: #D97706; /* ámbar oscuro */
+            transform: translateY(-10px) rotate(-0.5deg);
+            box-shadow: 0 20px 50px rgba(255, 0, 0, 0.4);
+            border-color: #FF3333; /* Darker red on hover */
         }
        .challenge-icon-container {
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background-color: #FEF3C7; /* ámbar muy claro */
+            background-color: #330000; /* Dark red background */
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            border: 2px solid #FCD34D; /* Borde ámbar claro */
+            border: 2px solid #FF0000; /* Red border */
         }
-       .challenge-icon-container svg { /* Target SVG for formal icons */
-            width: 2.5rem; /* Iconos más grandes */
+       .challenge-icon-container svg {
+            width: 2.5rem;
             height: 2.5rem;
-            color: #D97706; /* ámbar oscuro */
+            color: #FFFFFF; /* White icons */
         }
-        /* No more asymmetric margin for challenge cards on desktop */
-        /* @media (min-width: 768px) {
-           .challenge-grid-desktop > div:nth-child(even) { 
-                margin-top: 3rem; 
-            }
-        } */
 
         /* La Transformación - Iconos más grandes y con animación */
        .transform-item-icon {
             transition: transform 0.3s ease;
         }
        .transform-item:hover .transform-item-icon {
-            transform: scale(1.15) rotate(7deg); /* Gira el icono más al hover */
+            transform: scale(1.15) rotate(7deg);
         }
        .transform-icon-container {
-            width: 80px; /* Más grande */
-            height: 80px; /* Más grande */
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background-color: #FDFCEF; /* Fondo del body */
+            background-color: #000000; /* Black background */
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            border: 3px solid #FCD34D; /* Borde ámbar claro */
+            border: 3px solid #FF0000; /* Red border */
         }
-       .transform-icon-container svg { /* Target SVG for formal icons */
-            width: 3rem; /* Iconos aún más grandes */
+       .transform-icon-container svg {
+            width: 3rem;
             height: 3rem;
-            color: #D97706; /* ámbar oscuro */
+            color: #FF0000; /* Red icons */
         }
 
         /* Mi Método - Homogeneización de bloques: items siempre de ancho completo y alineados a la izquierda */
        .timeline-container {
             position: relative;
             padding-left: 2rem;
-            border-left: 3px solid #F59E0B; /* Color de la línea principal, ámbar */
+            border-left: 3px solid #FF0000; /* Red line */
         }
        .timeline-item-custom {
             position: relative;
             margin-bottom: 3.5rem;
             padding: 1.5rem 0 1.5rem 2.5rem;
-            background-color: #FFFFFF;
+            background-color: #1a1a1a; /* Dark gray for timeline items */
             border-radius: 0.75rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.1); /* Red shadow */
             transition: all 0.3s ease;
-            border: 1px solid #E5E7EB;
+            border: 1px solid #330000; /* Darker red border */
+            color: #FFFFFF; /* White text */
         }
        .timeline-item-custom:hover {
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.2);
             transform: translateX(8px);
-            border-color: #F59E0B;
+            border-color: #FF3333; /* Darker red on hover */
         }
        .timeline-item-custom::before {
             content: '';
@@ -152,20 +148,19 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #D97706;
-            border: 5px solid #FDFCEF;
+            background: #FF0000; /* Red dot */
+            border: 5px solid #000000; /* Black border for dot */
             z-index: 1;
             transition: all 0.3s ease;
         }
        .timeline-item-custom:hover::before {
-            background: #B45309;
+            background: #FF3333; /* Darker red on hover */
             transform: translateY(-50%) scale(1.15);
         }
-        /* En desktop, mantener la misma estructura de una columna para homogeneizar el ancho de los bloques */
         @media (min-width: 768px) {
            .timeline-container {
                 padding-left: 2rem;
-                border-left: 3px solid #F59E0B;
+                border-left: 3px solid #FF0000; /* Red line */
                 margin: 0 auto;
                 max-width: 800px;
             }
@@ -192,43 +187,40 @@
         /* Testimonios - Carrusel con sombra y hover */
        .testimonial-card-custom {
             flex-shrink: 0;
-            /* Se establece un ancho base y luego se ajusta con media queries */
-            width: 90%; /* Ancho predeterminado para móvil, ocupando más espacio */
+            width: 90%;
             padding: 1rem;
-            box-sizing: border-box; /* Asegura que el padding no desborde */
+            box-sizing: border-box;
         }
-        @media (min-width: 768px) { /* Tablet y Desktop */
+        @media (min-width: 768px) {
             .testimonial-card-custom {
-                width: calc(50% - 1.5rem); /* Dos columnas con un margen de 1.5rem entre ellas */
-                margin: 0 0.75rem; /* Margen a ambos lados para el espaciado entre tarjetas */
+                width: calc(50% - 1.5rem);
+                margin: 0 0.75rem;
             }
-        }
-        @media (min-width: 1024px) { /* Desktop más grande, si se quisiera 3 columnas */
-            /* No se aplica aquí, ya que el pedido es mantener solo dos testimonios */
         }
 
        .testimonial-inner-card {
-            background-color: #FFFFFF; /* Blanco */
-            padding: 2.5rem; /* Más padding */
-            border-radius: 1.5rem; /* Más redondeado */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra más definida */
-            border: 1px solid #E5E7EB; /* Borde sutil */
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición más suave */
+            background-color: #1a1a1a; /* Dark gray for testimonial cards */
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.1); /* Red shadow */
+            border: 1px solid #330000; /* Darker red border */
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: #FFFFFF; /* White text */
         }
        .testimonial-inner-card:hover {
             transform: translateY(-8px) scale(1.005);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-            border-color: #D97706; /* ámbar oscuro */
+            box-shadow: 0 25px 60px rgba(255, 0, 0, 0.2);
+            border-color: #FF3333; /* Darker red on hover */
         }
        .testimonial-image-clip {
             position: relative;
-            width: 112px; /* Más grande */
-            height: 112px; /* Más grande */
+            width: 112px;
+            height: 112px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 1.5rem; /* Centrado */
-            border: 5px solid #F59E0B; /* Borde ámbar */
-            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3); /* Sombra interior sutil */
+            margin: 0 auto 1.5rem;
+            border: 5px solid #FF0000; /* Red border */
+            box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3); /* Red inner shadow */
         }
        .testimonial-image-clip img {
             width: 100%;
@@ -236,20 +228,20 @@
             object-fit: cover;
         }
        .testimonial-quote {
-            font-size: 1.35rem; /* Texto más grande */
+            font-size: 1.35rem;
             font-style: italic;
-            color: #4B5563; /* Gris oscuro */
-            line-height: 1.6; /* Mejor legibilidad */
+            color: #CCCCCC; /* Light gray for quotes */
+            line-height: 1.6;
         }
        .testimonial-author {
             font-weight: bold;
-            color: #D97706; /* ámbar oscuro */
-            margin-top: 2rem; /* Más espacio */
-            font-size: 1.125rem; /* Texto más grande */
+            color: #FF0000; /* Red for author name */
+            margin-top: 2rem;
+            font-size: 1.125rem;
         }
        .testimonial-title {
-            color: #6B7280; /* Gris medio */
-            font-size: 0.95rem; /* Texto ligeramente más grande */
+            color: #999999; /* Medium gray for title */
+            font-size: 0.95rem;
         }
 
         /* Botones del carrusel */
@@ -257,132 +249,134 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.85); /* Blanco con más opacidad */
+            background-color: rgba(255, 255, 255, 0.85);
             border-radius: 50%;
-            padding: 0.85rem; /* Más padding */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Sombra más definida */
-            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición más suave */
+            padding: 0.85rem;
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.2); /* Red shadow */
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             z-index: 20;
-            border: 1px solid #E5E7EB; /* Borde sutil */
+            border: 1px solid #330000; /* Darker red border */
         }
        .carousel-button:hover {
             background-color: #FFFFFF;
-            transform: translateY(-50%) scale(1.15); /* Más pronunciado */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-color: #D97706; /* ámbar oscuro */
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+            border-color: #FF0000; /* Red on hover */
         }
         #prev-btn { left: 1.5rem; }
         #next-btn { right: 1.5rem; }
 
         /* Recursos - Tarjeta con diseño asimétrico */
        .resource-section-card {
-            background-color: #FFFFFF;
-            padding: 2.5rem; /* Más padding */
-            border-radius: 2rem; /* Más redondeado */
-            border: 2px solid #FCD34D; /* Borde ámbar claro */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra más grande */
+            background-color: #1a1a1a; /* Dark gray */
+            padding: 2.5rem;
+            border-radius: 2rem;
+            border: 2px solid #FF0000; /* Red border */
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.1); /* Red shadow */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición más suave */
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: #FFFFFF; /* White text */
         }
        .resource-section-card:hover {
             transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 25px 50px rgba(255, 0, 0, 0.15);
         }
        .resource-section-card img {
-            transform: rotate(-2deg); /* Ligeramente inclinada */
-            box-shadow: 12px 12px 0px rgba(245, 158, 11, 0.2); /* Sombra ámbar asimétrica más pronunciada */
+            transform: rotate(-2deg);
+            box-shadow: 12px 12px 0px rgba(255, 0, 0, 0.2); /* Red asymmetric shadow */
             transition: transform 0.3s ease;
-            border-radius: 0.75rem; /* Bordes redondeados para la imagen */
+            border-radius: 0.75rem;
         }
        .resource-section-card img:hover {
             transform: rotate(-4deg) scale(1.03);
-            box-shadow: 15px 15px 0px rgba(245, 158, 11, 0.3);
+            box-shadow: 15px 15px 0px rgba(255, 0, 0, 0.3);
         }
         @media (min-width: 768px) {
            .resource-section-card {
                 flex-direction: row;
                 text-align: left;
-                padding: 4rem; /* Más padding en desktop */
+                padding: 4rem;
             }
            .resource-section-card img {
-                margin-right: 3rem; /* Más espacio a la derecha */
+                margin-right: 3rem;
             }
         }
 
         /* CTA Final & FAQ - Mejoras visuales */
        .faq-item-custom {
-            background-color: rgba(217, 119, 6, 0.25); /* ámbar oscuro con opacidad */
-            padding: 1.75rem; /* Más padding */
-            border-radius: 1rem; /* Más redondeado */
+            background-color: rgba(255, 0, 0, 0.25); /* Red with opacity */
+            padding: 1.75rem;
+            border-radius: 1rem;
             position: relative;
             overflow: hidden;
-            border-left: 8px solid #F59E0B; /* Borde ámbar más grueso */
+            border-left: 8px solid #FF0000; /* Thicker red border */
             transition: all 0.3s ease;
+            color: #FFFFFF; /* White text */
         }
        .faq-item-custom:hover {
-            background-color: rgba(217, 119, 6, 0.4); /* Más opacidad al hover */
-            transform: translateX(8px); /* Más desplazamiento */
+            background-color: rgba(255, 0, 0, 0.4); /* More opacity on hover */
+            transform: translateX(8px);
         }
        .faq-question {
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 700; /* bold */
-            color: #FFFFFF; /* Texto blanco */
-            font-size: 1.125rem; /* Texto más grande */
+            font-weight: 700;
+            color: #FFFFFF; /* White text */
+            font-size: 1.125rem;
         }
        .faq-question::after {
             content: '+';
-            font-size: 1.75rem; /* Signo más grande */
+            font-size: 1.75rem;
             font-weight: bold;
             color: #FFFFFF;
             transition: transform 0.3s ease;
         }
        .faq-question[aria-expanded="true"]::after {
-            content: '−'; /* Minus sign */
-            transform: rotate(0deg); /* No rotation for minus */
+            content: '−';
+            transform: rotate(0deg);
         }
        .faq-answer-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
             opacity: 0;
-            color: #4B5563; /* Gris oscuro para mayor visibilidad */
-            padding-top: 0.75rem; /* Más padding */
-            line-height: 1.6; /* Mejor legibilidad */
+            color: #CCCCCC; /* Light gray for answer text */
+            padding-top: 0.75rem;
+            line-height: 1.6;
         }
        .faq-answer-content.is-expanded {
-            max-height: 300px; /* Suficiente para la mayoría de las respuestas, ajustar si es necesario */
+            max-height: 300px;
             opacity: 1;
         }
 
         /* Botones y Floater */
        .cta-button {
-            background-color: #D97706; /* ámbar oscuro */
+            background-color: #FF0000; /* Red */
             color: #FFFFFF;
-            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición más suave */
-            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4); /* Sombra más profunda */
-            border-radius: 9999px; /* fully rounded */
-            font-weight: 700; /* bold */
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4); /* Red shadow */
+            border-radius: 9999px;
+            font-weight: 700;
         }
        .cta-button:hover {
-            transform: translateY(-4px) scale(1.03); /* Efecto 3D al hover */
-            background-color: #B45309; /* ámbar más oscuro */
-            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.5);
+            transform: translateY(-4px) scale(1.03);
+            background-color: #CC0000; /* Darker red */
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
         }
        .cta-button-secondary {
             background-color: #FFFFFF;
-            color: #B45309; /* ámbar más oscuro */
+            color: #CC0000; /* Darker red */
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-            border-radius: 9999px; /* fully rounded */
-            font-weight: 700; /* bold */
+            border-radius: 9999px;
+            font-weight: 700;
         }
        .cta-button-secondary:hover {
-            background-color: #FFFBEB; /* ámbar muy claro */
+            background-color: #EEEEEE; /* Lighter gray */
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
@@ -391,13 +385,13 @@
         }
        .linkedin-original-color:hover {
             opacity: 0.8;
-            transform: scale(1.18); /* Más pronunciado */
+            transform: scale(1.18);
         }
         /* Animación para elementos al entrar en vista */
        .animate-on-scroll {
             opacity: 0;
-            transform: translateY(40px); /* Más desplazamiento inicial */
-            transition: opacity 1s ease-out, transform 1s ease-out; /* Transición más lenta */
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
        .animate-on-scroll.is-visible {
             opacity: 1;
@@ -455,10 +449,10 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <div class="fixed bottom-4 left-4 z-50 bg-white/90 backdrop-blur-lg p-4 rounded-xl shadow-xl border border-gray-200 flex items-center space-x-4">
+    <div class="fixed bottom-4 left-4 z-50 bg-white/90 backdrop-blur-lg p-4 rounded-xl shadow-xl border border-gray-200 flex items-center space-x-4" style="background-color: #1a1a1a; border-color: #333333;">
         <div>
-            <h4 class="font-bold text-gray-900">Esteban Zárate</h4>
-            <p class="text-sm text-gray-600">Mentor Certificado OpenBeauchef</p>
+            <h4 class="font-bold text-gray-900" style="color: #FFFFFF;">Esteban Zárate</h4>
+            <p class="text-sm text-gray-600" style="color: #CCCCCC;">Mentor Certificado OpenBeauchef</p>
         </div>
         <a href="https://www.linkedin.com/in/estebanzarate/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Esteban Zárate" class="transition-transform hover:scale-110">
             <svg class="w-9 h-9 linkedin-original-color" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -467,47 +461,47 @@
         </a>
     </div>
 
-    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 border-b border-gray-200">
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 border-b border-gray-200" style="background-color: rgba(26, 26, 26, 0.9); border-color: #333333;">
         <nav class="container mx-auto px-6 py-4 flex justify-end items-center">
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#reto" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">El Desafío</a>
-                <a href="#transformacion" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">La Transformación</a>
-                <a href="#metodo" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">Mi Método</a>
-                <a href="#exito" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">Casos de Éxito</a>
-                <a href="#recursos" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium">Recursos</a>
+                <a href="#reto" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">El Desafío</a>
+                <a href="#transformacion" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">La Transformación</a>
+                <a href="#metodo" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">Mi Método</a>
+                <a href="#exito" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">Casos de Éxito</a>
+                <a href="#recursos" class="text-gray-600 hover:text-amber-700 transition-colors text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">Recursos</a>
             </div>
             <a href="#conversemos" class="hidden md:inline-block font-semibold px-7 py-3 rounded-full cta-button ml-8 text-lg">
                 Agendar Sesión
             </a>
-            <button id="mobile-menu-button" class="md:hidden text-gray-800" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-menu-button" class="md:hidden text-gray-800" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu" style="color: #FFFFFF;">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4 border-t border-gray-100">
-            <a href="#reto" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">El Desafío</a>
-            <a href="#transformacion" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">La Transformación</a>
-            <a href="#metodo" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">Mi Método</a>
-            <a href="#exito" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">Casos de Éxito</a>
-            <a href="#recursos" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg">Recursos</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pt-2 pb-4 border-t border-gray-100" style="background-color: #1a1a1a; border-color: #333333;">
+            <a href="#reto" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">El Desafío</a>
+            <a href="#transformacion" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">La Transformación</a>
+            <a href="#metodo" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">Mi Método</a>
+            <a href="#exito" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">Casos de Éxito</a>
+            <a href="#recursos" class="block py-3 text-gray-700 hover:text-amber-700 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">Recursos</a>
             <a href="#conversemos" class="block mt-6 text-center w-full font-semibold px-7 py-3 rounded-full cta-button text-lg">Agendar Sesión</a>
         </div>
     </header>
 
     <main>
         <section id="hero" class="relative py-16 md:py-24 overflow-hidden" aria-labelledby="hero-heading">
-            <div class="absolute inset-0 z-0 bg-gradient-to-br from-amber-50 to-transparent" style="background-image: url('img/portada.png'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black opacity-30"></div>
+            <div class="absolute inset-0 z-0 bg-gradient-to-br from-amber-50 to-transparent" style="background-image: url('img/portada.png'); background-size: cover; background-position: center; opacity: 0.5;">
+                <div class="absolute inset-0 bg-black opacity-30" style="background-color: rgba(0,0,0,0.7);"></div>
             </div>
             
-            <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10"></div>
+            <div class="absolute inset-0 bg-grid-gray-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10" style="display: none;"></div>
 
             <div class="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center">
-                <div class="bg-white bg-opacity-70 p-8 md:p-12 rounded-xl shadow-lg max-w-4xl animate-on-scroll">
+                <div class="bg-white bg-opacity-70 p-8 md:p-12 rounded-xl shadow-lg max-w-4xl animate-on-scroll" style="background-color: rgba(26, 26, 26, 0.85); color: #FFFFFF; box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);">
                     <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight"> Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mt-5"> Transfórmate en un Líder de Impacto
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mt-5" style="color: #FFFFFF;"> Transfórmate en un Líder de Impacto
                     </h2>
-                    <p class="mt-7 max-w-lg mx-auto text-lg text-gray-600 leading-relaxed"> Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
+                    <p class="mt-7 max-w-lg mx-auto text-lg text-gray-600 leading-relaxed" style="color: #CCCCCC;"> Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
                     </p>
                     <a href="#conversemos" class="mt-10 inline-block font-bold text-lg px-7 py-3 rounded-full cta-button shadow-lg"> Iniciemos TU diagnóstico ahora
                     </a>
@@ -516,42 +510,42 @@
                 <div class="w-full max-w-6xl mt-20 text-center animate-on-scroll">
                     <p class="text-3xl font-semibold text-white leading-relaxed mb-8">¿Estás buscando alguien con quien:</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-                        <div class="bg-white bg-opacity-70 p-6 rounded-lg shadow-md">
-                            <p class="text-xl font-medium text-gray-900">Puedas validar tu estrategia de desarrollo futuro?</p>
+                        <div class="bg-white bg-opacity-70 p-6 rounded-lg shadow-md" style="background-color: rgba(26, 26, 26, 0.8); box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);">
+                            <p class="text-xl font-medium text-gray-900" style="color: #FFFFFF;">Puedas validar tu estrategia de desarrollo futuro?</p>
                         </div>
-                        <div class="bg-white bg-opacity-70 p-6 rounded-lg shadow-md">
-                            <p class="text-xl font-medium text-gray-900">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
+                        <div class="bg-white bg-opacity-70 p-6 rounded-lg shadow-md" style="background-color: rgba(26, 26, 26, 0.8); box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);">
+                            <p class="text-xl font-medium text-gray-900" style="color: #FFFFFF;">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
                         </div>
-                        <div class="bg-white bg-opacity-70 p-6 rounded-lg shadow-md">
-                            <p class="text-xl font-medium text-gray-900">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
+                        <div class="bg-white bg-opacity-70 p-6 rounded-lg shadow-md" style="background-color: rgba(26, 26, 26, 0.8); box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);">
+                            <p class="text-xl font-medium text-gray-900" style="color: #FFFFFF;">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="colaboraciones" class="py-20 bg-white" aria-labelledby="colaboraciones-heading">
+        <section id="colaboraciones" class="py-20 bg-white" aria-labelledby="colaboraciones-heading" style="background-color: #000000;">
             <div class="container mx-auto px-6">
-                <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll">Algunas de las organizaciones en las que he colaborado</h3>
+                <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll" style="color: #FF0000;">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
-                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
-                    <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
-                    <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
-                    <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
-                    <img src="img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
-                    <img src="img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
-                    <img src="img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
-                    <img src="img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
+                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                    <img src="img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
+                    <img src="img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
+                    <img src="img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
+                    <img src="img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
                 </div>
             </div>
         </section>
 
         <section id="reto" class="py-24 md:py-32 relative" aria-labelledby="reto-heading">
-            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-amber-50/30 to-transparent [mask-image:radial-gradient(at_center,white,transparent)] -z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-amber-50/30 to-transparent [mask-image:radial-gradient(at_center,white,transparent)] -z-10" style="background: none;"></div>
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="reto-heading" class="text-4xl md:text-5xl font-black text-gray-900">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
-                    <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                    <h2 id="reto-heading" class="text-4xl md:text-5xl font-black text-gray-900" style="color: #FF0000;">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
+                    <p class="mt-5 text-xl text-gray-600 leading-relaxed" style="color: #FFFFFF;">
                         Muchos líderes de alto rendimiento enfrentan los mismos obstáculos. Estas son las frustraciones que juntos convertiremos en fortalezas.
                     </p>
                 </div>
@@ -562,8 +556,8 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L13.5 21.75 16.5 12h-6.75Z" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Sobrecarga y Agotamiento</h3>
-                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left" style="color: #FF0000;">Sobrecarga y Agotamiento</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed" style="color: #FFFFFF;">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
@@ -571,8 +565,8 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Estancamiento y Falta de Avance</h3>
-                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left" style="color: #FF0000;">Estancamiento y Falta de Avance</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed" style="color: #FFFFFF;">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
@@ -580,8 +574,8 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">Incertidumbre y Falta de Rumbo</h3>
-                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left" style="color: #FF0000;">Incertidumbre y Falta de Rumbo</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed" style="color: #FFFFFF;">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
@@ -590,48 +584,48 @@
                             </svg>
 
                         </div>
-                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left">La Soledad del Líder</h3>
-                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
+                        <h3 class="font-bold text-2xl text-amber-700 text-center md:text-left" style="color: #FF0000;">La Soledad del Líder</h3>
+                        <p class="mt-3 text-gray-700 text-center md:text-left leading-relaxed" style="color: #FFFFFF;">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="transformacion" class="py-24 md:py-32 bg-white" aria-labelledby="transformacion-heading">
+        <section id="transformacion" class="py-24 md:py-32 bg-white" aria-labelledby="transformacion-heading" style="background-color: #000000;">
                <div class="container mx-auto px-6">
                     <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black text-gray-900">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
-                        <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black text-gray-900" style="color: #FF0000;">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
+                        <p class="mt-5 text-xl text-gray-600 leading-relaxed" style="color: #FFFFFF;">
                             La mentoría no se trata de apagar incendios, sino de construir activamente el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
                         </p>
                     </div>
                     <div class="mt-20 grid md:grid-cols-3 gap-10">
-                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
+                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll" style="background-color: #1a1a1a; border-color: #333333; color: #FFFFFF;">
                             <div class="transform-icon-container" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75H6m-2.25-4.5H4.5m1.5 6.75H7.5m-1.5 6.75H6m6 0h.75m-7.5-6.75h.75m7.5 0h.75m-7.5 0H9m-3 0V4.5m15 15.75h-8.25a.75.75 0 0 1-.75-.75V8.25a.75.75 0 0 1 .75-.75h8.25c.414 0 .75.336.75.75v11.25c0 .414-.336-.75-.75-.75ZM6 18H4.5V4.5H6m-2.25-4.5V9m0 12.75V18c0-.414-.336-.75-.75-.75H3" />
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Hoja de Ruta Estratégica</h3>
-                            <p class="mt-3 text-gray-700 leading-relaxed">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
+                            <h3 class="text-2xl font-bold text-gray-900" style="color: #FF0000;">Hoja de Ruta Estratégica</h3>
+                            <p class="mt-3 text-gray-700 leading-relaxed" style="color: #FFFFFF;">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
                         </div>
-                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
+                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll" style="background-color: #1a1a1a; border-color: #333333; color: #FFFFFF;">
                             <div class="transform-icon-container" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.123 5.145 5.518.442c.407.032.547.559.252.846l-4.28 3.771 1.139 5.86c.071.371-.302.668-.603.414L12 18.295l-5.073 3.105c-.301.246-.674-.043-.603-.415l1.139-5.861-4.28-3.771c-.295-.287-.155-.814.252-.846l5.518-.442 2.123-5.145Z" />
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Liderazgo de Alto Impacto</h3>
-                            <p class="mt-3 text-gray-700 leading-relaxed">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
+                            <h3 class="text-2xl font-bold text-gray-900" style="color: #FF0000;">Liderazgo de Alto Impacto</h3>
+                            <p class="mt-3 text-gray-700 leading-relaxed" style="color: #FFFFFF;">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
                         </div>
-                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll">
+                        <div class="bg-gray-50 p-9 rounded-2xl text-center border border-gray-200 transform-item animate-on-scroll" style="background-color: #1a1a1a; border-color: #333333; color: #FFFFFF;">
                             <div class="transform-icon-container" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125l6 6 9-15m-3 0l6 6m-9-6l.969-.579 6 6m2.585-3.856l1.264 1.264M12 12.75h.008v.008H12v-.008Z" />
                                 </svg>
                             </div>
-                            <h3 class="2xl font-bold text-gray-900">Crecimiento Sostenible</h3>
-                            <p class="mt-3 text-gray-700 leading-relaxed">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
+                            <h3 class="2xl font-bold text-gray-900" style="color: #FF0000;">Crecimiento Sostenible</h3>
+                            <p class="mt-3 text-gray-700 leading-relaxed" style="color: #FFFFFF;">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
                         </div>
                     </div>
                </div>
@@ -640,35 +634,35 @@
         <section id="metodo" class="py-24 md:py-32" aria-labelledby="metodo-heading">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black text-gray-900">Mi Método: Enfoque-Acción-Impacto</h2>
-                    <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                    <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black text-gray-900" style="color: #FF0000;">Mi Método: Enfoque-Acción-Impacto</h2>
+                    <p class="mt-5 text-xl text-gray-600 leading-relaxed" style="color: #FFFFFF;">
                         No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado. Mi rol es hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones que te llevarán al éxito.
                     </p>
                 </div>
                 <div class="mt-24 max-w-4xl mx-auto flex justify-center timeline-container animate-on-scroll">
                     <div class="w-full md:w-3/4 lg:w-2/3"> 
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-amber-700 text-3xl">1. Diagnóstico y Claridad</h4>
-                            <p class="text-gray-700 mt-2 text-lg leading-relaxed">Analizamos tu situación actual, identificando los verdaderos obstáculos y las mayores oportunidades de crecimiento. Establecemos juntos el punto de partida y los objetivos.</p>
+                            <h4 class="font-bold text-amber-700 text-3xl" style="color: #FF0000;">1. Diagnóstico y Claridad</h4>
+                            <p class="text-gray-700 mt-2 text-lg leading-relaxed" style="color: #FFFFFF;">Analizamos tu situación actual, identificando los verdaderos obstáculos y las mayores oportunidades de crecimiento. Establecemos juntos el punto de partida y los objetivos.</p>
                         </div>
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-amber-700 text-3xl">2. Plan de Acción Estratégico</h4>
-                            <p class="text-gray-700 mt-2 text-lg leading-relaxed">Definimos un plan paso a paso, con metas claras, indicadores de éxito y acciones priorizadas para que sepas exactamente qué hacer y cómo medir tu progreso.</p>
+                            <h4 class="font-bold text-amber-700 text-3xl" style="color: #FF0000;">2. Plan de Acción Estratégico</h4>
+                            <p class="text-gray-700 mt-2 text-lg leading-relaxed" style="color: #FFFFFF;">Definimos un plan paso a paso, con metas claras, indicadores de éxito y acciones priorizadas para que sepas exactamente qué hacer y cómo medir tu progreso.</p>
                         </div>
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-amber-700 text-3xl">3. Implementación y Acompañamiento</h4>
-                            <p class="text-gray-700 mt-2 text-lg leading-relaxed">Te acompaño en la ejecución de tu plan, ajustando estrategias en tiempo real, superando desafíos y fortaleciendo tu mentalidad para asegurar resultados sostenibles y de largo plazo.</p>
+                            <h4 class="font-bold text-amber-700 text-3xl" style="color: #FF0000;">3. Implementación y Acompañamiento</h4>
+                            <p class="text-gray-700 mt-2 text-lg leading-relaxed" style="color: #FFFFFF;">Te acompaño en la ejecución de tu plan, ajustando estrategias en tiempo real, superando desafíos y fortaleciendo tu mentalidad para asegurar resultados sostenibles y de largo plazo.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="exito" class="py-24 md:py-32 bg-white" aria-labelledby="exito-heading">
+        <section id="exito" class="py-24 md:py-32 bg-white" aria-labelledby="exito-heading" style="background-color: #000000;">
             <div class="container mx-auto px-6">
                    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-                       <h2 id="exito-heading" class="text-4xl md:text-5xl font-black text-gray-900">Lo que Dicen Mis Clientes</h2>
-                       <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                       <h2 id="exito-heading" class="text-4xl md:text-5xl font-black text-gray-900" style="color: #FF0000;">Lo que Dicen Mis Clientes</h2>
+                       <p class="mt-5 text-xl text-gray-600 leading-relaxed" style="color: #FFFFFF;">
                            La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación y logros reales.
                        </p>
                    </div>
@@ -676,7 +670,7 @@
                        <div id="testimonial-slider" class="flex justify-center flex-wrap"> <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-center">
                                     <div class="testimonial-image-clip">
-                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
+                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF0000/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
                                     </div>
                                     <blockquote class="testimonial-quote">
                                         <p>"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
@@ -688,7 +682,7 @@
                             <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-center">
                                     <div class="testimonial-image-clip">
-                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
+                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF0000/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
                                     </div>
                                     <blockquote class="testimonial-quote">
                                         <p>"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
@@ -711,16 +705,16 @@
         <section id="recursos" class="py-24 md:py-32" aria-labelledby="recursos-heading">
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black text-gray-900">Recursos para Acelerar tu Crecimiento</h2>
-                    <p class="mt-5 text-xl text-gray-600 leading-relaxed">
+                    <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black text-gray-900" style="color: #FF0000;">Recursos para Acelerar tu Crecimiento</h2>
+                    <p class="mt-5 text-xl text-gray-600 leading-relaxed" style="color: #FFFFFF;">
                         El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan de acción efectivo.
                     </p>
                     <div class="mt-16 resource-section-card animate-on-scroll">
-                        <img src="https://placehold.co/250x350/FCD34D/B45309?text=Guia+Ilustrada" onerror="this.onerror=null;this.src='https://placehold.co/250x350/FCD34D/B45309?text=Guia+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
+                        <img src="https://placehold.co/250x350/FF0000/FFFFFF?text=Guia+Ilustrada" onerror="this.onerror=null;this.src='https://placehold.co/250x350/FF0000/FFFFFF?text=Guia+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
                         <div class="md:ml-12 mt-8 md:mt-0">
-                            <h3 class="text-2xl font-bold text-amber-700">GUÍA GRATUITA EXCLUSIVA</h3>
-                            <p class="text-3xl font-bold text-gray-900 mt-2 leading-tight">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
-                            <p class="mt-4 text-gray-600 text-lg">Descubre las trampas comunes que impiden tu progreso y cómo superarlas con estrategias probadas. ¡Tu hoja de ruta hacia el éxito está aquí!</p>
+                            <h3 class="text-2xl font-bold text-amber-700" style="color: #FF0000;">GUÍA GRATUITA EXCLUSIVA</h3>
+                            <p class="text-3xl font-bold text-gray-900 mt-2 leading-tight" style="color: #FFFFFF;">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
+                            <p class="mt-4 text-gray-600 text-lg" style="color: #CCCCCC;">Descubre las trampas comunes que impiden tu progreso y cómo superarlas con estrategias probadas. ¡Tu hoja de ruta hacia el éxito está aquí!</p>
                             <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" class="mt-8 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
                                 Descargar Guía Ahora
                             </a>
@@ -730,15 +724,15 @@
             </div>
         </section>
 
-        <section id="conversemos" class="py-24 md:py-32 bg-amber-600" aria-labelledby="conversemos-heading">
+        <section id="conversemos" class="py-24 md:py-32 bg-amber-600" aria-labelledby="conversemos-heading" style="background-color: #330000;">
             <div class="container mx-auto px-6 text-center">
-                   <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight animate-on-scroll">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
-                   <p class="mt-6 text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed animate-on-scroll">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
+                   <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight animate-on-scroll" style="color: #FF0000;">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
+                   <p class="mt-6 text-xl text-amber-100 max-w-3xl mx-auto leading-relaxed animate-on-scroll" style="color: #FFFFFF;">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
                    <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
                        Iniciemos TU diagnóstico ahora
                    </a>
                    <div id="faq-section" class="container mx-auto px-6 mt-28 max-w-4xl" role="region" aria-labelledby="faq-heading">
-                       <h3 id="faq-heading" class="text-3xl font-bold text-center mb-10 text-white animate-on-scroll">Preguntas Frecuentes</h3>
+                       <h3 id="faq-heading" class="text-3xl font-bold text-center mb-10 text-white animate-on-scroll" style="color: #FF0000;">Preguntas Frecuentes</h3>
                        <div class="space-y-6 text-left">
                             <div class="faq-item-custom animate-on-scroll">
                                <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
@@ -762,10 +756,10 @@
         </section>
     </main>
     
-    <footer class="bg-white text-gray-500 py-10 border-t border-gray-200">
+    <footer class="bg-white text-gray-500 py-10 border-t border-gray-200" style="background-color: #000000; color: #FFFFFF; border-color: #333333;">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Esteban Zárate. Todos los derechos reservados.</p>
-            <p class="text-sm mt-3">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-700 transition-colors">Política de Privacidad</a> | <a href="#" class="hover:text-amber-700 transition-colors">Términos de Servicio</a></p>
+            <p class="text-sm mt-3">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #FF0000;">Política de Privacidad</a> | <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #FF0000;">Términos de Servicio</a></p>
         </div>
     </footer>
 
@@ -801,8 +795,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (testimonialSlider) {
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        if (prevBtn) prevBtn.classList.add('hidden'); // Asegura que los botones estén ocultos
-        if (nextBtn) nextBtn.classList.add('hidden'); // Asegura que los botones estén ocultos
+        if (prevBtn) prevBtn.classList.add('hidden');
+        if (nextBtn) nextBtn.classList.add('hidden');
     }
     
     // FAQ Toggle mejorado
@@ -836,7 +830,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Animación al hacer scroll (Intersection Observer)
     const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
     const observerOptions = {
-        root: null, // viewport
+        root: null,
         rootMargin: '0px',
         threshold: 0.1 
     };
