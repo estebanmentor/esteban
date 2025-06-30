@@ -91,11 +91,12 @@
             height: 2.5rem;
             color: #D97706; /* ámbar oscuro */
         }
-        @media (min-width: 768px) {
-           .challenge-grid-desktop > div:nth-child(even) { /* Tarjetas pares, desplazadas hacia abajo */
-                margin-top: 3rem; /* Más desplazamiento */
+        /* No more asymmetric margin for challenge cards on desktop */
+        /* @media (min-width: 768px) {
+           .challenge-grid-desktop > div:nth-child(even) { 
+                margin-top: 3rem; 
             }
-        }
+        } */
 
         /* La Transformación - Iconos más grandes y con animación */
        .transform-item-icon {
@@ -121,7 +122,7 @@
             color: #D97706; /* ámbar oscuro */
         }
 
-        /* Mi Método - Línea de tiempo con elementos alternados */
+        /* Mi Método - Homogeneización de bloques: items siempre de ancho completo y alineados a la izquierda */
        .timeline-container {
             position: relative;
             padding-left: 2rem;
@@ -129,75 +130,61 @@
         }
        .timeline-item-custom {
             position: relative;
-            margin-bottom: 3.5rem; /* Más espacio entre ítems */
-            padding: 1.5rem 0 1.5rem 2.5rem; /* padding para el contenido */
+            margin-bottom: 3.5rem;
+            padding: 1.5rem 0 1.5rem 2.5rem;
             background-color: #FFFFFF;
             border-radius: 0.75rem;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            border: 1px solid #E5E7EB; /* Borde sutil */
+            border: 1px solid #E5E7EB;
         }
        .timeline-item-custom:hover {
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-            transform: translateX(8px); /* Más desplazamiento */
-            border-color: #F59E0B; /* ámbar */
+            transform: translateX(8px);
+            border-color: #F59E0B;
         }
        .timeline-item-custom::before {
             content: '';
             position: absolute;
-            left: -14px; /* Alineado con la línea */
+            left: -14px;
             top: 50%;
             transform: translateY(-50%);
-            width: 28px; /* Círculo más grande */
-            height: 28px; /* Círculo más grande */
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
-            background: #D97706; /* Círculo ámbar oscuro */
-            border: 5px solid #FDFCEF; /* Borde más claro, color del body */
+            background: #D97706;
+            border: 5px solid #FDFCEF;
             z-index: 1;
             transition: all 0.3s ease;
         }
        .timeline-item-custom:hover::before {
-            background: #B45309; /* ámbar más oscuro al hover */
-            transform: translateY(-50%) scale(1.15); /* Más grande al hover */
+            background: #B45309;
+            transform: translateY(-50%) scale(1.15);
         }
-        /* Asimetría en desktop para la línea de tiempo */
+        /* En desktop, mantener la misma estructura de una columna para homogeneizar el ancho de los bloques */
         @media (min-width: 768px) {
            .timeline-container {
-                border-left: none; /* Quitamos la línea vertical central en desktop */
-                position: relative;
-                width: 100%;
-            }
-           .timeline-container::before { /* Recreamos una línea central punteada */
-                content: '';
-                position: absolute;
-                left: 50%;
-                top: 0;
-                bottom: 0;
-                width: 3px; /* Línea más gruesa */
-                background-color: #F59E0B; /* ámbar */
-                transform: translateX(-50%);
-                z-index: 0;
+                padding-left: 2rem;
+                border-left: 3px solid #F59E0B;
+                margin: 0 auto;
+                max-width: 800px;
             }
            .timeline-item-custom {
-                width: 48%; /* Ocupa casi la mitad */
-                padding: 2rem; /* Más padding */
-            }
-           .timeline-item-custom:nth-child(odd) { /* Elementos impares a la izquierda */
-                margin-right: 52%; /* Deja espacio para el siguiente */
-                text-align: right;
-            }
-           .timeline-item-custom:nth-child(even) { /* Elementos pares a la derecha */
-                margin-left: 52%;
+                width: auto;
+                max-width: none;
+                padding: 2rem;
+                margin-left: 0;
+                margin-right: 0;
                 text-align: left;
             }
-           .timeline-item-custom::before { /* Posicionamiento de los círculos */
-                left: auto;
-                right: -16px; /* Para elementos de la izquierda */
-                background: #D97706;
-                border: 5px solid #FDFCEF; /* Fondo del body */
+           .timeline-item-custom:nth-child(odd),
+           .timeline-item-custom:nth-child(even) {
+                margin-right: 0;
+                margin-left: 0;
+                text-align: left;
             }
-           .timeline-item-custom:nth-child(even)::before {
-                left: -16px; /* Para elementos de la derecha */
+           .timeline-item-custom::before {
+                left: -14px;
                 right: auto;
             }
         }
