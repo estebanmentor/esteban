@@ -97,6 +97,7 @@
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición más suave y pronunciada */
             transform: rotate(0deg); /* Estado inicial sin rotación */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra más definida */
+            border: 1px solid #E5E7EB; /* Borde sutil */
         }
        .challenge-card:hover {
             transform: translateY(-10px) rotate(-0.5deg); /* Más pronunciado, con ligera rotación */
@@ -545,7 +546,7 @@
     </header>
 
     <main>
-        <section id="hero" class="relative flex items-center justify-center p-6 py-20" style="background-image: url('/img/hero-background.jpg'); background-size: cover; background-position: center;" aria-labelledby="hero-heading">
+        <section id="hero" class="relative flex items-center justify-center p-6 py-20" style="background-image: url('img/hero-background.jpg'); background-size: cover; background-position: center;" aria-labelledby="hero-heading">
             <div class="absolute inset-0 bg-black/30 -z-0"></div>
             <div class="relative z-10 max-w-3xl text-center flex flex-col items-center">
                 <div class="bg-amber-700/80 backdrop-blur-sm p-6 rounded-xl shadow-xl w-full h-[200px] flex items-center justify-center text-white text-2xl md:text-3xl font-bold leading-relaxed mb-8 animate-on-scroll">
@@ -569,14 +570,14 @@
             <div class="container mx-auto px-6">
                 <h3 id="colaboraciones-heading" class="text-center text-xl font-semibold text-gray-500 uppercase tracking-wider animate-on-scroll">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
-                    <img src="/img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
-                    <img src="/img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
-                    <img src="/img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
-                    <img src="/img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
-                    <img src="/img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
-                    <img src="/img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
-                    <img src="/img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
-                    <img src="/img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
+                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                    <img src="img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
+                    <img src="img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
+                    <img src="img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
+                    <img src="img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/FDFCEF/4B5563?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
                 </div>
             </div>
         </section>
@@ -711,7 +712,7 @@
                        <div id="testimonial-slider" class="flex justify-center flex-wrap"> <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-center">
                                     <div class="testimonial-image-clip">
-                                        <img src="/img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
+                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
                                     </div>
                                     <blockquote class="testimonial-quote">
                                         <p>"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
@@ -723,7 +724,7 @@
                             <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-center">
                                     <div class="testimonial-image-clip">
-                                        <img src="/img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
+                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/D97706/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
                                     </div>
                                     <blockquote class="testimonial-quote">
                                         <p>"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
