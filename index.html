@@ -49,8 +49,8 @@
         }
         
         /* Hero Section specific styles */
-        #hero h1, #hero h2, #hero p, #hero h3, #hero .gradient-text {
-            color: #FFFFFF; /* All typography in hero section white */
+        #hero h1, #hero h2, #hero p, #hero h3 {
+            color: #FFFFFF; /* All typography in hero section white, except specific span */
         }
         #hero h1 {
             font-size: calc(3rem * 1.4);
@@ -61,6 +61,11 @@
         #hero p {
             font-size: calc(1.125rem * 1.4);
         }
+        /* Specific override for the changed span in h1 */
+        #hero .gradient-text {
+            color: #CC0000; /* Red for "emprendedores s innovadores" */
+            text-transform: uppercase; /* Ensure uppercase for this span */
+        }
 
 
         /* Remove gradient text effect */
@@ -70,7 +75,6 @@
             -webkit-text-fill-color: unset;
             background-clip: unset;
             text-fill-color: unset;
-            color: #FFFFFF; /* Set color to white for hero section span */
         }
 
         /* Alternating section backgrounds */
@@ -532,10 +536,10 @@
     </header>
 
     <main>
-        <section id="hero" class="relative py-16 md:py-24 overflow-hidden" aria-labelledby="hero-heading">
+        <section id="hero" class="relative py-16 md:py-24 overflow-hidden">
             <div class="container mx-auto px-6 relative z-10 flex flex-col items-start justify-center text-left">
                 <div class="p-8 md:p-12 rounded-xl animate-on-scroll" style="background-color: #000000; color: #FFFFFF; box-shadow: none;">
-                    <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight"> Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
+                    <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight"> Mentoría de Negocios para <br><span class="gradient-text">Emprendedores S Innovadores</span>
                     </h1>
                     <h2 class="text-xl md:text-2xl font-bold mt-5" style="color: #FFFFFF; text-align: left;"> Transfórmate en un Líder de Impacto
                     </h2>
@@ -562,7 +566,7 @@
             </div>
         </section>
 
-        <section id="colaboraciones" class="py-20" aria-labelledby="colaboraciones-heading">
+        <section id="colaboraciones" class="py-20">
             <div class="container mx-auto px-6">
                 <h3 id="colaboraciones-heading" class="text-xl font-semibold uppercase tracking-wider animate-on-scroll" style="color: #FFFFFF; text-align: left;">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
@@ -628,7 +632,7 @@
             </div>
         </section>
 
-        <section id="transformacion" class="py-24 md:py-32" aria-labelledby="transformacion-heading">
+        <section id="transformacion" class="py-24 md:py-32">
                <div class="container mx-auto px-6">
                     <div class="max-w-3xl mx-auto animate-on-scroll">
                         <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
