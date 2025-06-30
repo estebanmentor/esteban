@@ -27,36 +27,39 @@
     
     <style>
         body {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: Arial, sans-serif; /* Changed to Arial */
             scroll-behavior: smooth;
             background-color: #000000; /* Black background */
             color: #FFFFFF; /* White for main text */
             background-image: none;
-            text-transform: uppercase;
+            text-transform: none; /* Removed uppercase from body */
             text-align: left; /* Aligned all text to the left */
         }
-        h1, h2, h3, h4 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #FFFFFF; /* All headings white by default */
-            text-transform: uppercase;
+        h1, h2 {
+            font-family: 'Bebas Neue', sans-serif; /* H1 and H2 remain Bebas Neue */
+            color: #FFFFFF; /* All typography in hero section white */
+            text-transform: uppercase; /* H1 and H2 uppercase */
         }
-        /* Specific h1 color for general sections */
+        h3, h4, p, a, span, cite, blockquote {
+            font-family: Arial, sans-serif; /* H3 and below, and general text, are Arial */
+            text-transform: none; /* No uppercase for these elements unless specified */
+        }
         h1 {
-            color: #FF0000; /* h1 explicitly red for non-hero sections if needed */
+            color: #CC0000; /* h1 explicitly a darker red */
         }
         
         /* Hero Section specific styles */
-        #hero h1, #hero h2, #hero p {
+        #hero h1, #hero h2, #hero p, #hero h3, #hero .gradient-text {
             color: #FFFFFF; /* All typography in hero section white */
         }
         #hero h1 {
-            font-size: calc(3rem * 1.4); /* 40% increase from 3xl (48px from 3rem) to 67.2px, and 5xl (60px from 5rem) to 84px */
+            font-size: calc(3rem * 1.4);
         }
         #hero h2 {
-            font-size: calc(2.25rem * 1.4); /* 40% increase from 2xl (36px from 2.25rem) to 50.4px */
+            font-size: calc(2.25rem * 1.4);
         }
         #hero p {
-            font-size: calc(1.125rem * 1.4); /* 40% increase from lg (18px from 1.125rem) to 25.2px */
+            font-size: calc(1.125rem * 1.4);
         }
 
 
@@ -69,6 +72,17 @@
             text-fill-color: unset;
             color: #FFFFFF; /* Set color to white for hero section span */
         }
+
+        /* Alternating section backgrounds */
+        #hero { background-color: #000000; }
+        #colaboraciones { background-color: #333333; } /* Grey 75% */
+        #reto { background-color: #555555; } /* Grey 60% */
+        #transformacion { background-color: #333333; } /* Grey 75% */
+        #metodo { background-color: #555555; } /* Grey 60% */
+        #exito { background-color: #333333; } /* Grey 75% */
+        #recursos { background-color: #555555; } /* Grey 60% */
+        #conversemos { background-color: #333333; } /* Grey 75% */
+
 
         /* Colaboraciones - Logotipos con efecto sutil */
        .logo-grid img {
@@ -97,7 +111,6 @@
        .challenge-card:hover {
             transform: translateY(-10px) rotate(-0.5deg);
             box-shadow: none; /* No box shadow */
-            border-color: #FF3333; /* This won't be visible due to no border */
         }
        .challenge-icon-container {
             width: 64px;
@@ -108,7 +121,7 @@
             align-items: center;
             justify-content: center;
             margin-left: 0; /* Align icons to the left */
-            border: 2px solid #FF0000;
+            border: 2px solid #CC0000; /* Darker red border */
         }
        .challenge-icon-container svg {
             width: 2.5rem;
@@ -132,12 +145,12 @@
             align-items: center;
             justify-content: center;
             margin-left: 0; /* Align icons to the left */
-            border: 3px solid #FF0000;
+            border: 3px solid #CC0000; /* Darker red border */
         }
        .transform-icon-container svg {
             width: 3rem;
             height: 3rem;
-            color: #FF0000;
+            color: #CC0000; /* Darker red icon */
         }
         .transform-item {
             background-color: #333333; /* Grey 75% */
@@ -150,7 +163,7 @@
        .timeline-container {
             position: relative;
             padding-left: 2rem;
-            border-left: 3px solid #FF0000;
+            border-left: 3px solid #CC0000; /* Darker red line */
         }
        .timeline-item-custom {
             position: relative;
@@ -166,7 +179,6 @@
        .timeline-item-custom:hover {
             box-shadow: none; /* No box shadow */
             transform: translateX(8px);
-            border-color: #FF3333; /* This won't be visible due to no border */
         }
        .timeline-item-custom::before {
             content: '';
@@ -177,19 +189,19 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #FF0000;
-            border: 5px solid #000000;
+            background: #CC0000; /* Darker red dot */
+            border: 5px solid #555555; /* Changed border to section background color */
             z-index: 1;
             transition: all 0.3s ease;
         }
        .timeline-item-custom:hover::before {
-            background: #FF3333;
+            background: #CC0000; /* Darker red on hover */
             transform: translateY(-50%) scale(1.15);
         }
         @media (min-width: 768px) {
            .timeline-container {
                 padding-left: 2rem;
-                border-left: 3px solid #FF0000;
+                border-left: 3px solid #CC0000; /* Darker red line */
                 margin: 0 auto;
                 max-width: 800px;
             }
@@ -239,7 +251,6 @@
        .testimonial-inner-card:hover {
             transform: translateY(-8px) scale(1.005);
             box-shadow: none; /* No box shadow */
-            border-color: #FF3333; /* This won't be visible due to no border */
         }
        .testimonial-image-clip {
             position: relative;
@@ -248,8 +259,8 @@
             border-radius: 50%;
             overflow: hidden;
             margin-left: 0; /* Align image to the left */
-            border: 5px solid #FF0000;
-            box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+            border: 5px solid #CC0000; /* Darker red border */
+            box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.3); /* Darker red inner shadow */
         }
        .testimonial-image-clip img {
             width: 100%;
@@ -281,7 +292,7 @@
             background-color: rgba(255, 255, 255, 0.85);
             border-radius: 50%;
             padding: 0.85rem;
-            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.2);
+            box-shadow: 0 6px 15px rgba(204, 0, 0, 0.2); /* Darker red shadow */
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             z-index: 20;
             border: 1px solid #330000;
@@ -289,8 +300,8 @@
        .carousel-button:hover {
             background-color: #FFFFFF;
             transform: translateY(-50%) scale(1.15);
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-            border-color: #FF0000;
+            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4); /* Darker red shadow */
+            border-color: #CC0000; /* Darker red on hover */
         }
         #prev-btn { left: 1.5rem; }
         #next-btn { right: 1.5rem; }
@@ -343,7 +354,7 @@
             border-radius: 1rem;
             position: relative;
             overflow: hidden;
-            border-left: 8px solid #FF0000; /* Left border remains for visual cue */
+            border-left: 8px solid #CC0000; /* Darker red left border remains for visual cue */
             transition: all 0.3s ease;
             color: #FFFFFF;
         }
@@ -387,32 +398,34 @@
 
         /* Botones y Floater */
        .cta-button {
-            background-color: #FF0000; /* Red */
+            background-color: #CC0000; /* Darker Red */
             color: #FFFFFF;
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4); /* Darker red shadow */
             border-radius: 9999px;
             font-weight: 700;
+            text-transform: uppercase; /* CTA buttons uppercase */
         }
        .cta-button:hover {
             transform: translateY(-4px) scale(1.03);
-            background-color: #CC0000;
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+            background-color: #990000; /* Even darker red */
+            box-shadow: 0 10px 30px rgba(204, 0, 0, 0.5);
         }
        .cta-button-secondary {
-            background-color: #FF0000; /* Red */
+            background-color: #CC0000; /* Darker Red */
             color: #FFFFFF;
-            box-shadow: 0 6px 25px rgba(255, 0, 0, 0.2);
+            box-shadow: 0 6px 25px rgba(204, 0, 0, 0.2); /* Darker red shadow */
             border-radius: 9999px;
             font-weight: 700;
+            text-transform: uppercase; /* CTA buttons uppercase */
         }
        .cta-button-secondary:hover {
-            background-color: #CC0000;
+            background-color: #990000; /* Even darker red */
             transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(204, 0, 0, 0.3);
         }
        .linkedin-original-color {
-            color: #000000; /* Changed to black for floater */
+            color: #000000; /* Black for floater */
         }
        .linkedin-original-color:hover {
             opacity: 0.8;
@@ -464,7 +477,7 @@
         "@type": "CommunicateAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://www.innovatur.cl/#conversemos",
+          "urlTemplate": "https://calendar.app.google/VDWYMXTHyy993Wpw8",
           "inLanguage": "es"
         },
         "name": "Agendar Sesión de Diagnóstico"
@@ -495,11 +508,11 @@
     <header class="sticky top-0 z-40 border-b" style="background-color: #000000; border-color: #333333;">
         <nav class="container mx-auto px-6 py-4 flex justify-end items-center">
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#reto" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">El Desafío</a>
-                <a href="#transformacion" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">La Transformación</a>
-                <a href="#metodo" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">Mi Método</a>
-                <a href="#exito" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">Casos de Éxito</a>
-                <a href="#recursos" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #FF0000;">Recursos</a>
+                <a href="#reto" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #CC0000;">El Desafío</a>
+                <a href="#transformacion" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #CC0000;">La Transformación</a>
+                <a href="#metodo" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #CC0000;">Mi Método</a>
+                <a href="#exito" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #CC0000;">Casos de Éxito</a>
+                <a href="#recursos" class="text-lg font-medium" style="color: #FFFFFF; hover:color: #CC0000;">Recursos</a>
             </div>
             <a href="#conversemos" class="hidden md:inline-block font-semibold px-7 py-3 rounded-full cta-button ml-8 text-lg">
                 Agendar Sesión
@@ -509,17 +522,17 @@
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t" style="background-color: #000000; border-color: #333333;">
-            <a href="#reto" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">El Desafío</a>
-            <a href="#transformacion" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">La Transformación</a>
-            <a href="#metodo" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">Mi Método</a>
-            <a href="#exito" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">Casos de Éxito</a>
-            <a href="#recursos" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #FF0000;">Recursos</a>
+            <a href="#reto" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">El Desafío</a>
+            <a href="#transformacion" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">La Transformación</a>
+            <a href="#metodo" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Mi Método</a>
+            <a href="#exito" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Casos de Éxito</a>
+            <a href="#recursos" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Recursos</a>
             <a href="#conversemos" class="block mt-6 text-center w-full font-semibold px-7 py-3 rounded-full cta-button text-lg">Agendar Sesión</a>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="relative py-16 md:py-24 overflow-hidden" aria-labelledby="hero-heading" style="background-color: #000000;">
+        <section id="hero" class="relative py-16 md:py-24 overflow-hidden" aria-labelledby="hero-heading">
             <div class="container mx-auto px-6 relative z-10 flex flex-col items-start justify-center text-left">
                 <div class="p-8 md:p-12 rounded-xl animate-on-scroll" style="background-color: #000000; color: #FFFFFF; box-shadow: none;">
                     <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight"> Mentoría de Negocios para <span class="gradient-text">Fundadores y Ejecutivos</span>
@@ -549,7 +562,7 @@
             </div>
         </section>
 
-        <section id="colaboraciones" class="py-20" aria-labelledby="colaboraciones-heading" style="background-color: #333333;">
+        <section id="colaboraciones" class="py-20" aria-labelledby="colaboraciones-heading">
             <div class="container mx-auto px-6">
                 <h3 id="colaboraciones-heading" class="text-xl font-semibold uppercase tracking-wider animate-on-scroll" style="color: #FFFFFF; text-align: left;">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
@@ -565,7 +578,7 @@
             </div>
         </section>
 
-        <section id="reto" class="py-24 md:py-32 relative" aria-labelledby="reto-heading" style="background-color: #000000;">
+        <section id="reto" class="py-24 md:py-32 relative">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="reto-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
@@ -615,10 +628,10 @@
             </div>
         </section>
 
-        <section id="transformacion" class="py-24 md:py-32" aria-labelledby="transformacion-heading" style="background-color: #333333;">
+        <section id="transformacion" class="py-24 md:py-32" aria-labelledby="transformacion-heading">
                <div class="container mx-auto px-6">
                     <div class="max-w-3xl mx-auto animate-on-scroll">
-                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Diseña un futuro con <span class="gradient-text" style="color: #FFFFFF;">claridad y confianza</span></h2>
+                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
                         <p class="mt-5 text-xl leading-relaxed" style="color: #FFFFFF; text-align: left;">
                             La mentoría no se trata de apagar incendios, sino de construir activamente el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
                         </p>
@@ -655,7 +668,7 @@
                </div>
         </section>
 
-        <section id="metodo" class="py-24 md:py-32" aria-labelledby="metodo-heading" style="background-color: #000000;">
+        <section id="metodo" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Mi Método: Enfoque-Acción-Impacto</h2>
@@ -682,7 +695,7 @@
             </div>
         </section>
 
-        <section id="exito" class="py-24 md:py-32" aria-labelledby="exito-heading" style="background-color: #333333;">
+        <section id="exito" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                    <div class="max-w-3xl mx-auto animate-on-scroll">
                        <h2 id="exito-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Lo que Dicen Mis Clientes</h2>
@@ -694,7 +707,7 @@
                        <div id="testimonial-slider" class="flex justify-start flex-wrap"> <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-left">
                                     <div class="testimonial-image-clip">
-                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF0000/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
+                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CC0000/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
                                     </div>
                                     <blockquote class="testimonial-quote">
                                         <p>"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
@@ -706,7 +719,7 @@
                             <div class="testimonial-card-custom">
                                 <div class="testimonial-inner-card text-left">
                                     <div class="testimonial-image-clip">
-                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF0000/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
+                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CC0000/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
                                     </div>
                                     <blockquote class="testimonial-quote">
                                         <p>"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
@@ -726,7 +739,7 @@
             </div>
         </section>
         
-        <section id="recursos" class="py-24 md:py-32" aria-labelledby="recursos-heading" style="background-color: #000000;">
+        <section id="recursos" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
                     <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Recursos para Acelerar tu Crecimiento</h2>
@@ -734,7 +747,7 @@
                         El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan de acción efectivo.
                     </p>
                     <div class="mt-16 resource-section-card animate-on-scroll">
-                        <img src="https://placehold.co/250x350/FF0000/FFFFFF?text=Guia+Ilustrada" onerror="this.onerror=null;this.src='https://placehold.co/250x350/FF0000/FFFFFF?text=Guia+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
+                        <img src="https://placehold.co/250x350/CC0000/FFFFFF?text=Guia+Ilustrada" onerror="this.onerror=null;this.src='https://placehold.co/250x350/CC0000/FFFFFF?text=Guia+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
                         <div class="md:ml-12 mt-8 md:mt-0">
                             <h3 class="text-2xl font-bold" style="color: #FFFFFF;">GUÍA GRATUITA EXCLUSIVA</h3>
                             <p class="text-3xl font-bold mt-2 leading-tight" style="color: #FFFFFF;">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
@@ -748,7 +761,7 @@
             </div>
         </section>
 
-        <section id="conversemos" class="py-24 md:py-32" aria-labelledby="conversemos-heading" style="background-color: #333333;">
+        <section id="conversemos" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                    <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black max-w-4xl mx-auto leading-tight animate-on-scroll" style="color: #FFFFFF; text-align: left;">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
                    <p class="mt-6 text-xl max-w-3xl mx-auto leading-relaxed animate-on-scroll" style="color: #FFFFFF; text-align: left;">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
@@ -783,7 +796,7 @@
     <footer class="text-gray-500 py-10 border-t" style="background-color: #000000; color: #FFFFFF; border-color: #333333;">
         <div class="container mx-auto px-6 text-left">
             <p>&copy; 2025 Esteban Zárate. Todos los derechos reservados.</p>
-            <p class="text-sm mt-3">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #FF0000;">Política de Privacidad</a> | <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #FF0000;">Términos de Servicio</a></p>
+            <p class="text-sm mt-3">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #CC0000;">Política de Privacidad</a> | <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #CC0000;">Términos de Servicio</a></p>
         </div>
     </footer>
 
