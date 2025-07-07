@@ -66,17 +66,36 @@
         }
         #hero h1 {
             font-size: calc(3rem * 1.4);
+            word-wrap: break-word; /* Ensure text wraps */
         }
-        #hero h2 {
-            font-size: calc(2.25rem * 1.4);
+        @media (max-width: 767px) {
+            #hero h1 {
+                font-size: 2.5rem; /* Adjust for mobile */
+            }
+            #hero h2 {
+                font-size: 1.75rem; /* Adjust for mobile */
+            }
+            #hero p {
+                font-size: 1rem; /* Adjust for mobile */
+            }
+            #hero .hero-content-wrapper {
+                flex-direction: column; /* Stack columns on mobile */
+            }
+            #hero .hero-text-column,
+            #hero .hero-video-column {
+                width: 100%; /* Full width on mobile */
+                padding: 0; /* Adjust padding for mobile */
+            }
+            #hero .hero-video-column {
+                margin-top: 2rem; /* Space between text and video on mobile */
+            }
         }
-        #hero p {
-            font-size: calc(1.125rem * 1.4);
-        }
+
         /* Specific override for the changed span in h1 */
         #hero .gradient-text {
             color: #CC0000; /* Red for "emprendedores e innovadores" */
             text-transform: uppercase; /* Ensure uppercase for this span */
+            word-wrap: break-word; /* Ensure text wraps */
         }
 
 
@@ -465,6 +484,25 @@
        .animate-on-scroll.left.is-visible,.animate-on-scroll.right.is-visible {
             transform: translateX(0);
         }
+
+        /* Specific styles for video */
+        .hero-video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 0.75rem; /* Equivalent to rounded-xl */
+        }
+
+        .hero-video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
     </style>
 
     <script type="application/ld+json">
@@ -554,29 +592,38 @@
 
     <main>
         <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading">
-            <div class="container mx-auto px-6 relative z-10 flex flex-col items-start justify-center text-left">
-                <div class="p-8 md:p-12 rounded-xl animate-on-scroll" style="background-color: #000000; color: #FFFFFF; box-shadow: none;">
-                    <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight"> Mentoría de Negocios para <br><span class="gradient-text">Emprendedores e Innovadores</span>
+            <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between text-left hero-content-wrapper">
+                <div class="p-8 md:p-12 rounded-xl animate-on-scroll hero-text-column md:w-1/2 w-full" style="background-color: #000000; color: #FFFFFF; box-shadow: none;">
+                    <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-wrap"> Mentoría de Negocios para <br><span class="gradient-text">Emprendedores e Innovadores</span>
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-bold mt-5" style="color: #FFFFFF; text-align: left;"> Transfórmate en un Líder de Impacto
+                    <h2 class="text-xl md:text-2xl font-bold mt-5 text-wrap" style="color: #FFFFFF; text-align: left;"> Transfórmate en un Líder de Impacto
                     </h2>
-                    <p class="mt-7 max-w-lg text-lg leading-relaxed" style="color: #FFFFFF; text-align: left;"> Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
+                    <p class="mt-7 max-w-lg text-lg leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;"> Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
                     </p>
                     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2JYDnnMJemnVA0yUSogwLXmF8hczXBBv0NtQybnXHEGF8JwqPAbLyDS824kZg6iDhN3M_deXXK" class="mt-10 inline-block font-bold text-lg px-7 py-3 rounded-full cta-button shadow-lg"> Iniciemos TU diagnóstico ahora
                     </a>
                 </div>
 
+                <div class="md:w-1/2 w-full mt-8 md:mt-0 hero-video-column flex justify-center items-center animate-on-scroll">
+                    <div class="hero-video-container">
+                        <video autoplay loop muted playsinline>
+                            <source src="path/to/your/video.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
                 <div class="w-full max-w-6xl mt-20 text-left animate-on-scroll">
-                    <p class="text-3xl font-semibold text-white leading-relaxed mb-8">¿Estás buscando alguien con quien:</p>
+                    <p class="text-3xl font-semibold text-white leading-relaxed mb-8 text-wrap">¿Estás buscando alguien con quien:</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                         <div class="p-6 rounded-lg" style="background-color: #000000; box-shadow: none; border: none;">
-                            <p class="text-xl font-medium" style="color: #FFFFFF; text-align: left;">Puedas validar tu estrategia de desarrollo futuro?</p>
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas validar tu estrategia de desarrollo futuro?</p>
                         </div>
                         <div class="p-6 rounded-lg" style="background-color: #000000; box-shadow: none; border: none;">
-                            <p class="text-xl font-medium" style="color: #FFFFFF; text-align: left;">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
                         </div>
                         <div class="p-6 rounded-lg" style="background-color: #000000; box-shadow: none; border: none;">
-                            <p class="text-xl font-medium" style="color: #FFFFFF; text-align: left;">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
                         </div>
                     </div>
                 </div>
@@ -585,7 +632,7 @@
 
         <section id="colaboraciones" class="py-20">
             <div class="container mx-auto px-6">
-                <h3 id="colaboraciones-heading" class="text-xl font-semibold uppercase tracking-wider animate-on-scroll" style="color: #FFFFFF; text-align: left;">Algunas de las organizaciones en las que he colaborado</h3>
+                <h3 id="colaboraciones-heading" class="text-xl font-semibold uppercase tracking-wider animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">Algunas de las organizaciones en las que he colaborado</h3>
                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
                     <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
                     <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
@@ -602,8 +649,8 @@
         <section id="reto" class="py-24 md:py-32 relative">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="reto-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
-                    <p class="mt-5 text-xl leading-relaxed" style="color: #FFFFFF; text-align: left;">
+                    <h2 id="reto-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
+                    <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
                         Muchos líderes de alto rendimiento enfrentan los mismos obstáculos. Estas son las frustraciones que juntos convertiremos en fortalezas.
                     </p>
                 </div>
@@ -614,8 +661,8 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L13.5 21.75 16.5 12h-6.75Z" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-2xl" style="color: #FFFFFF; text-align: left;">Sobrecarga y Agotamiento</h3>
-                        <p class="mt-3 leading-relaxed" style="color: #FFFFFF; text-align: left;">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">Sobrecarga y Agotamiento</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
@@ -623,8 +670,8 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-2xl" style="color: #FFFFFF; text-align: left;">Estancamiento y Falta de Avance</h3>
-                        <p class="mt-3 leading-relaxed" style="color: #FFFFFF; text-align: left;">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">Estancamiento y Falta de Avance</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
@@ -632,8 +679,8 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
                             </svg>
                         </div>
-                        <h3 class="font-bold text-2xl" style="color: #FFFFFF; text-align: left;">Incertidumbre y Falta de Rumbo</h3>
-                        <p class="mt-3 leading-relaxed" style="color: #FFFFFF; text-align: left;">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">Incertidumbre y Falta de Rumbo</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
                     </div>
                     <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
                         <div class="challenge-icon-container" aria-hidden="true">
@@ -642,8 +689,8 @@
                             </svg>
 
                         </div>
-                        <h3 class="font-bold text-2xl" style="color: #FFFFFF; text-align: left;">La Soledad del Líder</h3>
-                        <p class="mt-3 leading-relaxed" style="color: #FFFFFF; text-align: left;">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">La Soledad del Líder</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
                     </div>
                 </div>
             </div>
@@ -652,8 +699,8 @@
         <section id="transformacion" class="py-24 md:py-32">
                <div class="container mx-auto px-6">
                     <div class="max-w-3xl mx-auto animate-on-scroll">
-                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
-                        <p class="mt-5 text-xl leading-relaxed" style="color: #FFFFFF; text-align: left;">
+                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
+                        <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
                             La mentoría no se trata de apagar incendios, sino de construir activamente el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
                         </p>
                     </div>
@@ -664,8 +711,8 @@
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75H6m-2.25-4.5H4.5m1.5 6.75H7.5m-1.5 6.75H6m6 0h.75m-7.5-6.75h.75m7.5 0h.75m-7.5 0H9m-3 0V4.5m15 15.75h-8.25a.75.75 0 0 1-.75-.75V8.25a.75.75 0 0 1 .75-.75h8.25c.414 0 .75.336.75.75v11.25c0 .414-.336-.75-.75-.75ZM6 18H4.5V4.5H6m-2.25-4.5V9m0 12.75V18c0-.414-.336-.75-.75-.75H3" />
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-bold" style="color: #FFFFFF;">Hoja de Ruta Estratégica</h3>
-                            <p class="mt-3 leading-relaxed" style="color: #FFFFFF;">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
+                            <h3 class="text-2xl font-bold text-wrap" style="color: #FFFFFF;">Hoja de Ruta Estratégica</h3>
+                            <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF;">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
                         </div>
                         <div class="transform-item p-9 rounded-2xl text-left animate-on-scroll">
                             <div class="transform-icon-container" aria-hidden="true">
@@ -673,8 +720,8 @@
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.123 5.145 5.518.442c.407.032.547.559.252.846l-4.28 3.771 1.139 5.86c.071.371-.302.668-.603.414L12 18.295l-5.073 3.105c-.301.246-.674-.043-.603-.415l1.139-5.861-4.28-3.771c-.295-.287-.155-.814.252-.846l5.518-.442 2.123-5.145Z" />
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-bold" style="color: #FFFFFF;">Liderazgo de Alto Impacto</h3>
-                            <p class="mt-3 leading-relaxed" style="color: #FFFFFF;">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
+                            <h3 class="text-2xl font-bold text-wrap" style="color: #FFFFFF;">Liderazgo de Alto Impacto</h3>
+                            <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF;">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
                         </div>
                         <div class="transform-item p-9 rounded-2xl text-left animate-on-scroll">
                             <div class="transform-icon-container" aria-hidden="true">
@@ -682,8 +729,8 @@
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125l6 6 9-15m-3 0l6 6m-9-6l.969-.579 6 6m2.585-3.856l1.264 1.264M12 12.75h.008v.008H12v-.008Z" />
                                 </svg>
                             </div>
-                            <h3 class="2xl font-bold" style="color: #FFFFFF;">Crecimiento Sostenible</h3>
-                            <p class="mt-3 leading-relaxed" style="color: #FFFFFF;">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
+                            <h3 class="2xl font-bold text-wrap" style="color: #FFFFFF;">Crecimiento Sostenible</h3>
+                            <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF;">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
                         </div>
                     </div>
                </div>
@@ -692,24 +739,24 @@
         <section id="metodo" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Mi Método: Enfoque-Acción-Impacto</h2>
-                    <p class="mt-5 text-xl leading-relaxed" style="color: #FFFFFF; text-align: left;">
+                    <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Mi Método: Enfoque-Acción-Impacto</h2>
+                    <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
                         No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado. Mi rol es hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones que te llevarán al éxito.
                     </p>
                 </div>
                 <div class="mt-24 max-w-4xl mx-auto flex justify-start timeline-container animate-on-scroll">
                     <div class="w-full md:w-3/4 lg:w-2/3"> 
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-3xl" style="color: #FFFFFF;">1. Diagnóstico y Claridad</h4>
-                            <p class="mt-2 text-lg leading-relaxed" style="color: #FFFFFF;">Analizamos tu situación actual, identificando los verdaderos obstáculos y las mayores oportunidades de crecimiento. Establecemos juntos el punto de partida y los objetivos.</p>
+                            <h4 class="font-bold text-3xl text-wrap" style="color: #FFFFFF;">1. Diagnóstico y Claridad</h4>
+                            <p class="mt-2 text-lg leading-relaxed text-wrap" style="color: #FFFFFF;">Analizamos tu situación actual, identificando los verdaderos obstáculos y las mayores oportunidades de crecimiento. Establecemos juntos el punto de partida y los objetivos.</p>
                         </div>
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-3xl" style="color: #FFFFFF;">2. Plan de Acción Estratégico</h4>
-                            <p class="mt-2 text-lg leading-relaxed" style="color: #FFFFFF;">Definimos un plan paso a paso, con metas claras, indicadores de éxito y acciones priorizadas para que sepas exactamente qué hacer y cómo medir tu progreso.</p>
+                            <h4 class="font-bold text-3xl text-wrap" style="color: #FFFFFF;">2. Plan de Acción Estratégico</h4>
+                            <p class="mt-2 text-lg leading-relaxed text-wrap" style="color: #FFFFFF;">Definimos un plan paso a paso, con metas claras, indicadores de éxito y acciones priorizadas para que sepas exactamente qué hacer y cómo medir tu progreso.</p>
                         </div>
                         <div class="timeline-item-custom animate-on-scroll">
-                            <h4 class="font-bold text-3xl" style="color: #FFFFFF;">3. Implementación y Acompañamiento</h4>
-                            <p class="mt-2 text-lg leading-relaxed" style="color: #FFFFFF;">Te acompaño en la ejecución de tu plan, ajustando estrategias en tiempo real, superando desafíos y fortaleciendo tu mentalidad para asegurar resultados sostenibles y de largo plazo.</p>
+                            <h4 class="font-bold text-3xl text-wrap" style="color: #FFFFFF;">3. Implementación y Acompañamiento</h4>
+                            <p class="mt-2 text-lg leading-relaxed text-wrap" style="color: #FFFFFF;">Te acompaño en la ejecución de tu plan, ajustando estrategias en tiempo real, superando desafíos y fortaleciendo tu mentalidad para asegurar resultados sostenibles y de largo plazo.</p>
                         </div>
                     </div>
                 </div>
@@ -719,8 +766,8 @@
         <section id="exito" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                    <div class="max-w-3xl mx-auto animate-on-scroll">
-                       <h2 id="exito-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Lo que Dicen Mis Clientes</h2>
-                       <p class="mt-5 text-xl leading-relaxed" style="color: #FFFFFF; text-align: left;">
+                       <h2 id="exito-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Lo que Dicen Mis Clientes</h2>
+                       <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
                            La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación y logros reales.
                        </p>
                    </div>
@@ -731,7 +778,7 @@
                                         <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CC0000/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
                                     </div>
                                     <blockquote class="testimonial-quote">
-                                        <p>"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
+                                        <p class="text-wrap">"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
                                     </blockquote>
                                     <cite class="testimonial-author not-italic">Gisella Lira</cite>
                                     <p class="testimonial-title">Fundadora de Pocas Copas y Winehunter</p>
@@ -743,7 +790,7 @@
                                         <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CC0000/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
                                     </div>
                                     <blockquote class="testimonial-quote">
-                                        <p>"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
+                                        <p class="text-wrap">"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
                                     </blockquote>
                                     <cite class="testimonial-author not-italic">Daniela Salvador</cite>
                                     <p class="testimonial-title">Directora Revista Canal HORECA</p>
@@ -763,16 +810,16 @@
         <section id="recursos" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto animate-on-scroll">
-                    <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black" style="color: #FFFFFF; text-align: left;">Recursos para Acelerar tu Crecimiento</h2>
-                    <p class="mt-5 text-xl leading-relaxed" style="color: #FFFFFF; text-align: left;">
+                    <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Recursos para Acelerar tu Crecimiento</h2>
+                    <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
                         El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan de acción efectivo.
                     </p>
                     <div class="mt-16 resource-section-card animate-on-scroll">
                         <img src="https://placehold.co/250x350/CC0000/FFFFFF?text=Guia+Ilustrada" onerror="this.onerror=null;this.src='https://placehold.co/250x350/CC0000/FFFFFF?text=Guia+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
                         <div class="md:ml-12 mt-8 md:mt-0">
-                            <h3 class="text-2xl font-bold" style="color: #FFFFFF;">GUÍA GRATUITA EXCLUSIVA</h3>
-                            <p class="text-3xl font-bold mt-2 leading-tight" style="color: #FFFFFF;">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
-                            <p class="mt-4 text-lg" style="color: #FFFFFF;">Descubre las trampas comunes que impiden tu progreso y cómo superarlas con estrategias probadas. ¡Tu hoja de ruta hacia el éxito está aquí!</p>
+                            <h3 class="text-2xl font-bold text-wrap" style="color: #FFFFFF;">GUÍA GRATUITA EXCLUSIVA</h3>
+                            <p class="text-3xl font-bold mt-2 leading-tight text-wrap" style="color: #FFFFFF;">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
+                            <p class="mt-4 text-lg text-wrap" style="color: #FFFFFF;">Descubre las trampas comunes que impiden tu progreso y cómo superarlas con estrategias probadas. ¡Tu hoja de ruta hacia el éxito está aquí!</p>
                             <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" class="mt-8 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
                                 Descargar Guía Ahora
                             </a>
@@ -784,29 +831,29 @@
 
         <section id="conversemos" class="py-24 md:py-32">
             <div class="container mx-auto px-6">
-                   <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black max-w-4xl mx-auto leading-tight animate-on-scroll" style="color: #FFFFFF; text-align: left;">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
-                   <p class="mt-6 text-xl max-w-3xl mx-auto leading-relaxed animate-on-scroll" style="color: #FFFFFF; text-align: left;">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
+                   <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black max-w-4xl mx-auto leading-tight animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
+                   <p class="mt-6 text-xl max-w-3xl mx-auto leading-relaxed animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2JYDnnMJemnVA0yUSogwLXmF8hczXBBv0NtQybnXHEGF8JwqPAbLyDS824kZg6iDhN3M_deXXK" target="_blank" rel="noopener" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
                        ¡Agenda tu sesión ahora!
                    </a>
                    <div id="faq-section" class="container mx-auto px-6 mt-28 max-w-4xl" role="region" aria-labelledby="faq-heading">
-                       <h3 id="faq-heading" class="text-3xl font-bold mb-10 animate-on-scroll" style="color: #FFFFFF; text-align: left;">Preguntas Frecuentes</h3>
+                       <h3 id="faq-heading" class="text-3xl font-bold mb-10 animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">Preguntas Frecuentes</h3>
                        <div class="space-y-6 text-left">
                             <div class="faq-item-custom animate-on-scroll">
-                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
-                               <p id="faq-answer-0" class="mt-3 faq-answer-content">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia, sabiduría y visión para impulsar el desarrollo integral del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas poderosas y herramientas específicas, ayuda a la persona a desarrollar habilidades concretas y a encontrar sus propias soluciones para un objetivo definido.</p>
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
+                               <p id="faq-answer-0" class="mt-3 faq-answer-content text-wrap">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia, sabiduría y visión para impulsar el desarrollo integral del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas poderosas y herramientas específicas, ayuda a la persona a desarrollar habilidades concretas y a encontrar sus propias soluciones para un objetivo definido.</p>
                            </div>
                             <div class="faq-item-custom animate-on-scroll">
-                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
-                               <p id="faq-answer-1" class="mt-3 faq-answer-content">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica y medible. No se trata de teoría; trabajamos juntos en *tus* desafíos reales y complejos para generar resultados tangibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda y duradera, no solo soluciones temporales o superficiales.</p>
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
+                               <p id="faq-answer-1" class="mt-3 faq-answer-content text-wrap">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica y medible. No se trata de teoría; trabajamos juntos en *tus* desafíos reales y complejos para generar resultados tangibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda y duradera, no solo soluciones temporales o superficiales.</p>
                            </div>
                             <div class="faq-item-custom animate-on-scroll">
-                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
-                               <p id="faq-answer-2" class="mt-3 faq-answer-content">La dedicación se adapta a tus metas y disponibilidad, pero desde nuestras primeras sesiones estableceremos un plan de trabajo claro y ambicioso. Muchos de mis clientes comienzan a ver cambios significativos en su claridad mental y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en la estrategia y rentabilidad de su negocio en los primeros 2-3 meses de mentoría.</p>
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
+                               <p id="faq-answer-2" class="mt-3 faq-answer-content text-wrap">La dedicación se adapta a tus metas y disponibilidad, pero desde nuestras primeras sesiones estableceremos un plan de trabajo claro y ambicioso. Muchos de mis clientes comienzan a ver cambios significativos en su claridad mental y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en la estrategia y rentabilidad de su negocio en los primeros 2-3 meses de mentoría.</p>
                            </div>
                             <div class="faq-item-custom animate-on-scroll">
-                               <h4 class="font-semibold text-xl cursor-pointer faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
-                               <p id="faq-answer-3" class="mt-3 faq-answer-content">Si sientes que podrías lograr mucho más de lo que estás haciendo, si la complejidad de tu negocio te abruma, o si simplemente buscas una perspectiva externa y experta para acelerar tu crecimiento y evitar errores costosos, este es el momento ideal. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso estratégico que necesitas ahora mismo.</p>
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
+                               <p id="faq-answer-3" class="mt-3 faq-answer-content text-wrap">Si sientes que podrías lograr mucho más de lo que estás haciendo, si la complejidad de tu negocio te abruma, o si simplemente buscas una perspectiva externa y experta para acelerar tu crecimiento y evitar errores costosos, este es el momento ideal. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso estratégico que necesitas ahora mismo.</p>
                            </div>
                        </div>
                    </div>
