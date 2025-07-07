@@ -56,6 +56,7 @@
             background-color: #000000;
             padding-top: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             padding-bottom: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
+            min-height: 100vh; /* Asegura que la sección hero ocupe al menos la altura completa del viewport */
         }
         @media (min-width: 768px) {
             #hero {
@@ -616,7 +617,7 @@
                     </a>
                 </div>
 
-                <div class="md:w-1/2 w-full mt-8 md:mt-0 hero-video-column flex justify-center items-center animate-on-scroll" style="height: 100%;">
+                <div class="md:w-1/2 w-full mt-8 md:mt-0 hero-video-column flex justify-center items-center animate-on-scroll">
                     <div class="hero-video-container">
                         <video autoplay loop muted playsinline>
                             <source src="img/Generated File July 07, 2025 - 4_49PM.mp4" type="video/mp4">
