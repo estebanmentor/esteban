@@ -57,6 +57,7 @@
             padding-top: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             padding-bottom: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             min-height: 100vh; /* Asegura que la sección hero ocupe al menos la altura completa del viewport */
+            position: relative; /* Necesario para que el video posicionado absolutamente funcione correctamente */
         }
         @media (min-width: 768px) {
             #hero {
@@ -85,13 +86,9 @@
             #hero .hero-content-wrapper {
                 flex-direction: column; /* Stack columns on mobile */
             }
-            #hero .hero-text-column,
-            #hero .hero-video-column {
+            #hero .hero-text-column { /* Removido hero-video-column */
                 width: 100%; /* Full width on mobile */
                 padding: 0; /* Adjust padding for mobile */
-            }
-            #hero .hero-video-column {
-                margin-top: 2rem; /* Space between text and video on mobile */
             }
         }
 
@@ -489,32 +486,16 @@
             transform: translateX(0);
         }
 
-        /* Specific styles for video */
-        .hero-video-container {
-            position: relative;
-            width: 100%;
-            height: 100%; /* Changed from padding-top for full height */
-            overflow: hidden;
-            border-radius: 0.75rem; /* Equivalent to rounded-xl */
-        }
-
-        .hero-video-container video {
+        /* Styles for video as a full background */
+        .hero-background-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 0.75rem;
-        }
-        /* Ensure columns stretch to equal height on medium and larger screens */
-        @media (min-width: 768px) {
-            #hero .hero-content-wrapper {
-                align-items: stretch; /* Make items stretch to fill height */
-            }
-            #hero .hero-video-column {
-                height: 100%; /* Ensure the video column takes full height */
-            }
+            object-fit: cover; /* Ensures video covers the area */
+            z-index: -1; /* Puts video behind other content */
+            filter: brightness(0.6); /* Optional: darken video for better text contrast */
         }
     </style>
 
@@ -605,8 +586,13 @@
 
     <main>
         <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading">
+            <video autoplay loop muted playsinline class="hero-background-video">
+                <source src="img/Generated File July 07, 2025 - 4_49PM.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
             <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-stretch justify-between text-left hero-content-wrapper">
-                <div class="p-8 md:p-12 rounded-xl animate-on-scroll hero-text-column md:w-1/2 w-full" style="background-color: #000000; color: #FFFFFF; box-shadow: none;">
+                <div class="p-8 md:p-12 rounded-xl animate-on-scroll hero-text-column md:w-1/2 w-full" style="color: #FFFFFF; box-shadow: none;">
                     <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-wrap"> Mentoría de Negocios para <br><span class="gradient-text">Emprendedores e Innovadores</span>
                     </h1>
                     <h2 class="text-xl md:text-2xl font-bold mt-5 text-wrap" style="color: #FFFFFF; text-align: left;"> Transfórmate en un Líder de Impacto
@@ -617,25 +603,16 @@
                     </a>
                 </div>
 
-                <div class="md:w-1/2 w-full mt-8 md:mt-0 hero-video-column flex justify-center items-center animate-on-scroll">
-                    <div class="hero-video-container">
-                        <video autoplay loop muted playsinline>
-                            <source src="img/Generated File July 07, 2025 - 4_49PM.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-
                 <div class="w-full max-w-6xl mt-20 text-left animate-on-scroll">
                     <p class="text-3xl font-semibold text-white leading-relaxed mb-8 text-wrap">¿Estás buscando alguien con quien:</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-                        <div class="p-6 rounded-lg" style="background-color: #000000; box-shadow: none; border: none;">
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
                             <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas validar tu estrategia de desarrollo futuro?</p>
                         </div>
-                        <div class="p-6 rounded-lg" style="background-color: #000000; box-shadow: none; border: none;">
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
                             <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
                         </div>
-                        <div class="p-6 rounded-lg" style="background-color: #000000; box-shadow: none; border: none;">
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
                             <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
                         </div>
                     </div>
