@@ -98,6 +98,991 @@
             color: #CC0000; /* Red for "emprendedores e innovadores" */
             text-transform: uppercase; /* Ensure uppercase for this span */
             word-wrap: break-word; /* Ensure text wraps */
+            font-size: 80%; /* Reduced by 20% */
+        }
+
+
+        /* Remove gradient text effect */
+        .gradient-text {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            background-clip: unset;
+            text-fill-color: unset;
+        }
+
+        /* Alternating section backgrounds */
+        #colaboraciones { background-color: #333333; } /* Grey 75% */
+        #reto { background-color: #555555; } /* Grey 60% */
+        #transformacion { background-color: #333333; } /* Grey 75% */
+        #metodo { background-color: #555555; } /* Grey 60% */
+        #exito { background-color: #333333; } /* Grey 75% */
+        #recursos { background-color: #555555; } /* Grey 60% */
+        #conversemos { background-color: #333333; } /* Grey 75% */
+
+
+        /* Colaboraciones - Logotipos con efecto sutil */
+       .logo-grid img {
+            max-height: 100px;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: all 0.4s ease-in-out;
+        }
+       .logo-grid img:hover {
+            filter: none;
+            opacity: 1;
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        /* El Reto - Tarjetas asimétricas y con iconos ilustrativos */
+       .challenge-card {
+            position: relative;
+            overflow: hidden;
+            border: none; /* No border */
+            background-color: #333333; /* Grey 75% */
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: rotate(0deg);
+            box-shadow: none; /* No box shadow */
+            color: #FFFFFF;
+        }
+       .challenge-card:hover {
+            transform: translateY(-10px) rotate(-0.5deg);
+            box-shadow: none; /* No box shadow */
+        }
+       .challenge-icon-container {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: #000000; /* Black for icon background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0; /* Align icons to the left */
+            border: 2px solid #CC0000; /* Darker red border */
+        }
+       .challenge-icon-container svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            color: #FFFFFF;
+        }
+
+        /* La Transformación - Iconos más grandes y con animación */
+       .transform-item-icon {
+            transition: transform 0.3s ease;
+        }
+       .transform-item:hover .transform-item-icon {
+            transform: scale(1.15) rotate(7deg);
+        }
+       .transform-icon-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0; /* Align icons to the left */
+            border: 3px solid #CC0000; /* Darker red border */
+        }
+       .transform-icon-container svg {
+            width: 3rem;
+            height: 3rem;
+            color: #CC0000; /* Darker red icon */
+        }
+        .transform-item {
+            background-color: #333333; /* Grey 75% */
+            border: none; /* No border */
+            box-shadow: none; /* No box shadow */
+            color: #FFFFFF;
+        }
+
+        /* Mi Método - Homogeneización de bloques: items siempre de ancho completo y alineados a la izquierda */
+       .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #CC0000; /* Darker red line */
+        }
+       .timeline-item-custom {
+            position: relative;
+            margin-bottom: 3.5rem;
+            padding: 1.5rem 0 1.5rem 2.5rem;
+            background-color: #333333; /* Grey 75% */
+            border-radius: 0.75rem;
+            box-shadow: none; /* No box shadow */
+            transition: all 0.3s ease;
+            border: none; /* No border */
+            color: #FFFFFF;
+        }
+       .timeline-item-custom:hover {
+            box-shadow: none; /* No box shadow */
+            transform: translateX(8px);
+        }
+       .timeline-item-custom::before {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #CC0000; /* Darker red dot */
+            border: 5px solid #555555; /* Changed border to section background color */
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+       .timeline-item-custom:hover::before {
+            background: #CC0000; /* Darker red on hover */
+            transform: translateY(-50%) scale(1.15);
+        }
+        @media (min-width: 768px) {
+           .timeline-container {
+                padding-left: 2rem;
+                border-left: 3px solid #CC0000; /* Darker red line */
+                margin: 0 auto;
+                max-width: 800px;
+            }
+           .timeline-item-custom {
+                width: auto;
+                max-width: none;
+                padding: 2rem;
+                margin-left: 0;
+                margin-right: 0;
+                text-align: left;
+            }
+           .timeline-item-custom:nth-child(odd),
+           .timeline-item-custom:nth-child(even) {
+                margin-right: 0;
+                margin-left: 0;
+                text-align: left;
+            }
+           .timeline-item-custom::before {
+                left: -14px;
+                right: auto;
+            }
+        }
+
+        /* Testimonios - Carrusel con sombra y hover */
+       .testimonial-card-custom {
+            flex-shrink: 0;
+            width: 90%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        @media (min-width: 768px) {
+            .testimonial-card-custom {
+                width: calc(50% - 1.5rem);
+                margin: 0 0.75rem;
+            }
+        }
+
+       .testimonial-inner-card {
+            background-color: #333333; /* Grey 75% */
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: none; /* No box shadow */
+            border: none; /* No border */
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: #FFFFFF;
+        }
+       .testimonial-inner-card:hover {
+            transform: translateY(-8px) scale(1.005);
+            box-shadow: none; /* No box shadow */
+        }
+       .testimonial-image-clip {
+            position: relative;
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 0; /* Align image to the left */
+            border: 5px solid #CC0000; /* Darker red border */
+            box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.3); /* Darker red inner shadow */
+        }
+       .testimonial-image-clip img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       .testimonial-quote {
+            font-size: 1.35rem;
+            font-style: normal;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+       .testimonial-author {
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-top: 2rem;
+            font-size: 1.125rem;
+        }
+       .testimonial-title {
+            color: #FFFFFF;
+            font-size: 0.95rem;
+        }
+
+        /* Botones del carrusel (hidden in this version) */
+       .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 50%;
+            padding: 0.85rem;
+            box-shadow: 0 6px 15px rgba(204, 0, 0, 0.2); /* Darker red shadow */
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            z-index: 20;
+            border: 1px solid #333333;
+        }
+       .carousel-button:hover {
+            background-color: #FFFFFF;
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4); /* Darker red shadow */
+            border-color: #CC0000; /* Darker red on hover */
+        }
+        #prev-btn { left: 1.5rem; }
+        #next-btn { right: 1.5rem; }
+
+        /* Recursos - Tarjeta con diseño asimétrico */
+       .resource-section-card {
+            background-color: #333333; /* Grey 75% */
+            padding: 2.5rem;
+            border-radius: 2rem;
+            border: none; /* No border */
+            box-shadow: none; /* No box shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: #FFFFFF;
+        }
+       .resource-section-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: none; /* No box shadow */
+        }
+       .resource-section-card img {
+            transform: rotate(-2deg);
+            box-shadow: none; /* No box shadow */
+            transition: transform 0.3s ease;
+            border-radius: 0.75rem;
+        }
+       .resource-section-card img:hover {
+            transform: rotate(-4deg) scale(1.03);
+            box-shadow: none; /* No box shadow */
+        }
+        @media (min-width: 768px) {
+           .resource-section-card {
+                flex-direction: row;
+                text-align: left;
+                padding: 4rem;
+                align-items: center;
+            }
+           .resource-section-card img {
+                margin-right: 3rem;
+                margin: unset;
+            }
+        }
+
+        /* CTA Final & FAQ - Mejoras visuales */
+       .faq-item-custom {
+            background-color: #333333; /* Grey 75% */
+            padding: 1.75rem;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            border-left: 8px solid #CC0000; /* Darker red left border remains for visual cue */
+            transition: all 0.3s ease;
+            color: #FFFFFF;
+        }
+       .faq-item-custom:hover {
+            background-color: #404040; /* Slightly different gray on hover */
+            transform: translateX(8px);
+        }
+       .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: #FFFFFF;
+            font-size: 1.125rem;
+        }
+       .faq-question::after {
+            content: '+';
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            transition: transform 0.3s ease;
+        }
+       .faq-question[aria-expanded="true"]::after {
+            content: '−';
+            transform: rotate(0deg);
+        }
+       .faq-answer-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+            color: #FFFFFF;
+            padding-top: 0.75rem;
+            line-height: 1.6;
+        }
+       .faq-answer-content.is-expanded {
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        /* Botones y Floater */
+       .cta-button {
+            background-color: #CC0000; /* Darker Red */
+            color: #FFFFFF;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.4); /* Darker red shadow */
+            border-radius: 9999px;
+            font-weight: 700;
+            text-transform: uppercase; /* CTA buttons uppercase */
+        }
+       .cta-button:hover {
+            transform: translateY(-4px) scale(1.03);
+            background-color: #990000; /* Even darker red */
+            box-shadow: 0 10px 30px rgba(204, 0, 0, 0.5);
+        }
+       .cta-button-secondary {
+            background-color: #CC0000; /* Darker Red */
+            color: #FFFFFF;
+            box-shadow: 0 6px 25px rgba(204, 0, 0, 0.2); /* Darker red shadow */
+            border-radius: 9999px;
+            font-weight: 700;
+            text-transform: uppercase; /* CTA buttons uppercase */
+        }
+       .cta-button-secondary:hover {
+            background-color: #990000; /* Even darker red */
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 30px rgba(204, 0, 0, 0.3);
+        }
+       .linkedin-original-color {
+            color: #000000; /* Black for floater */
+        }
+       .linkedin-original-color:hover {
+            opacity: 0.8;
+            transform: scale(1.18);
+        }
+        /* Animación para elementos al entrar en vista */
+       .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+       .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+       .animate-on-scroll.left {
+            transform: translateX(-40px);
+        }
+       .animate-on-scroll.right {
+            transform: translateX(40px);
+        }
+       .animate-on-scroll.left.is-visible,.animate-on-scroll.right.is-visible {
+            transform: translateX(0);
+        }
+
+        /* Styles for video as a full background */
+        .hero-background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures video covers the area */
+            z-index: -1; /* Puts video behind other content */
+            filter: brightness(0.6); /* Optional: darken video for better text contrast */
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Esteban Zárate - Mentor de Negocios y Coach Ejecutivo",
+      "description": "Mentoría personalizada para fundadores y ejecutivos enfocada en desbloquear el potencial, convertir desafíos en crecimiento y alcanzar metas de negocio y liderazgo en Chile y LATAM.",
+      "url": "https://www.innovatur.cl",
+      "image": "https://placehold.co/1200x630/FFFBEB/D97706?text=Esteban+Zarate+Mentor+Ilustrado",
+      "provider": {
+        "@type": "Person",
+        "name": "Esteban Zárate",
+        "jobTitle": "Mentor de Negocios y Coach Ejecutivo",
+        "knowsAbout": ["Estrategia de Negocios", "Liderazgo Ejecutivo", "Crecimiento Empresarial", "Transformación Digital", "Productividad"],
+        "url": "https://www.innovatur.cl/#metodo",
+        "image": "https://placehold.co/400x400/FFFBEB/D97706?text=Esteban+Zarate+Ilustracion+Perfil"
+      },
+      "serviceType": "Mentoría de Negocios",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Chile y LATAM"
+      },
+      "potentialAction": {
+        "@type": "CommunicateAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://calendar.app.google/VDWYMXTHyy993Wpw8",
+          "inLanguage": "es"
+        },
+        "name": "Agendar Sesión de Diagnóstico"
+      },
+      "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+569XXXXXXXX",
+          "contactType": "customer service"
+      }
+    }
+    </script>
+    <script id="faq-schema" type="application/ld+json"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="fixed bottom-4 left-4 z-50 p-4 rounded-xl shadow-xl border flex items-center space-x-4" style="background-color: #FFFFFF; border-color: #DDDDDD;">
+        <div>
+            <h4 class="font-bold text-gray-900" style="color: #000000;">Esteban Zárate</h4>
+            <p class="text-sm text-gray-600" style="color: #333333;">Mentor Certificado OpenBeauchef</p>
+        </div>
+        <a href="https://www.linkedin.com/in/estebanzarate/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Esteban Zárate" class="transition-transform hover:scale-110">
+            <svg class="w-9 h-9 linkedin-original-color" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <header class="sticky top-0 z-40 border-b" style="background-color: #000000; border-color: #333333;">
+        <nav class="container mx-auto px-6 py-4 flex justify-start items-center">
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#hero" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;" aria-label="Inicio">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </a>
+                <a href="#reto" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">El Desafío</a>
+                <a href="#transformacion" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">La Transformación</a>
+                <a href="#metodo" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Mi Método</a>
+                <a href="#exito" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Casos de Éxito</a>
+                <a href="#recursos" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Recursos</a>
+            </div>
+            <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="hidden md:inline-block font-semibold px-7 py-3 rounded-full cta-button ml-8 text-lg">
+                ¡Agenda tu sesión ahora!
+            </a>
+            <button id="mobile-menu-button" class="md:hidden" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu" style="color: #FFFFFF;">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t" style="background-color: #000000; border-color: #333333;">
+            <a href="#hero" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Inicio</a>
+            <a href="#reto" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">El Desafío</a>
+            <a href="#transformacion" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">La Transformación</a>
+            <a href="#metodo" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Mi Método</a>
+            <a href="#exito" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Casos de Éxito</a>
+            <a href="#recursos" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Recursos</a>
+            <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="block mt-6 text-center w-full font-semibold px-7 py-3 rounded-full cta-button text-lg">¡Agenda tu sesión ahora!</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading">
+            <video autoplay loop muted playsinline class="hero-background-video">
+                <source src="img/videofondo.mp4" type="video/mp4">
+                <source src="videofondo.webp" type="video/webp">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-stretch justify-between text-left hero-content-wrapper">
+                <div class="p-8 md:p-12 rounded-xl animate-on-scroll hero-text-column md:w-1/2 w-full" style="color: #FFFFFF; box-shadow: none;">
+                    <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-wrap"> Mentoría de Negocios para <br><span class="gradient-text">Emprendedores e Innovadores</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-bold mt-5 text-wrap" style="color: #FFFFFF; text-align: left;"> Tu camino hacia el Liderazgo de Alto Impacto.
+                    </h2>
+                    <p class="mt-7 max-w-lg text-lg leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;"> Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
+                    </p>
+                    <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="mt-10 inline-block font-semibold text-lg px-7 py-3 rounded-full cta-button"> ¡Agenda tu sesión ahora!
+                    </a>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="mt-20 text-left animate-on-scroll">
+                    <p class="text-3xl font-semibold text-white leading-relaxed mb-8 text-wrap">¿Estás buscando alguien con quien:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas validar tu estrategia de desarrollo futuro?</p>
+                        </div>
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
+                        </div>
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="colaboraciones" class="py-20">
+            <div class="container mx-auto px-6">
+                <h3 id="colaboraciones-heading" class="text-xl font-semibold uppercase tracking-wider animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">Algunas de las organizaciones en las que he colaborado</h3>
+               <div class="mt-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center logo-grid animate-on-scroll">
+                    <img src="img/logo-culinary.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Culinary';" alt="Logo Instituto Profesional Culinary" title="Instituto Profesional Culinary" loading="lazy">
+                    <img src="img/logo-ams.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=AMS';" alt="Logo AMS Mobile Solutions" title="AMS-Asicom Mobile Solutions" loading="lazy">
+                    <img src="img/logo-fedetur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Fedetur';" alt="Logo Fedetur" title="FEDETUR" loading="lazy">
+                    <img src="img/buin-zoo.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Buin+Zoo';" alt="Logo Buin Zoo" title="Buin Zoo" loading="lazy">
+                    <img src="img/Sernatur.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Sernatur';" alt="Logo Sernatur" title="Sernatur" loading="lazy">
+                    <img src="img/logo_esade_portada.jpg" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=ESADE';" alt="Logo ESADE Business School" title="ESADE Business School" loading="lazy">
+                    <img src="img/logo-corfo-1.png.webp" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Corfo';" alt="Logo Corfo" title="Corfo" loading="lazy">
+                    <img src="img/logo elquidomos.png" onerror="this.onerror=null;this.src='https://placehold.co/180x60/000000/FFFFFF?text=Elqui+Domos';" alt="Logo Elqui Domos" title="Elqui Domos" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="reto" class="py-24 md:py-32 relative">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto animate-on-scroll">
+                    <h2 id="reto-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">¿Tu esfuerzo no se traduce en los resultados que esperas?</h2>
+                    <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
+                        Líderes de alto rendimiento enfrentan obstáculos comunes. Juntos, transformaremos estas frustraciones en fortalezas.
+                    </p>
+                </div>
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto challenge-grid-desktop">
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L13.5 21.75 16.5 12h-6.75Z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">Sobrecarga y Agotamiento</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Sientes que haces malabares con demasiadas tareas. La lista nunca termina y el agotamiento amenaza tu productividad. Un mentor te ayuda a priorizar y delegar.</p>
+                    </div>
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">Estancamiento y Falta de Avance</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Trabajas sin descanso pero no ves el crecimiento real. Te sientes atascado, repitiendo ciclos sin llegar al siguiente nivel. Es tiempo de una nueva perspectiva.</p>
+                    </div>
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">Incertidumbre y Falta de Rumbo</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Las dudas te asaltan y la falta de un plan claro te hace perder oportunidades valiosas y energía. Un buen mentor te provee de claridad y dirección.</p>
+                    </div>
+                    <div class="challenge-card p-9 rounded-2xl animate-on-scroll">
+                        <div class="challenge-icon-container" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.75c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 15 17.027v-1.572a2.14 2.14 0 0 0-.798-.162c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 12 13.503c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 9 11.859V9.75m6 2.25c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 12 8.253c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 9 6.621v-1.572c0-.276.055-.543.162-.798A2.14 2.14 0 0 1 6.621 3H6c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 3.75 3H3.75m18 0c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 18.379 3H18c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 15.75 3H15.75m0 0a3.75 3.75 0 0 0-7.5 0m7.5 0a3.75 3.75 0 0 1 7.5 0m0 0v.008c.002.404.008.809.008 1.213L21 6.75v1.5c0 .276-.055.543-.162.798A2.14 2.14 0 0 1 18.379 11.25H18c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 15.75 12.753v1.5c0 .276-.055.543-.162.798A2.14 2.14 0 0 1 12.621 16.5H12c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 9.75 18.379V18.75m-6 0c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 3.75 17.027v-1.572c0-.276.055-.543.162-.798A2.14 2.14 0 0 1 6.621 13.503H6c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 3.75 11.859V9.75m0 9a3.75 3.75 0 0 0 7.5 0m-7.5 0a3.75 3.75 0 0 1-7.5 0m0 0H3.75c-.276 0-.543-.055-.798-.162A2.14 2.14 0 0 1 0 18.379V18c0-.276.055-.543.162-.798A2.14 2.14 0 0 1 3.75 15.75H3.75m0 0V18a3.75 3.75 0 0 0 7.5 0Z" />
+                            </svg>
+
+                        </div>
+                        <h3 class="font-bold text-2xl text-wrap" style="color: #FFFFFF; text-align: left;">La Soledad del Líder</h3>
+                        <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">Te falta un par con experiencia con quien rebotar ideas, compartir dudas y celebrar victorias sin filtros. Un mentor es ese compañero estratégico que necesitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="transformacion" class="py-24 md:py-32">
+               <div class="container mx-auto px-6">
+                    <div class="max-w-3xl mx-auto animate-on-scroll">
+                        <h2 id="transformacion-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Diseña un futuro con <span class="gradient-text">claridad y confianza</span></h2>
+                        <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
+                            La mentoría construye el futuro que deseas. Estos son los resultados tangibles que lograremos juntos.
+                        </p>
+                    </div>
+                    <div class="mt-20 grid md:grid-cols-3 gap-10">
+                        <div class="transform-item p-9 rounded-2xl text-left animate-on-scroll">
+                            <div class="transform-icon-container" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75H6m-2.25-4.5H4.5m1.5 6.75H7.5m-1.5 6.75H6m6 0h.75m-7.5-6.75h.75m7.5 0h.75m-7.5 0H9m-3 0V4.5m15 15.75h-8.25a.75.75 0 0 1-.75-.75V8.25a.75.75 0 0 1 .75-.75h8.25c.414 0 .75.336.75.75v11.25c0 .414-.336-.75-.75-.75ZM6 18H4.5V4.5H6m-2.25-4.5V9m0 12.75V18c0-.414-.336-.75-.75-.75H3" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-wrap" style="color: #FFFFFF;">Hoja de Ruta Estratégica</h3>
+                            <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF;">Definiremos objetivos precisos y un plan paso a paso que te permita tomar el control y ver resultados tangibles y medibles.</p>
+                        </div>
+                        <div class="transform-item p-9 rounded-2xl text-left animate-on-scroll">
+                            <div class="transform-icon-container" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.123 5.145 5.518.442c.407.032.547.559.252.846l-4.28 3.771 1.139 5.86c.071.371-.302.668-.603.414L12 18.295l-5.073 3.105c-.301.246-.674-.043-.603-.415l1.139-5.861-4.28-3.771c-.295-.287-.155-.814.252-.846l5.518-.442 2.123-5.145Z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-wrap" style="color: #FFFFFF;">Liderazgo de Alto Impacto</h3>
+                            <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF;">Desarrollarás las habilidades y la mentalidad para inspirar a tu equipo y navegar la incertidumbre con total seguridad y convicción.</p>
+                        </div>
+                        <div class="transform-item p-9 rounded-2xl text-left animate-on-scroll">
+                            <div class="transform-icon-container" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125l6 6 9-15m-3 0l6 6m-9-6l.969-.579 6 6m2.585-3.856l1.264 1.264M12 12.75h.008v.008H12v-.008Z" />
+                                </svg>
+                            </div>
+                            <h3 class="2xl font-bold text-wrap" style="color: #FFFFFF;">Crecimiento Sostenible</h3>
+                            <p class="mt-3 leading-relaxed text-wrap" style="color: #FFFFFF;">Te ayudaré a optimizar tu enfoque y productividad para que logres un crecimiento exponencial sin sacrificar tu bienestar y calidad de vida.</p>
+                        </div>
+                    </div>
+               </div>
+        </section>
+
+        <section id="metodo" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto animate-on-scroll">
+                    <h2 id="metodo-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Mi Método: Enfoque-Acción-Impacto</h2>
+                    <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
+                        No hay fórmulas mágicas, sino un proceso estructurado y 100% personalizado. Mi rol es hacer las preguntas correctas y proveerte de un marco probado para que tú mismo construyas las soluciones que te llevarán al éxito.
+                    </p>
+                </div>
+                <div class="mt-24 max-w-4xl mx-auto flex justify-start timeline-container animate-on-scroll">
+                    <div class="w-full md:w-3/4 lg:w-2/3"> 
+                        <div class="timeline-item-custom animate-on-scroll">
+                            <h4 class="font-bold text-3xl text-wrap" style="color: #FFFFFF;">1. Diagnóstico y Claridad</h4>
+                            <p class="mt-2 text-lg leading-relaxed text-wrap" style="color: #FFFFFF;">Analizamos tu situación actual, identificando los verdaderos obstáculos y las mayores oportunidades de crecimiento. Establecemos juntos el punto de partida y los objetivos.</p>
+                        </div>
+                        <div class="timeline-item-custom animate-on-scroll">
+                            <h4 class="font-bold text-3xl text-wrap" style="color: #FFFFFF;">2. Plan de Acción Estratégico</h4>
+                            <p class="mt-2 text-lg leading-relaxed text-wrap" style="color: #FFFFFF;">Definimos un plan paso a paso, con metas claras, indicadores de éxito y acciones priorizadas para que sepas exactamente qué hacer y cómo medir tu progreso.</p>
+                        </div>
+                        <div class="timeline-item-custom animate-on-scroll">
+                            <h4 class="font-bold text-3xl text-wrap" style="color: #FFFFFF;">3. Implementación y Acompañamiento</h4>
+                            <p class="mt-2 text-lg leading-relaxed text-wrap" style="color: #FFFFFF;">Te acompaño en la ejecución de tu plan, ajustando estrategias en tiempo real, superando desafíos y fortaleciendo tu mentalidad para asegurar resultados sostenibles y de largo plazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="exito" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                   <div class="max-w-3xl mx-auto animate-on-scroll">
+                       <h2 id="exito-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Lo que Dicen Mis Clientes</h2>
+                       <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
+                           La prueba más grande del valor de esta mentoría es el éxito de mis clientes. Estas son sus historias de transformación y logros reales.
+                       </p>
+                   </div>
+                   <div class="mt-20 relative w-full overflow-hidden">
+                       <div id="testimonial-slider" class="flex justify-start flex-wrap"> <div class="testimonial-card-custom">
+                                <div class="testimonial-inner-card text-left">
+                                    <div class="testimonial-image-clip">
+                                        <img src="img/Gisella-7.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CC0000/ffffff?text=GL';" alt="Ilustración de perfil de Gisella Lira">
+                                    </div>
+                                    <blockquote class="testimonial-quote">
+                                        <p class="text-wrap">"Esteban tiene una habilidad única para simplificar lo complejo. Me ayudó a definir el rumbo estratégico cuando más lo necesitaba y a superar obstáculos que parecían insalvables."</p>
+                                    </blockquote>
+                                    <cite class="testimonial-author not-italic">Gisella Lira</cite>
+                                    <p class="testimonial-title">Fundadora de Pocas Copas y Winehunter</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-card-custom">
+                                <div class="testimonial-inner-card text-left">
+                                    <div class="testimonial-image-clip">
+                                        <img src="img/daniela-salvador.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/CC0000/ffffff?text=DS';" alt="Ilustración de perfil de Daniela Salvador">
+                                    </div>
+                                    <blockquote class="testimonial-quote">
+                                        <p class="text-wrap">"Esteban posee un amplio conocimiento comercial, lo que le permite empatizar con las necesidades del mercado. Sus mentorías me han enseñado a comprender al cliente y a visualizar oportunidades, anticipando sus necesidades y valorando mi trabajo para hacer crecer mi negocio."</p>
+                                    </blockquote>
+                                    <cite class="testimonial-author not-italic">Daniela Salvador</cite>
+                                    <p class="testimonial-title">Directora Revista Canal HORECA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="prev-btn" class="carousel-button left-6 hidden" aria-label="Testimonio anterior">
+                            <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="next-btn" class="carousel-button right-6 hidden" aria-label="Siguiente testimonio">
+                            <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                   </div>
+            </div>
+        </section>
+        
+        <section id="recursos" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto animate-on-scroll">
+                    <h2 id="recursos-heading" class="text-4xl md:text-5xl font-black text-wrap" style="color: #FFFFFF; text-align: left;">Recursos para Acelerar tu Crecimiento</h2>
+                    <p class="mt-5 text-xl leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;">
+                        El conocimiento es poder. He creado esta guía práctica para ayudarte a diagnosticar los puntos ciegos en tu negocio y empezar a trazar un plan de acción efectivo.
+                    </p>
+                    <div class="mt-16 resource-section-card animate-on-scroll">
+                        <img src="https://placehold.co/250x350/CC0000/FFFFFF?text=Guia+Ilustrada" onerror="this.onerror=null;this.src='https://placehold.co/250x350/CC0000/FFFFFF?text=Guia+Gratuita';" alt="Portada de la Guía Los 5 Errores que Frenan el Crecimiento de tu Negocio, con un diseño ilustrativo." class="w-56 h-auto rounded-xl shadow-lg object-cover">
+                        <div class="md:ml-12 mt-8 md:mt-0">
+                            <h3 class="text-2xl font-bold text-wrap" style="color: #FFFFFF;">GUÍA GRATUITA EXCLUSIVA</h3>
+                            <p class="text-3xl font-bold mt-2 leading-tight text-wrap" style="color: #FFFFFF;">Los 5 Errores que Frenan el Crecimiento de tu Negocio</p>
+                            <p class="mt-4 text-lg text-wrap" style="color: #FFFFFF;">Descubre las trampas comunes que impiden tu progreso y cómo superarlas con estrategias probadas. ¡Tu hoja de ruta hacia el éxito está aquí!</p>
+                            <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" class="mt-8 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button shadow-lg">
+                                Descargar Guía Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conversemos" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                   <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black max-w-4xl mx-auto leading-tight animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
+                   <p class="mt-6 text-xl max-w-3xl mx-auto leading-relaxed animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
+                   <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
+                       ¡Agenda tu sesión ahora!
+                   </a>
+                   <div id="faq-section" class="container mx-auto px-6 mt-28 max-w-4xl" role="region" aria-labelledby="faq-heading">
+                       <h3 id="faq-heading" class="text-3xl font-bold mb-10 animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">Preguntas Frecuentes</h3>
+                       <div class="space-y-6 text-left">
+                            <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-0">¿Cuál es la diferencia entre mentoring y coaching?</h4>
+                               <p id="faq-answer-0" class="mt-3 faq-answer-content text-wrap">El mentoring es una relación a largo plazo donde el mentor comparte su experiencia, sabiduría y visión para impulsar el desarrollo integral del mentee. El coaching, en cambio, es un proceso a corto plazo que, a través de preguntas poderosas y herramientas específicas, ayuda a la persona a desarrollar habilidades concretas y a encontrar sus propias soluciones para un objetivo definido.</p>
+                           </div>
+                            <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-1">¿En qué se diferencia tu mentoría de otros programas?</h4>
+                               <p id="faq-answer-1" class="mt-3 faq-answer-content text-wrap">Mi enfoque (Método EAI) es 100% personalizado y se centra en la implementación práctica y medible. No se trata de teoría; trabajamos juntos en *tus* desafíos reales y complejos para generar resultados tangibles y sostenibles en *tu* negocio y liderazgo. Buscamos una transformación profunda y duradera, no solo soluciones temporales o superficiales.</p>
+                           </div>
+                            <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-2">¿Cuánto tiempo necesito dedicar y cuándo veré resultados?</h4>
+                               <p id="faq-answer-2" class="mt-3 faq-answer-content text-wrap">La dedicación se adapta a tus metas y disponibilidad, pero desde nuestras primeras sesiones estableceremos un plan de trabajo claro y ambicioso. Muchos de mis clientes comienzan a ver cambios significativos en su claridad mental y confianza en las primeras semanas, lo que se traduce en mejoras tangibles en la estrategia y rentabilidad de su negocio en los primeros 2-3 meses de mentoría.</p>
+                           </div>
+                            <div class="faq-item-custom animate-on-scroll">
+                               <h4 class="font-semibold text-xl cursor-pointer faq-question text-wrap" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-answer-3">¿Cómo sé si este es el momento adecuado para un mentor?</h4>
+                               <p id="faq-answer-3" class="mt-3 faq-answer-content text-wrap">Si sientes que podrías lograr mucho más de lo que estás haciendo, si la complejidad de tu negocio te abruma, o si simplemente buscas una perspectiva externa y experta para acelerar tu crecimiento y evitar errores costosos, este es el momento ideal. Una breve sesión de claridad sin compromiso nos ayudará a determinar si mi mentoría es el impulso estratégico que necesitas ahora mismo.</p>
+                           </div>
+                       </div>
+                   </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-gray-500 py-10 border-t" style="background-color: #000000; color: #FFFFFF; border-color: #333333;">
+        <div class="container mx-auto px-6 text-left">
+            <p>&copy; 2025 Esteban Zárate. Todos los derechos reservados.</p>
+            <p class="text-sm mt-3">Mentoría para Emprendedores y Ejecutivos en Chile y LATAM. <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #CC0000;">Política de Privacidad</a> | <a href="#" class="hover:text-amber-700 transition-colors" style="color: #FFFFFF; hover:color: #CC0000;">Términos de Servicio</a></p>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a, header a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+    
+    // Desactivamos completamente la lógica del carrusel en JavaScript
+    const testimonialSlider = document.getElementById('testimonial-slider');
+    if (testimonialSlider) {
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        if (prevBtn) prevBtn.classList.add('hidden');
+        if (nextBtn) nextBtn.classList.add('hidden');
+    }
+    
+    // FAQ Toggle mejorado
+    const faqSection = document.getElementById('faq-section');
+    const faqQuestions = faqSection.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach((question) => {
+        const clickHandler = () => {
+            const answer = document.getElementById(question.getAttribute('aria-controls'));
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+            faqQuestions.forEach(q => {
+                if (q !== question) { 
+                    q.setAttribute('aria-expanded', 'false');
+                    document.getElementById(q.getAttribute('aria-controls')).classList.remove('is-expanded');
+                }
+            });
+
+            question.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('is-expanded');
+        };
+        question.addEventListener('click', clickHandler);
+        question.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') { 
+                event.preventDefault();
+                clickHandler();
+            }
+        });
+    });
+
+    // Animación al hacer scroll (Intersection Observer)
+    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); 
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    function generateFaqSchema() {
+        const faqEntities = []; 
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach((question) => {
+            const answerId = question.getAttribute('aria-controls');
+            const answer = document.getElementById(answerId);
+            if(answer) {
+                faqEntities.push({
+                    "@type": "Question",
+                    "name": question.textContent.trim(),
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answer.textContent.trim()
+                    }
+                });
+            }
+        });
+        const faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqEntities
+        };
+        const schemaScript = document.getElementById('faq-schema');
+        if (schemaScript) {
+            schemaScript.textContent = JSON.stringify(faqSchema, null, 2);
+        }
+    }
+    generateFaqSchema();
+
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteban Zárate - Mentor de Negocios y Emprendedores - Potencia tu Liderazgo</title>
+    <meta name="description" content="Mentoría de negocios personalizada para fundadores y ejecutivos. Transforma desafíos complejos en crecimiento exponencial y alcanza tus metas con un plan estratégico y accionable. Desarrolla liderazgo de alto impacto.">
+    <meta name="keywords" content="mentor de negocios, coaching ejecutivo, esteban zarate, mentor para emprendedores, liderazgo, crecimiento de negocios, estrategia empresarial, coaching chile, mentoría online, desarrollo empresarial, transformación digital, planificación estratégica">
+    
+    <meta property="og:title" content="Esteban Zárate - Mentor de Negocios y Emprendedores">
+    <meta property="og:description" content="Mentoría personalizada para fundadores y ejecutivos: transforma desafíos en crecimiento y liderazgo de alto impacto.">
+    <meta property="og:image" content="https://placehold.co/1200x630/FFFBEB/D97706?text=Esteban+Zarate+Mentor+Ilustrado">
+    <meta property="og:url" content="https://www.innovatur.cl">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Esteban Zárate - Mentor de Negocios y Emprendedores">
+    <meta property="twitter:description" content="Mentoría personalizada para fundadores y ejecutivos: transforma desafíos en crecimiento y liderazgo de alto impacto.">
+    <meta name="twitter:image" content="https://placehold.co/1200x675/FFFBEB/D97706?text=Esteban+Zarate+Mentor+Twitter+Ilustrado">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body {
+            height: 100%; /* Asegura que html y body ocupen la altura completa del viewport */
+        }
+        body {
+            font-family: Arial, sans-serif; /* Changed to Arial */
+            scroll-behavior: smooth;
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White for main text */
+            background-image: none;
+            text-transform: none; /* Removed uppercase from body */
+            text-align: left; /* Aligned all text to the left */
+            line-height: 1.6; /* Improved readability */
+        }
+        h1, h2 {
+            font-family: 'Bebas Neue', sans-serif; /* H1 and H2 remain Bebas Neue */
+            color: #FFFFFF; /* All typography in hero section white */
+            text-transform: uppercase; /* H1 and H2 uppercase */
+        }
+        h3, h4, p, a, span, cite, blockquote {
+            font-family: Arial, sans-serif; /* H3 and below, and general text, are Arial */
+            text-transform: none; /* No uppercase for these elements unless specified */
+        }
+        h1 {
+            color: #CC0000; /* h1 explicitly a darker red */
+        }
+        
+        /* Hero Section specific styles */
+        #hero {
+            background-color: #000000;
+            padding-top: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
+            padding-bottom: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
+            min-height: 100vh; /* Asegura que la sección hero ocupe al menos la altura completa del viewport */
+            position: relative; /* Necesario para que el video posicionado absolutamente funcione correctamente */
+        }
+        @media (min-width: 768px) {
+            #hero {
+                padding-top: 3.84rem; /* 20% less than 4.8rem (previous 20% reduction) */
+                padding-bottom: 3.84rem; /* 20% less than 4.8rem (previous 20% reduction) */
+            }
+        }
+
+        #hero h1, #hero h2, #hero p, #hero h3 {
+            color: #FFFFFF; /* All typography in hero section white, except specific span */
+        }
+        #hero h1 {
+            font-size: calc(3rem * 1.4);
+            word-wrap: break-word; /* Ensure text wraps */
+        }
+        @media (max-width: 767px) {
+            #hero h1 {
+                font-size: 2.5rem; /* Adjust for mobile */
+            }
+            #hero h2 {
+                font-size: 1.75rem; /* Adjust for mobile */
+            }
+            #hero p {
+                font-size: 1rem; /* Adjust for mobile */
+            }
+            #hero .hero-content-wrapper {
+                flex-direction: column; /* Stack columns on mobile */
+            }
+            #hero .hero-text-column { /* Removido hero-video-column */
+                width: 100%; /* Full width on mobile */
+                padding: 0; /* Adjust padding for mobile */
+            }
+        }
+
+        /* Specific override for the changed span in h1 */
+        #hero .gradient-text {
+            color: #CC0000; /* Red for "emprendedores e innovadores" */
+            text-transform: uppercase; /* Ensure uppercase for this span */
+            word-wrap: break-word; /* Ensure text wraps */
         }
 
 
