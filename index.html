@@ -54,7 +54,7 @@
         
         /* Hero Section specific styles */
         #hero {
-            background-color: #000000; /* Restored black background color */
+            background-color: #000000;
             padding-top: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             padding-bottom: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             min-height: 100vh; /* Asegura que la sección hero ocupe al menos la altura completa del viewport */
@@ -67,33 +67,7 @@
             }
         }
 
-        #hero h1, #hero h2, #hero p, #hero h3 {
-            color: #FFFFFF; /* All typography in hero section white, except specific span */
-        }
-        #hero h1 {
-            font-size: calc(3rem * 1.4);
-            word-wrap: break-word; /* Ensure text wraps */
-        }
-        @media (max-width: 767px) {
-            #hero h1 {
-                font-size: 2.5rem; /* Adjust for mobile */
-            }
-            #hero h2 {
-                font-size: 1.75rem; /* Adjust for mobile */
-            }
-            #hero p {
-                font-size: 1rem; /* Adjust for mobile */
-            }
-            #hero .hero-content-wrapper {
-                flex-direction: column; /* Stack columns on mobile */
-            }
-            #hero .hero-text-column { /* Removido hero-video-column */
-                width: 100%; /* Full width on mobile */
-                padding: 0; /* Adjust padding for mobile */
-            }
-        }
-
-        /* Specific override for the changed span in h1 */
+        /* Specific override for the changed span in h1 (kept for other sections if applies) */
         #hero .gradient-text {
             color: #CC0000; /* Red for "emprendedores e innovadores" */
             text-transform: uppercase; /* Ensure uppercase for this span */
@@ -101,14 +75,45 @@
             font-size: 80%; /* Reduced by 20% */
         }
 
-
-        /* Remove gradient text effect */
+        /* Remove gradient text effect (kept for other sections if applies) */
         .gradient-text {
             background: none;
             -webkit-background-clip: unset;
             -webkit-text-fill-color: unset;
             background-clip: unset;
             text-fill-color: unset;
+        }
+
+        /* Styles for hero-background-video (kept for potential future use in #hero if needed) */
+        .hero-background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            /* Removed filter: brightness(0.6); */
+        }
+
+        /* NEW: Styles for hero2 section */
+        #hero2 {
+            width: 100%;
+            min-height: 100vh; /* Make it full viewport height */
+            background-color: #000000; /* A background color for the section itself */
+            display: flex; /* Use flexbox to center video if it doesn't cover */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide overflow from object-fit: cover */
+            position: relative; /* Needed for absolute positioning of child elements, though none explicitly needed for video itself here */
+        }
+
+        /* NEW: Styles for video within hero2 (as main content) */
+        .hero2-video {
+            width: 100%;
+            height: 100%; /* Make video fill the section's height */
+            object-fit: cover; /* Ensures video covers the area without distorting aspect ratio */
+            display: block; /* Remove extra space below video */
         }
 
         /* Alternating section backgrounds */
@@ -487,18 +492,6 @@
        .animate-on-scroll.left.is-visible,.animate-on-scroll.right.is-visible {
             transform: translateX(0);
         }
-
-        /* Styles for video as a full background */
-        .hero-background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures video covers the area */
-            z-index: -1; /* Puts video behind other content */
-            /* Removed filter: brightness(0.6); */
-        }
     </style>
 
     <script type="application/ld+json">
@@ -588,7 +581,10 @@
 
     <main>
         <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading">
-            <video autoplay loop muted playsinline class="hero-background-video">
+            </section>
+
+        <section id="hero2" class="relative overflow-hidden">
+            <video autoplay loop muted playsinline class="hero2-video">
                 <source src="img/videofondo.mp4" type="video/mp4">
                 <source src="img/videofondo.webp" type="video/webp">
                 Your browser does not support the video tag.
