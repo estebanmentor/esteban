@@ -54,7 +54,7 @@
         
         /* Hero Section specific styles */
         #hero {
-            background-color: #000000;
+            background-color: #000000; /* Restored black background color */
             padding-top: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             padding-bottom: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             min-height: 100vh; /* Asegura que la sección hero ocupe al menos la altura completa del viewport */
@@ -74,6 +74,7 @@
             word-wrap: break-word; /* Ensure text wraps */
             font-size: 80%; /* Reduced by 20% */
         }
+
 
         /* Remove gradient text effect (kept for other sections if applies) */
         .gradient-text {
@@ -101,19 +102,71 @@
             width: 100%;
             min-height: 100vh; /* Make it full viewport height */
             background-color: #000000; /* A background color for the section itself */
-            display: flex; /* Use flexbox to center video if it doesn't cover */
-            justify-content: center;
-            align-items: center;
             overflow: hidden; /* Hide overflow from object-fit: cover */
-            position: relative; /* Needed for absolute positioning of child elements, though none explicitly needed for video itself here */
+            position: relative; /* Needed for absolute positioning of child elements */
+            display: flex; /* Flex container for direct children of hero2 */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Push content to top and bottom if needed */
+            align-items: flex-start; /* Align content to the left */
+            padding-top: 2.56rem; /* Match original hero padding */
+            padding-bottom: 2.56rem; /* Match original hero padding */
+        }
+        @media (min-width: 768px) {
+            #hero2 {
+                padding-top: 3.84rem; /* Match original hero padding */
+                padding-bottom: 3.84rem; /* Match original hero padding */
+            }
         }
 
         /* NEW: Styles for video within hero2 (as main content) */
         .hero2-video {
+            position: absolute; /* Position video absolutely to act as background */
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100%; /* Make video fill the section's height */
+            height: 100%;
             object-fit: cover; /* Ensures video covers the area without distorting aspect ratio */
-            display: block; /* Remove extra space below video */
+            z-index: -1; /* Puts video behind other content */
+        }
+
+        /* Styles for content within hero2 */
+        #hero2 .hero-content-wrapper,
+        #hero2 .questions-block {
+            position: relative; /* Position relative for z-index and normal flow within hero2 */
+            z-index: 10; /* Ensure content is above video */
+            width: 100%; /* Take full width of parent container */
+            color: #FFFFFF; /* White text color */
+            text-align: left; /* Align text to left */
+        }
+
+        #hero2 .hero-text-column {
+            color: #FFFFFF;
+            box-shadow: none;
+        }
+        
+        #hero2 h1, #hero2 h2, #hero2 p, #hero2 h3 {
+            color: #FFFFFF;
+        }
+        #hero2 h1 {
+            font-size: calc(3rem * 1.4);
+            word-wrap: break-word;
+        }
+        @media (max-width: 767px) {
+            #hero2 h1 {
+                font-size: 2.5rem;
+            }
+            #hero2 h2 {
+                font-size: 1.75rem;
+            }
+            #hero2 p {
+                font-size: 1rem;
+            }
+        }
+        #hero2 .gradient-text {
+            color: #CC0000;
+            text-transform: uppercase;
+            word-wrap: break-word;
+            font-size: 80%;
         }
 
         /* Alternating section backgrounds */
@@ -589,6 +642,36 @@
                 <source src="img/videofondo.webp" type="video/webp">
                 Your browser does not support the video tag.
             </video>
+
+            <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row md:items-stretch justify-between text-left hero-content-wrapper">
+                <div class="p-8 md:p-12 rounded-xl animate-on-scroll hero-text-column md:w-1/2 w-full" style="color: #FFFFFF; box-shadow: none;">
+                    <h1 id="hero-heading" class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-wrap"> Mentoría de Negocios para <br><span class="gradient-text">Emprendedores e Innovadores</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-bold mt-5 text-wrap" style="color: #FFFFFF; text-align: left;"> Tu camino hacia el Liderazgo de Alto Impacto.
+                    </h2>
+                    <p class="mt-7 max-w-lg text-lg leading-relaxed text-wrap" style="color: #FFFFFF; text-align: left;"> Juntos, desbloquearemos tu potencial, crearemos un plan de acción claro y desarrollaremos habilidades de liderazgo para superar obstáculos y tomar decisiones con confianza inquebrantable.
+                    </p>
+                    <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="mt-10 inline-block font-semibold text-lg px-7 py-3 rounded-full cta-button"> ¡Agenda tu sesión ahora!
+                    </a>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="mt-20 text-left animate-on-scroll">
+                    <p class="text-3xl font-semibold text-white leading-relaxed mb-8 text-wrap">¿Estás buscando alguien con quien:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas validar tu estrategia de desarrollo futuro?</p>
+                        </div>
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Puedas discutir y mejorar tu desempeño como líder de una iniciativa/proyecto innovador?</p>
+                        </div>
+                        <div class="p-6 rounded-lg" style="box-shadow: none; border: none;">
+                            <p class="text-xl font-medium text-wrap" style="color: #FFFFFF; text-align: left;">Te acompañe en la implementación y seguimiento de tu plan de negocios?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="colaboraciones" class="py-20">
