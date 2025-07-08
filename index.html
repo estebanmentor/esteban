@@ -54,11 +54,16 @@
         
         /* Hero Section specific styles */
         #hero {
-            background-color: #000000; /* Restored black background color */
+            background-color: transparent; /* Changed to transparent to reveal video */
             padding-top: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             padding-bottom: 2.56rem; /* 20% less than 3.2rem (previous 20% reduction) */
             min-height: 100vh; /* Asegura que la sección hero ocupe al menos la altura completa del viewport */
             position: relative; /* Necesario para que el video posicionado absolutamente funcione correctamente */
+            overflow: hidden; /* Hide overflow from object-fit: cover */
+            display: flex; /* Flex container for direct children of hero */
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Push content to top and bottom if needed */
+            align-items: flex-start; /* Align content to the left */
         }
         @media (min-width: 768px) {
             #hero {
@@ -85,41 +90,8 @@
             text-fill-color: unset;
         }
 
-        /* Styles for hero-background-video (kept for potential future use in #hero if needed) */
+        /* Styles for video within hero (as main content) */
         .hero-background-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            /* Removed filter: brightness(0.6); */
-        }
-
-        /* NEW: Styles for hero2 section */
-        #hero2 {
-            width: 100%;
-            min-height: 100vh; /* Make it full viewport height */
-            background-color: transparent; /* Changed to transparent to reveal video */
-            overflow: hidden; /* Hide overflow from object-fit: cover */
-            position: relative; /* Needed for absolute positioning of child elements */
-            display: flex; /* Flex container for direct children of hero2 */
-            flex-direction: column; /* Stack content vertically */
-            justify-content: space-between; /* Push content to top and bottom if needed */
-            align-items: flex-start; /* Align content to the left */
-            padding-top: 2.56rem; /* Match original hero padding */
-            padding-bottom: 2.56rem; /* Match original hero padding */
-        }
-        @media (min-width: 768px) {
-            #hero2 {
-                padding-top: 3.84rem; /* Match original hero padding */
-                padding-bottom: 3.84rem; /* Match original hero padding */
-            }
-        }
-
-        /* NEW: Styles for video within hero2 (as main content) */
-        .hero2-video {
             position: absolute; /* Position video absolutely to act as background */
             top: 0;
             left: 0;
@@ -129,45 +101,47 @@
             z-index: -1; /* Puts video behind other content */
         }
 
-        /* Styles for content within hero2 */
-        #hero2 .hero-content-wrapper,
-        #hero2 .questions-block {
-            position: relative; /* Position relative for z-index and normal flow within hero2 */
+        /* Styles for content within hero */
+        #hero .hero-content-wrapper,
+        #hero .questions-block {
+            position: relative; /* Position relative for z-index and normal flow within hero */
             z-index: 10; /* Ensure content is above video */
             width: 100%; /* Take full width of parent container */
             color: #FFFFFF; /* White text color */
             text-align: left; /* Align text to left */
         }
 
-        #hero2 .hero-text-column {
+        #hero .hero-text-column {
             color: #FFFFFF;
             box-shadow: none;
         }
         
-        #hero2 h1, #hero2 h2, #hero2 p, #hero2 h3 {
+        #hero h1, #hero h2, #hero p, #hero h3 {
             color: #FFFFFF;
         }
-        #hero2 h1 {
+        #hero h1 {
             font-size: calc(3rem * 1.4);
             word-wrap: break-word;
         }
         @media (max-width: 767px) {
-            #hero2 h1 {
+            #hero h1 {
                 font-size: 2.5rem;
             }
-            #hero2 h2 {
+            #hero h2 {
                 font-size: 1.75rem;
             }
-            #hero2 p {
+            #hero p {
                 font-size: 1rem;
             }
         }
-        #hero2 .gradient-text {
+        /* Gradient text specifically within new hero */
+        #hero .gradient-text {
             color: #CC0000;
             text-transform: uppercase;
             word-wrap: break-word;
             font-size: 80%;
         }
+
 
         /* Alternating section backgrounds */
         #colaboraciones { background-color: #333333; } /* Grey 75% */
@@ -634,10 +608,7 @@
 
     <main>
         <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-heading">
-            </section>
-
-        <section id="hero2" class="relative overflow-hidden">
-            <video autoplay loop muted playsinline class="hero2-video">
+            <video autoplay loop muted playsinline class="hero-background-video">
                 <source src="img/videofondo.mp4" type="video/mp4">
                 <source src="img/videofondo.webp" type="video/webp">
                 Your browser does not support the video tag.
