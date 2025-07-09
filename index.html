@@ -497,6 +497,20 @@
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 8px 30px rgba(204, 0, 0, 0.3);
         }
+       .cta-button-blue {
+            background-color: #007bff; /* Blue */
+            color: #FFFFFF;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4); /* Blue shadow */
+            border-radius: 9999px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+       .cta-button-blue:hover {
+            transform: translateY(-4px) scale(1.03);
+            background-color: #0056b3; /* Darker blue */
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.5);
+        }
        .linkedin-original-color {
             color: #000000; /* Black for floater */
         }
@@ -591,6 +605,7 @@
                 <a href="#metodo" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Mi Método</a>
                 <a href="#exito" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Casos de Éxito</a>
                 <a href="#recursos" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Recursos</a>
+                <a href="#conversemos" class="text-lg font-medium transition-colors duration-300" style="color: #FFFFFF;">Contacto</a>
             </div>
             <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="hidden md:inline-block font-semibold px-7 py-3 rounded-full cta-button ml-8 text-lg">
                 ¡Agenda tu sesión ahora!
@@ -606,6 +621,7 @@
             <a href="#metodo" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Mi Método</a>
             <a href="#exito" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Casos de Éxito</a>
             <a href="#recursos" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Recursos</a>
+            <a href="#conversemos" class="block py-3 font-medium text-lg" style="color: #FFFFFF; hover:color: #CC0000;">Contacto</a>
             <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" class="block mt-6 text-center w-full font-semibold px-7 py-3 rounded-full cta-button text-lg">¡Agenda tu sesión ahora!</a>
         </div>
     </header>
@@ -852,9 +868,14 @@
             <div class="container mx-auto px-6">
                    <h2 id="conversemos-heading" class="text-4xl md:text-5xl font-black max-w-4xl mx-auto leading-tight animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">¿Seguirás navegando a la deriva o tomarás el timón de tu liderazgo?</h2>
                    <p class="mt-6 text-xl max-w-3xl mx-auto leading-relaxed animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">El momento de tomar acción es ahora. Una conversación puede ser el primer paso hacia la transformación que buscas. No tienes que seguir este camino solo/a.</p>
-                   <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="mt-12 inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
-                       ¡Agenda tu sesión ahora!
-                   </a>
+                   <div class="flex flex-col md:flex-row justify-center items-center mt-12 space-y-4 md:space-y-0 md:space-x-8">
+                       <a href="https://calendar.app.google/VDWYMXTHyy993Wpw8" target="_blank" rel="noopener" class="inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-secondary transition-transform hover:scale-105 animate-on-scroll">
+                           ¡Agenda tu sesión ahora!
+                       </a>
+                       <a href="https://share.hsforms.com/1jbtMlpVARyOq910-L3skSwtuzrj" target="_blank" rel="noopener" class="inline-block font-bold text-xl px-9 py-4 rounded-full cta-button-blue transition-transform hover:scale-105 animate-on-scroll">
+                           Contáctanos
+                       </a>
+                   </div>
                    <div id="faq-section" class="container mx-auto px-6 mt-28 max-w-4xl" role="region" aria-labelledby="faq-heading">
                        <h3 id="faq-heading" class="text-3xl font-bold mb-10 animate-on-scroll text-wrap" style="color: #FFFFFF; text-align: left;">Preguntas Frecuentes</h3>
                        <div class="space-y-6 text-left">
